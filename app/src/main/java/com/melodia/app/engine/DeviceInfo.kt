@@ -40,7 +40,7 @@ class DeviceInfo(private val context: Context) {
     fun phoneVerdict(allowLowRam: Boolean): Verdict {
         if (!isArm64) return Verdict(false, "Phone AI needs a 64-bit ARM phone.")
         if (ramClassGb < 8 && !allowLowRam) {
-            return Verdict(false, "Phone AI needs at least 8 GB of RAM; this phone has about $ramClassGb GB. Use PC AI instead, or turn on \"Try anyway\".")
+            return Verdict(false, "Phone AI needs at least 8 GB of RAM; this phone has about $ramClassGb GB. Use PC AI instead, or turn on \"Try on phones with less RAM\" in Settings.")
         }
         if (ramClassGb < 12) {
             return Verdict(true, "Works on this phone, but expect slow songs. 12 GB+ RAM is smoother. Close other apps first.")
