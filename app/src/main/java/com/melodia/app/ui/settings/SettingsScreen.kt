@@ -130,7 +130,8 @@ fun SettingsScreen(nav: Navigator, snackbar: SnackbarHostState) {
             SectionCard("Phone AI") {
                 Hint(
                     "Makes songs with natural sung vocals right on this phone, offline. Needs a one-time model " +
-                        "download (about 2.5 to 3.5 GB) and takes a few minutes per song."
+                        "download (about 2.5 to 3.5 GB, plus 2 GB for the songwriter). Expect about 5 minutes for a " +
+                        "30-second preview and roughly 9 minutes per minute of song on a fast phone."
                 )
                 Spacer(Modifier.height(4.dp))
                 Hint(

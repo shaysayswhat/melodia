@@ -10,7 +10,8 @@ import kotlin.random.Random
 /**
  * Gets lyrics from the songwriter model. Its output varies a lot from seed to seed
  * (sometimes a single line looped, invented words or the wrong language), so each draft
- * is checked and a new seed is tried until one is usable.
+ * is checked and a new seed is tried until one is usable. It writes in the asked style and
+ * language but often not about the asked topic; that is a limit of the model.
  */
 object Songwriter {
 
@@ -31,6 +32,7 @@ object Songwriter {
         lmModel: String,
         attempts: Int = 3,
         onJob: (String?) -> Unit = {},
+        onRejected: (lyrics: String, problem: String) -> Unit = { _, _ -> },
         onAttempt: suspend (attempt: Int, of: Int) -> Unit = { _, _ -> },
     ): Draft {
         val language = PromptBuilder.lyricsLanguage(req)
@@ -53,11 +55,13 @@ object Songwriter {
             val check = PromptBuilder.checkLyrics(lyrics, language, theme)
             if (!check.usable) {
                 lastProblem = check.problem.orEmpty()
+                onRejected(lyrics, lastProblem)
                 continue
             }
-            val draft = Draft(lyrics, plan, i)
-            if (best == null || check.score > best.second.score) best = draft to check
-            if (check.score >= 0.8f) break // usable and on topic: good enough, save the wait
+            // Usable is good enough. Retrying for the topic rarely helps: real engine runs showed the
+            // songwriter mostly ignores topics (1-2 of 6 drafts on topic, even with the 4B model).
+            best = Draft(lyrics, plan, i) to check
+            break
         }
         return best?.first ?: throw EngineException(
             "The songwriter couldn't write usable lyrics this time ($lastProblem). " +

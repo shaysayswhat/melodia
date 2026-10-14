@@ -259,7 +259,10 @@ private fun SimpleCard(draft: SongRequest, vm: CreateViewModel) {
             modifier = Modifier.fillMaxWidth(),
         )
         Spacer(Modifier.height(8.dp))
-        Hint("The Songwriter brain writes the lyrics and picks the details. You can still choose the voice below.")
+        Hint(
+            "The Songwriter brain writes the lyrics and picks the details. It follows the style, mood and language " +
+                "you describe much better than a story or topic. You can still choose the voice below."
+        )
         SwitchRow("Instrumental", draft.instrumental, { v -> vm.update { it.copy(instrumental = v) } }, "No singing")
     }
 }
@@ -350,7 +353,11 @@ private fun LyricsCard(draft: SongRequest, vm: CreateViewModel, busy: Boolean) {
             if (syllableWarning != null) Hint(syllableWarning, color = MelodiaColors.Amber)
             val lengthWarning = remember(draft.lyrics, draft.durationSec) { tooManyLinesWarning(draft.lyrics, draft.durationSec) }
             if (lengthWarning != null) Hint(lengthWarning, color = MelodiaColors.Amber)
-            Hint("Leave lyrics empty to let the Songwriter brain write them. Put [Verse], [Chorus] tags on their own lines.")
+            Hint(
+                "Put [Verse], [Chorus] tags on their own lines. \"Write for me\" writes lyrics in your style and " +
+                    "language, but often not about your topic. For lyrics about something specific, write your own " +
+                    "(or ask an AI chat for them) and paste them here."
+            )
         }
     }
 }
@@ -647,7 +654,7 @@ private fun EngineDialog(
                 EngineOption(
                     "Phone AI",
                     when {
-                        status.phoneReady -> "Ready. Offline, natural vocals, takes a few minutes."
+                        status.phoneReady -> "Ready. Offline, natural vocals. About 5 minutes per 30 seconds of song."
                         status.termuxUp -> "Using the Termux engine on this phone."
                         else -> status.phoneProblem()
                     },

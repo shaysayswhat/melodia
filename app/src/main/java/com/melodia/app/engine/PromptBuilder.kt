@@ -178,11 +178,18 @@ object PromptBuilder {
         "still", "here", "there", "time", "now", "one", "into", "from", "by", "at", "let", "hold", "want",
     )
     private val ROMAN_BANGLA_WORDS = setOf(
-        "ami", "tumi", "amar", "tomar", "tomay", "amay", "mon", "moner", "mone", "ei", "ki", "na", "je", "ar",
-        "hoy", "jay", "jaay", "bhalobasha", "bhalobashi", "brishti", "akash", "chokhe", "chokher", "hridoy",
-        "shudhu", "kotha", "din", "raat", "aaj", "ekhon", "kemon", "keno", "kothay", "shathe", "sathe", "pashe",
-        "theke", "hoye", "kore", "dhore", "gaan", "sur", "megh", "nodi", "phire", "esho", "eso", "bhule", "ache",
-        "achhe", "chhilo", "chilo", "tor", "mor", "shohor", "shohorer", "alo", "chhaya", "hashi", "kanna",
+        "ami", "tumi", "amar", "tomar", "tomay", "tomake", "amay", "amake", "mon", "moner", "mone", "ei", "oi", "ki",
+        "na", "je", "ar", "aar", "hoy", "jay", "jaay", "bhalobasha", "bhalobashi", "bhalobeshe", "bhalobese", "bhalo",
+        "brishti", "akash", "chokhe", "chokher", "chokh", "hridoy", "shudhu", "kotha", "din", "raat", "rat", "aaj",
+        "aji", "ekhon", "kemon", "keno", "kothay", "shathe", "sathe", "pashe", "theke", "hoye", "kore", "kori",
+        "dhore", "gaan", "gan", "sur", "megh", "megher", "nodi", "phire", "esho", "eso", "eshe", "bhule", "ache",
+        "achhe", "chhilo", "chilo", "tor", "mor", "more", "shohor", "shohorer", "alo", "chhaya", "hashi", "kanna",
+        "bela", "belay", "mele", "bhasay", "bhasha", "lekho", "likhi", "shokal", "shondha", "rongin", "shopno",
+        "shopner", "prem", "preme", "chai", "chao", "boshe", "ektu", "kichu", "shob", "shobai", "jani", "jano",
+        "bujhi", "bojhe", "bujhe", "bedona", "tobu", "jodi", "kokhono", "pran", "praner", "hawa", "batash", "phul",
+        "chand", "ghum", "mukh", "ghat", "ghate", "poth", "pothe", "ghor", "bari", "desh", "maa", "priyo", "bondhu",
+        "pore", "pora", "nei", "hobe", "holo", "jabo", "jete", "ashe", "dekho", "dekhi", "shuno", "shuni", "bolo",
+        "boli", "chole", "cholo", "kache", "dure", "ogo", "re", "go", "jibon", "jiboner", "shara", "ekla", "dujon",
     )
     private val ROMAN_HINDI_WORDS = setOf(
         "main", "mein", "tum", "tu", "hai", "hain", "mera", "meri", "tera", "teri", "dil", "pyaar", "pyar", "ki",

@@ -132,8 +132,9 @@ fun MelodiaRoot(openLibraryRequests: Int) {
             text = {
                 Text(
                     "Melodia sings your lyrics with AI, without any cloud service.\n\n" +
-                        "Phone AI: runs on this phone, offline, after a one-time download of about 2.5 GB. Needs 8 GB+ RAM. " +
-                        "Each song takes a few minutes.\n\n" +
+                        "Phone AI: runs on this phone, offline, after a one-time download of about 2.5 GB " +
+                        "(plus 2 GB for the recommended songwriter). Needs 8 GB+ RAM. It is slow: about 5 minutes " +
+                        "for a 30-second preview, and roughly 9 minutes per minute of song.\n\n" +
                         "PC AI: uses your computer's graphics card on the same Wi-Fi. Faster and higher quality.\n\n" +
                         "Set up at least one to start."
                 )

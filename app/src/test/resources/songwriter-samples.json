@@ -76,5 +76,35 @@
   "language": "bn",
   "expect": "good",
   "lyrics": "[Acoustic Guitar Intro]\n\nTumi chole gele\nRongin akash kade\nMone pora kanna\nMon jole agune jhore\n\n[Instrumental Break - Acoustic Guitar]\n\nTomari hashi mone\nChokhe bo alo jole\nKemon e bo ni bolo\nAmar bhalobasha bhule\n\n[Chorus]\nO praner bondhu\nKothay gele tumi\nDukher sure baje\nAmar hridoy koli\n\n[Instrumental Break - Acoustic Guitar]\n\nShuncho ki ekhono\nAmari shongit poran\nDur theke sobhike\nFirio na jao\n\nKoto bhalobasha\nLikha chilo kalay\nEkhon shudhu shunbo\nBohudobeshe jala\n\nKoto na din gelo\nKotha rakha eka\nTomar opekhay\nShudhui hridoy kade\n\n[Instrumental Break - Acoustic Guitar]\n\nO praner bondhu\nKothay gele tumi\nDukher sure baje\nAmar hridoy koli\n\n[Instrumental Break - Acoustic Guitar]\n\n[Outro - Acoustic Guitar fades out]"
+ },
+ {
+  "id": "topics-1.7B-dhaka-rain-short-11",
+  "language": "bn",
+  "expect": "bad",
+  "lyrics": "[Intro]\nO Vodun Tish ti ma gbe 'ko je\nO Vodun Tish ti ma gbe 'ko je\n\n[Verse 1]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Chorus]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Verse 2]\nO Vodun Tish ti ma gbe 'ko je\nO Vodun Tish ti ma gbe 'ko je\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Chorus]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Instrumental Break]\n\n[Outro]\n[Instrumental layered guitar melodies]"
+ },
+ {
+  "id": "topics-1.7B-dhaka-rain-app-long-11",
+  "language": "bn",
+  "expect": "good",
+  "lyrics": "[Intro]\n[Acoustic guitar riff]\n\n[Verse 1]\nRojinodi ghate aari\nAajabi tomay ektu bari\nOgo tumi ki boshe chao preme\nAmi chai tomay roj kina re\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Instrumental Break]\n[Acoustic guitar solo]\n\n[Verse 2]\nCoffee table e phone e haate\nTomay dekhle mon ta naache\nEkta moment English kore\nBolo will you be my love, shobore?\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Instrumental Break]\n[Acoustic guitar solo]\n\n[Bridge]\nAj neme da romantic raate\nTomay niye jabo shopne shathe\nHate haat rekhe haath ta dhore\nEnglish boli baby tumi ghumore\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Outro]\nBaby tumi amar shundor-er rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n[abrupt silence]"
+ },
+ {
+  "id": "topics-1.7B-dhaka-rain-topic-first-11",
+  "language": "bn",
+  "expect": "good",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nShokun belay\nDana mele\nNokun bhasay\nShohag lekho\nShukun raate\nAghun mohay\n\n[Pre-Chorus]\nShohak melo\nNoyone bhashe\nTumar smriti\nChokhe chilo\nShohak bhabhe\nTumi achho\n\n[Chorus]\nShohak melate\nKeli jaye\nTumar chobi\nChokher ayay\nShohak bathe\nAghun jone\nTumar hashi\nMayar badhe\nShohak bathe\nBhanga mone\nTumi aina\nTomar chokhe\nShohak bathe\nGholir betha\nTumi ki betha\nTomar chokhe\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nShokun belay\nDana mele\nNokun bhasay\nShohag lekho\nShukun raate\nAghun mohay\n\n[Outro - Instrumental]\n[Acoustic guitar melody fades out]"
+ },
+ {
+  "id": "topics-4B-dhaka-rain-short-11",
+  "language": "bn",
+  "expect": "good",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nAmar mon bojhe na\nKeno bujhe bedona\nBhalobashi ja more\nKeno kori chholona\n\n[Instrumental Break - Acoustic Guitar & Synth Pads]\n\n[Outro - Fade Out]"
+ },
+ {
+  "id": "topics-4B-dhaka-rain-topic-first-11",
+  "language": "bn",
+  "expect": "bad",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nEmoni ekbar kahani pori\nShokolu dhumkari to shomoy ekore\nEmoni ekbar kahani pori\nShokolu dhumkari to shomoy ekore\n\n[Instrumental Break - Acoustic Guitar]\n\n[Outro]"
  }
 ]

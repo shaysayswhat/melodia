@@ -370,18 +370,21 @@ def main():
     tap("Create", exact=True, which="lowest")
     time.sleep(1.5)
     scroll_top()
+    before = [t for t in texts(dump()) if "\n" in t]
     if tap("Write for me", exact=True, scroll=True):
         start = time.time()
         outcome = "timeout"
         while time.time() - start < 15 * 60:
             all_text = texts(dump())
-            if any("Lyrics written" in t for t in all_text):
-                outcome = "written"
-                break
+            busy = any(t.startswith("Writing lyrics") or t.startswith("Starting the songwriter") for t in all_text)
+            fields = [t for t in all_text if "\n" in t]
             if any("couldn't write" in t or "isn't installed" in t for t in all_text):
                 outcome = "failed: " + next(t for t in all_text if "couldn't write" in t or "isn't installed" in t)
                 break
-            time.sleep(3)
+            if not busy and fields and fields != before and time.time() - start > 5:
+                outcome = "written"
+                break
+            time.sleep(2)
         results["write_for_me"] = outcome
         results["write_for_me_seconds"] = int(time.time() - start)
         log(f"write for me: {outcome} in {results['write_for_me_seconds']}s")
