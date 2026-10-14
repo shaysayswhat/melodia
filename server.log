@@ -1,0 +1,1900 @@
+[Server] Scanning models in /home/runner/work/_temp/ace/models
+[Registry] Qwen3-Embedding-0.6B-Q8_0.gguf -> Text-Enc
+[Registry] acestep-5Hz-lm-0.6B-Q8_0.gguf -> LM
+[Registry] acestep-5Hz-lm-1.7B-Q8_0.gguf -> LM
+[Registry] acestep-v15-turbo-Q4_K_M.gguf -> DiT
+[Registry] vae-BF16.gguf -> VAE
+[Server] Scanning adapters in /home/runner/work/_temp/ace/adapters
+[Store] Created (policy=STRICT)
+[Server] acestep.cpp 4c75d8b (2026-10-14)
+[Server] Listening on 127.0.0.1:8085
+[Server] Pipelines: /lm /synth /understand
+[Server] Models: 2 LM, 1 Text-Enc, 1 DiT, 1 VAE, 0 Adapter
+[Server] Job 7d6ef64b234ffa3e created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 307 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[FSM] Prefix trees: bpm=301, dur=601, key=106, lang=53, tsig=5 nodes
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 514ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.9 tok/s
+[LM-Phase1] Step 200, 1 active, 27.0 tok/s
+[LM-Phase1] Step 300, 1 active, 24.7 tok/s
+[LM-Phase1] Step 400, 1 active, 23.6 tok/s
+[LM-Phase1] Decode 19291ms
+[LM-Phase1 Batch0] seed=11, 447 tokens
+[inspire Batch0] seed=11:
+bpm:111
+caption: A gentle and heartwarming pop song with a nostalgic, lullaby-like quality.
+  The arrangement begins with a simple, clean piano melody and a sweet, clear female
+  lead vocal. A light, steady drum machine beat and a subtle bassline enter, establishing
+  a warm and inviting groove. The chorus introduces layered vocal harmonies, creating
+  a fuller, more emotional soundscape. An instrumental break features a whimsical,
+  flute-like synth melody, adding a touch of reminiscent to the innocent atmosphere.
+  The song maintains a consistently sweet and uplifting mood throughout, perfect for
+  a family-friendly holiday theme.
+duration: 157
+keyscale:A major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Verse 1]
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+
+[Verse 2]
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+
+[Chorus]
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+
+[Instrumental Break - Electric Piano Solo]
+
+[Verse 3]
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+
+[Chorus]
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+Maona is there, see, maona is there
+
+[Outro]
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 19808ms | N=1 seed=362362538
+[Store] Unload LM (671.9 MB)
+[Server] Job 7d6ef64b234ffa3e done (LM, 1 results)
+[Server] Job 09972a5b683a691e created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 301 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 486ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.7 tok/s
+[LM-Phase1] Step 200, 1 active, 26.8 tok/s
+[LM-Phase1] Step 300, 1 active, 24.3 tok/s
+[LM-Phase1] Step 400, 1 active, 23.2 tok/s
+[LM-Phase1] Step 500, 1 active, 22.2 tok/s
+[LM-Phase1] Decode 23978ms
+[LM-Phase1 Batch0] seed=22, 524 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: An upbeat and cheerful pop song with a strong narrative quality, reminiscent
+  of a children's musical or an animation soundtrack. The track opens with a catchy,
+  whistled synth melody over a simple, clean pop-rock arrangement featuring a straightforward
+  drum machine beat, a round electric bass, and bright keyboard chords. A clear, friendly
+  male vocal tells a story, which builds into an anthemic chorus with layered vocal
+  harmonies. The song includes a playful instrumental break highlighted by a lively
+  synth brass section playing a memorable melody. The production is polished and bright,
+  maintaining a consistently positive and uplifting mood throughout.
+duration: 208
+keyscale:A minor
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Whistling Melody]
+
+[Verse 1]
+Kaiku's gone but they still miss him
+Under moonlight's soft glow they vision
+With each step to a new dimension
+Facing life with pure intention
+Kaiku's bright but he's a mystery
+Dancing through with simplicity
+Morning coffee, bright infinity
+Waking dreams for their story
+
+[Chorus]
+Kaiku, kaiku, wander through the night
+Rainbow skies lead them to the light
+Every road a path to fight
+With your heart you shine so bright
+
+[Verse 2]
+Underneath the city's starry glow
+Magic places they dare not go
+With each laugh our spirits show
+Kaiku dreams begin to grow
+
+[Instrumental Break - Synth Brass Section]
+
+[Verse 3]
+In the park with trees in harmony
+Music plays a tune to set free
+Children playing skies jubily
+Hearts aligned in harmony
+
+[Chorus]
+Kaiku, kaiku, wander through the night
+Rainbow skies lead them to the light
+Every road a path to fight
+With your heart you shine so bright
+
+[Bridge]
+Underneath the city's starry glow
+Magic places they dare not go
+With each laugh our spirits show
+Kaiku dreams begin to grow
+
+[Instrumental Break - Synth Brass Section]
+
+[Chorus]
+Kaiku, kaiku, wander through the night
+Rainbow skies lead them to the light
+Every road a path to fight
+With your heart you shine so bright
+
+[Outro]
+Underneath the city's starry glow
+Magic places they dare not go
+With each laugh our spirits show
+Kaiku dreams begin to grow
+[Synth brass melody fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 24468ms | N=1 seed=222443509
+[Store] Unload LM (671.9 MB)
+[Server] Job 09972a5b683a691e done (LM, 1 results)
+[Server] Job 2bb7cd5a3d9de4e2 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 298 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 490ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.8 tok/s
+[LM-Phase1] Step 200, 1 active, 26.9 tok/s
+[LM-Phase1] Step 300, 1 active, 24.7 tok/s
+[LM-Phase1] Step 400, 1 active, 23.5 tok/s
+[LM-Phase1] Decode 20017ms
+[LM-Phase1 Batch0] seed=11, 461 tokens
+[inspire Batch0] seed=11:
+bpm:111
+caption: A gentle and heartwarming pop song with a nostalgic, lullaby-like quality.
+  The arrangement begins with a simple, clean piano melody and a sweet, clear female
+  lead vocal. A light, bossa nova-inspired groove is established by a shaker and a
+  soft drum machine beat, complemented by a warm acoustic bassline. The track features
+  a charming instrumental break with a melodic flute solo, followed later by a brief,
+  clean-toned electric guitar passage. The song builds to a more dynamic, full-band
+  section before gracefully slowing to a gentle finale with a final piano arpeggio
+  and a soft acoustic guitar flourish.
+duration: 135
+keyscale:A major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro]
+[Verse 1]
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+
+[Verse 2]
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+
+[Chorus]
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+
+[Instrumental Break - Flute Solo]
+
+[Verse 3]
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+
+[Chorus]
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+I'm on my own, I'm on my own
+
+[Outro]
+[Instrumental fade out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 20511ms | N=1 seed=583268995
+[Store] Unload LM (671.9 MB)
+[Server] Job 2bb7cd5a3d9de4e2 done (LM, 1 results)
+[Server] Job d28060a13df57680 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 301 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 487ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.7 tok/s
+[LM-Phase1] Step 200, 1 active, 26.7 tok/s
+[LM-Phase1] Step 300, 1 active, 24.5 tok/s
+[LM-Phase1] Step 400, 1 active, 23.2 tok/s
+[LM-Phase1] Step 500, 1 active, 22.2 tok/s
+[LM-Phase1] Step 600, 1 active, 20.9 tok/s
+[LM-Phase1] Decode 33433ms
+[LM-Phase1 Batch0] seed=22, 676 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: An upbeat and cheerful pop song with a strong narrative quality, reminiscent
+  of a children's musical or an animation soundtrack. The track opens with a catchy,
+  whistled synth melody over a simple, clean pop-rock arrangement featuring a straightforward
+  drum machine beat, a round electric bass, and bright keyboard chords. A clear, friendly
+  male lead vocal tells a story, which builds into a fuller chorus with layered vocal
+  harmonies and the return of the whistled hook. The song features a dynamic shift
+  in a quieter bridge section where the instrumentation becomes more subdued, before
+  swelling into a final, more powerful and emotive chorus. The track concludes with
+  the whistled melody and a final, playful sound effect.
+duration: 170
+keyscale:G minor
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Whistling Melody]
+
+[Verse 1]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Pre-Chorus]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Chorus]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Verse 2]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Instrumental Break - Whistling Melody]
+
+[Bridge]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Chorus]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+
+[Outro]
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+Ella van vun sa, tien tei la shu
+[Whistling melody fades out]
+[Final piano chord]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 33924ms | N=1 seed=2664788413
+[Store] Unload LM (671.9 MB)
+[Server] Job d28060a13df57680 done (LM, 1 results)
+[Server] Job 599688cd5f1a48fb created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 297 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 660ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.2 tok/s
+[LM-Phase1] Step 200, 1 active, 26.3 tok/s
+[LM-Phase1] Step 300, 1 active, 23.9 tok/s
+[LM-Phase1] Decode 13794ms
+[LM-Phase1 Batch0] seed=11, 325 tokens
+[inspire Batch0] seed=11:
+bpm:111
+caption: A simple, direct piano melody opens the track, establishing a sentimental
+  mood before a clean, straightforward drum machine beat and a subtle synth bass enter.
+  A male vocalist delivers an earnest and emotional performance, singing in a mix
+  of English and Thai. The vocals are treated with a noticeable reverb and occasional
+  delay, adding a touch of space to the otherwise clean and unadorned production.
+  The song follows a conventional pop structure, centered around a heartfelt and longing
+  vocal narrative.
+duration: 44
+keyscale:G minor
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro]
+[Piano melody begins]
+Woah, woah, woah, woah
+Woah, woah, woah, woah
+
+[Verse 1]
+Yeah
+You were my love, you were my everything
+But now I'm missing you
+Woah, woah, woah
+Yeah
+
+[Verse 2]
+Ting a me, ang pih jachang
+Nga kaikai ja bai ang mai ang bai
+Ang lo ta kaing ni ki lo kaing nai
+Ang ga ma ka kaing ka kaing nai
+
+[Chorus]
+Woah, woah, woah, woah
+Woah, woah, woah, woah
+Woah, woah, woah, woah
+Woah, woah, woah, woah
+
+[Outro]
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 14459ms | N=1 seed=4013483943
+[Store] Unload LM (671.9 MB)
+[Server] Job 599688cd5f1a48fb done (LM, 1 results)
+[Server] Job 6522a5b8de0d428d created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 297 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 651ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.0 tok/s
+[LM-Phase1] Step 200, 1 active, 27.0 tok/s
+[LM-Phase1] Step 300, 1 active, 24.2 tok/s
+[LM-Phase1] Step 400, 1 active, 23.2 tok/s
+[LM-Phase1] Step 500, 1 active, 22.0 tok/s
+[LM-Phase1] Step 600, 1 active, 20.8 tok/s
+[LM-Phase1] Step 700, 1 active, 20.1 tok/s
+[LM-Phase1] Decode 37626ms
+[LM-Phase1 Batch0] seed=22, 739 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: An upbeat and cheerful pop song with a strong narrative quality, reminiscent
+  of a children's musical or an animation soundtrack. The track opens with a catchy,
+  accordion-like synth melody over a simple, driving drum machine beat and a clean
+  bassline. A clear, friendly male lead vocal enters, singing first in English and
+  then transitioning seamlessly into Japanese. The choruses are anthemic and uplifting,
+  featuring layered vocal harmonies that add to the song's positive energy. The arrangement
+  is bright and straightforward, carried by the prominent synth lead and vocals, with
+  a brief, reflective bridge that slows down before a final, powerful chorus and an
+  instrumental outro that fades into a gentle, music-box-like rendition of the main
+  melody.
+duration: 160
+keyscale:C# major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Synth Melody]
+
+[Verse 1]
+Far away from home, a stranger to the north
+In a small town, a village with no love at all
+Beneath the evergreen trees, she prays for a little peace
+Where a little has a wing
+
+[Chorus]
+There's a sunflower in Maon's market, it's a sight to behold
+With its purple and gold, she'll grow up to be a new soul
+And now a song to sing for a new one
+
+[Instrumental Break - Synth Melody]
+
+[Verse 2]
+In Maon's market, a friend from Maon's farm
+In a small town, a village with no love at all
+Beneath the evergreen trees, he prays for a little peace
+Where a little has a wing
+
+[Chorus]
+There's a sunflower in Maon's market, it's a sight to behold
+With its purple and gold, she'll grow up to be a new soul
+And now a song to sing for a new one
+
+[Bridge]
+Far away from home, a stranger to the north
+In a small town, a village with no love at all
+Beneath the evergreen trees, she prays for a little peace
+Where a little has a wing
+
+[Chorus]
+There's a sunflower in Maon's market, it's a sight to behold
+With its purple and gold, she'll grow up to be a new soul
+And now a song to sing for a new one
+
+[Instrumental Break - Synth Melody]
+
+[Verse 3]
+In Maon's market, a friend from Maon's farm
+In a small town, a village with no love at all
+Beneath the evergreen trees, he prays for a little peace
+Where a little has a wing
+
+[Chorus]
+There's a sunflower in Maon's market, it's a sight to behold
+With its purple and gold, she'll grow up to be a new soul
+And now a song to sing for a new one
+
+[Outro]
+[Synth melody fades]
+Far away from home, a stranger to the north
+In a small town, a village with no love at all
+Beneath the evergreen trees, he prays for a little peace
+Where a little has a wing
+There's a sunflower in Maon's market, it's a sight to behold
+With its purple and gold, she'll grow up to be a new soul
+And now a song to sing for a new one
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 38281ms | N=1 seed=2426028861
+[Store] Unload LM (671.9 MB)
+[Server] Job 6522a5b8de0d428d done (LM, 1 results)
+[Server] Job 84c66f7afa3122aa created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 296 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 650ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 26.8 tok/s
+[LM-Phase1] Step 200, 1 active, 26.9 tok/s
+[LM-Phase1] Step 300, 1 active, 24.3 tok/s
+[LM-Phase1] Step 400, 1 active, 23.2 tok/s
+[LM-Phase1] Decode 19120ms
+[LM-Phase1 Batch0] seed=11, 439 tokens
+[inspire Batch0] seed=11:
+bpm:111
+caption: A clean, arpeggiated electric guitar riff opens this bilingual pop track,
+  establishing a gentle and melodic foundation. A straightforward drum machine beat
+  and a simple bassline provide a steady, unobtrusive rhythm section. The lead male
+  vocal, delivered in a clear and earnest tone, seamlessly switches between English
+  and Spanish lyrics, often within the same phrase. The production is direct and uncluttered,
+  focusing on the vocal melody and lyrical narrative. The song follows a conventional
+  verse-chorus structure, concluding with an instrumental outro where the main guitar
+  riff fades out.
+duration: 145
+keyscale:A minor
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Arpeggiated Electric Guitar]
+
+[Verse 1]
+I'm lost in the sea of your love
+Where the waves crash, I'm dreaming of
+Your touch like the ocean breeze
+Every moment with you is a tease
+
+[Chorus]
+Heartbeat in the waves, can't you feel?
+Your love's like a wave, it's so real
+Dancing under stars in the night
+With you by my side, everything's right
+
+[Verse 2]
+Your smile's like the sun breaking through
+Every moment feels brand new
+Whispers in the midnight air
+With you, I'm flying without a care
+
+[Chorus]
+Heartbeat in the waves, can't you feel?
+Your love's like a wave, it's so real
+Dancing under stars in the night
+With you by my side, everything's right
+
+[Bridge]
+In the silence, your voice is all I hear
+Your love's a melody ringing clear
+Through the storm and the calm tonight
+Together forever, everything's alright
+
+[Chorus]
+Heartbeat in the waves, can't you feel?
+Your love's like a wave, it's so real
+Dancing under stars in the night
+With you by my side, everything's right
+
+[Outro - Arpeggiated Electric Guitar Fades Out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 19774ms | N=1 seed=3137304552
+[Store] Unload LM (671.9 MB)
+[Server] Job 84c66f7afa3122aa done (LM, 1 results)
+[Server] Job b2735fe6d8bd0599 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 294 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 650ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.1 tok/s
+[LM-Phase1] Step 200, 1 active, 26.9 tok/s
+[LM-Phase1] Step 300, 1 active, 24.4 tok/s
+[LM-Phase1] Step 400, 1 active, 23.3 tok/s
+[LM-Phase1] Step 500, 1 active, 22.2 tok/s
+[LM-Phase1] Step 600, 1 active, 20.9 tok/s
+[LM-Phase1] Step 700, 1 active, 20.1 tok/s
+[LM-Phase1] Decode 35581ms
+[LM-Phase1 Batch0] seed=22, 711 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: A clean, modern pop track built on a foundation of a plucky synth melody
+  and a straightforward electronic drum machine beat. A smooth, round synth bass provides
+  the harmonic underpinning. The lead male vocal, delivered in a clear and melodic
+  French, sits comfortably in the mix with light reverb. The chorus introduces layered
+  vocal harmonies and a distinct, slightly filtered backing vocal that adds texture
+  and depth. The arrangement follows a classic pop structure, with a brief, more reflective
+  bridge section that shifts the harmony before returning to the catchy, rhythmic
+  chorus and a layered vocal outro that ends abruptly.
+duration: 146
+keyscale:G minor
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro]
+[Synth pluck melody and drum beat]
+
+[Verse 1]
+I don't know where to go
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+
+[Chorus]
+I don't know where to go
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+
+[Verse 2]
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+
+[Bridge]
+I don't know where to go
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+
+[Chorus]
+I don't know where to go
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+
+[Outro]
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+My heart is breaking, I'm too old
+It's been a while, I don't know
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 36235ms | N=1 seed=1601967815
+[Store] Unload LM (671.9 MB)
+[Server] Job b2735fe6d8bd0599 done (LM, 1 results)
+[Server] Job 937f371859d421dc created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 301 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 651ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.1 tok/s
+[LM-Phase1] Step 200, 1 active, 26.9 tok/s
+[LM-Phase1] Step 300, 1 active, 24.3 tok/s
+[LM-Phase1] Step 400, 1 active, 23.2 tok/s
+[LM-Phase1] Decode 18832ms
+[LM-Phase1 Batch0] seed=11, 433 tokens
+[inspire Batch0] seed=11:
+bpm:143
+caption: A gentle and heartwarming acoustic folk song featuring a clean, fingerpicked
+  acoustic guitar that plays a melodic and intricate pattern. A warm, clear male vocal
+  delivers a narrative in a soft, storytelling style. The arrangement gradually builds
+  with the subtle accompaniment of a shaker and a light, supportive bassline. The
+  chorus sections are marked by a slight lift in vocal intensity and a fuller sound,
+  creating a feeling of gentle uplift. The overall mood is peaceful, nostalgic, and
+  sweet, reminiscent of a modern Christmas or holiday song.
+duration: 135
+keyscale:G major
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Nalaba sunken la aki
+Snitz la pihak mokha sana
+Nabok aki ditiwa
+Uchlo hua ta ki baka
+
+[Chorus]
+Nalaba sunken la aki
+Snitz la pihak mokha sana
+Nabok aki ditiwa
+Uchlo hua ta ki baka
+
+[Verse 2]
+Hi akhi chad hamakem
+He akhi chad ek gokhok
+Hi akhi chad nani akem
+Hi akhi chad nani akem
+
+[Bridge]
+Ekh aki amin kochi
+Nai nai nekha kha
+Aki amin kochi
+Nai nai nekha kha
+
+[Chorus]
+Hi akhi chad hamakem
+He akhi chad ek gokhok
+Hi akhi chad nani akem
+Hi akhi chad nani akem
+
+[Outro]
+Nai nai nekha kha
+Nai nai nekha kha
+Nai nai nekha kha
+Nai nai nekha kha
+[Final guitar strum]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 19487ms | N=1 seed=835367834
+[Store] Unload LM (671.9 MB)
+[Server] Job 937f371859d421dc done (LM, 1 results)
+[Server] Job 714d937d87458d25 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 295 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 650ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.1 tok/s
+[LM-Phase1] Decode 7304ms
+[LM-Phase1 Batch0] seed=22, 197 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: A gentle and introspective acoustic pop track featuring a clean, arpeggiated
+  acoustic guitar that forms the melodic and harmonic core. A soft male vocal, sung
+  in Bengali, delivers an emotional and slightly breathy melody over a simple, steady
+  drum machine beat and a subtle bassline. The production is clean and spacious, with
+  a touch of reverb on the vocals, creating a heartfelt and melancholic atmosphere
+  perfect for a quiet, reflective moment.
+duration: 52
+keyscale:A minor
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Verse]
+Chandra chandra madhur sajana
+Sanskriti mridu madhur mani
+Pakhyatho gandhar khyatho
+Bhajana rahyo chandra dhara
+Vidyā prathada
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 7958ms | N=1 seed=470236933
+[Store] Unload LM (671.9 MB)
+[Server] Job 714d937d87458d25 done (LM, 1 results)
+[Server] Job c98296fa2e0107d4 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 295 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 651ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.1 tok/s
+[LM-Phase1] Step 200, 1 active, 27.0 tok/s
+[LM-Phase1] Step 300, 1 active, 24.4 tok/s
+[LM-Phase1] Step 400, 1 active, 23.3 tok/s
+[LM-Phase1] Step 500, 1 active, 22.1 tok/s
+[LM-Phase1] Step 600, 1 active, 20.9 tok/s
+[LM-Phase1] Step 700, 1 active, 20.1 tok/s
+[LM-Phase1] Step 800, 1 active, 19.0 tok/s
+[LM-Phase1] Step 900, 1 active, 18.2 tok/s
+[LM-Phase1] Step 1000, 1 active, 17.5 tok/s
+[LM-Phase1] Step 1100, 1 active, 16.8 tok/s
+[LM-Phase1] Decode 72583ms
+[LM-Phase1 Batch0] seed=11, 1182 tokens
+[inspire Batch0] seed=11:
+bpm:111
+caption: A gentle and heartwarming acoustic folk song featuring a clean, fingerpicked
+  acoustic guitar that provides both the harmony and a steady, flowing rhythm. A warm,
+  clear male vocal delivers a narrative in a soft, storytelling style. The arrangement
+  is sparse and intimate, with a subtle acoustic bass grounding the chords. The chorus
+  introduces a slightly fuller dynamic with lightly strummed chords and a more soaring
+  vocal melody. An instrumental bridge showcases more intricate guitar interplay before
+  the song concludes with a final, resolving chord progression that fades to silence.
+duration: 180
+keyscale:C# minor
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Dagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagad
+[Outro - Acoustic Guitar]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 73238ms | N=1 seed=1816909997
+[Store] Unload LM (671.9 MB)
+[Server] Job c98296fa2e0107d4 done (LM, 1 results)
+[Server] Job 3a2eefaead1c1995 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 296 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 656ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 27.0 tok/s
+[LM-Phase1] Step 200, 1 active, 26.7 tok/s
+[LM-Phase1] Step 300, 1 active, 24.3 tok/s
+[LM-Phase1] Step 400, 1 active, 23.0 tok/s
+[LM-Phase1] Step 500, 1 active, 21.9 tok/s
+[LM-Phase1] Decode 26528ms
+[LM-Phase1 Batch0] seed=22, 561 tokens
+[inspire Batch0] seed=22:
+bpm:115
+caption: A gentle and introspective acoustic pop track featuring a clean, fingerpicked
+  acoustic guitar playing a steady arpeggiated pattern. A soft, breathy female vocal
+  delivers a melodic and heartfelt performance in Bengali. The arrangement is supported
+  by a simple, clean bassline and a light, programmed drum beat with a shaker providing
+  a consistent rhythmic pulse. The song maintains a calm and melancholic mood throughout,
+  with a brief instrumental section highlighted by airy, wordless vocalizations before
+  concluding with the fading acoustic guitar.
+duration: 185
+keyscale:A minor
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Verse 2]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Chorus]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Verse 3]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Chorus]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Bridge]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+
+[Outro]
+Kunna paat, chumbak chumbak
+Aadhi raat, chumbak chumbak
+Bak chumbak, chumbak chumbak
+Bak chumbak, chumbak chumbak
+[Acoustic guitar fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 27188ms | N=1 seed=2657191064
+[Store] Unload LM (671.9 MB)
+[Server] Job 3a2eefaead1c1995 done (LM, 1 results)
+[Server] Job 5198f6a73c125d15 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 496 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[FSM] Prefix trees: bpm=301, dur=601, key=106, lang=53, tsig=5 nodes
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1340ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.6 tok/s
+[LM-Phase1] Decode 10081ms
+[LM-Phase1 Batch0] seed=11, 137 tokens
+[inspire Batch0] seed=11:
+bpm:130
+caption: A bright, plucky synth arpeggio dances over a bed of warm, sustained synth
+  pads, creating a dreamy and optimistic atmosphere. A clean, polished electronic
+  drum machine provides a steady, relaxed beat, while a smooth synth bass anchors
+  the chord progression. The overall sound is characteristic of chillwave or lo-fi
+  pop, with a clean, spacious production perfect for a relaxed or focused mood.
+duration: 17
+genres: chillwave lo-fi pop
+keyscale: D major
+language: unknown
+timesignature: 4
+</think>
+
+# Lyric
+[Instrumental]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 11425ms | N=1 seed=4156141695
+[Store] Unload LM (1879.2 MB)
+[Server] Job 5198f6a73c125d15 done (LM, 1 results)
+[Server] Job 40535fbd85c817e9 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 501 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1346ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.7 tok/s
+[LM-Phase1] Step 200, 1 active, 13.9 tok/s
+[LM-Phase1] Decode 14720ms
+[LM-Phase1 Batch0] seed=22, 204 tokens
+[inspire Batch0] seed=22:
+bpm:130
+caption: An upbeat and celebratory pop track driven by a clean, melodic electric guitar
+  riff and a steady four-on-the-floor dance beat. A clear, earnest male vocal sings
+  in Hebrew over a foundation of synth bass and atmospheric pads. The arrangement
+  builds into an energetic chorus where a catchy synth lead melody takes center stage,
+  creating a joyful and uplifting dance-pop feel perfect for a celebration.
+duration: 107
+keyscale:D major
+language:en
+timesignature:3
+</think>
+
+# Lyric
+[Intro - Electric Guitar Melody]
+
+[Verse 1]
+Shalom
+Baruch habnini
+Atal haze, nura'eni
+
+[Verse 2]
+Shalom
+Baruch habnini
+Atal haze, nura'eni
+
+[Instrumental Break - Guitar Melody]
+
+[Instrumental Break - Guitar Melody]
+
+[Outro - Guitar Melody Fades Out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 16070ms | N=1 seed=31041
+[Store] Unload LM (1879.2 MB)
+[Server] Job 40535fbd85c817e9 done (LM, 1 results)
+[Server] Job d850af82b44e1ba2 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 499 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1344ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.5 tok/s
+[LM-Phase1] Step 200, 1 active, 13.6 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Step 400, 1 active, 12.7 tok/s
+[LM-Phase1] Step 500, 1 active, 12.4 tok/s
+[LM-Phase1] Decode 42722ms
+[LM-Phase1 Batch0] seed=11, 525 tokens
+[inspire Batch0] seed=11:
+bpm:130
+caption: A bright, clean piano melody opens this uplifting pop track, quickly joined
+  by a steady, straightforward drum machine beat and a warm synth bass. A clear, earnest
+  male vocal delivers a romantic narrative in French, with the chorus building to
+  an anthemic peak featuring layered vocal harmonies and a memorable hook. The arrangement
+  includes an instrumental break where the piano melody shines, followed by a brief,
+  reflective breakdown with softer vocals before launching into a final, powerful
+  chorus that fades out on the piano motif.
+duration: 183
+keyscale:D major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Piano Melody]
+
+[Verse 1]
+On s'est rencontrés un soir d'été
+Sous les étoiles on s'est parlé
+Ton rire dansait comme une mélodie
+Main dans la main c'était toi et moi
+Les jours passaient, on buildait nos rêves
+Faire de la plage, un coin de trêve
+Ton amour brillait comme un feu doré
+Dans chaque regard on voyait l'éternité
+
+[Chorus]
+Toi et moi, ensemble encore
+Comme la mer qui jamais ne dévore
+Nos cœurs battent sous le même décor
+Toi et moi, c'est plus fort que l'aurore
+
+[Instrumental Break - Piano & Drums]
+
+[Verse 2]
+Des larmes et joie au fil du chemin
+Main dans la main, on trace notre destin
+Le monde autour peut bien tourner
+Car dans tes yeux tout est parfait
+Et si parfois le vent nous éloigne
+Souviens-toi du feu qui nous signe
+Toi et moi on est l'éternité
+Jamais personne ne pourra briser
+
+[Chorus]
+Toi et moi, ensemble encore
+Comme la mer qui jamais ne dévore
+Nos cœurs battent sous le même décor
+Toi et moi, c'est plus fort que l'aurore
+
+[Instrumental Break - Piano & Drums]
+
+[Bridge]
+Toi et moi, ensemble encore
+Comme la mer qui jamais ne dévore
+Nos cœurs battent sous le même décor
+Toi et moi, c'est plus fort que l'aurore
+
+[Outro]
+Toi et moi, c'est plus fort que l'aurore
+[Piano melody fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 44070ms | N=1 seed=1067198733
+[Store] Unload LM (1879.2 MB)
+[Server] Job d850af82b44e1ba2 done (LM, 1 results)
+[Server] Job 3e787357e1bb9704 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 497 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 41 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1338ms, 41 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.7 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.1 tok/s
+[LM-Phase1] Step 400, 1 active, 12.8 tok/s
+[LM-Phase1] Step 500, 1 active, 12.4 tok/s
+[LM-Phase1] Decode 45111ms
+[LM-Phase1 Batch0] seed=22, 551 tokens
+[inspire Batch0] seed=22:
+bpm:130
+caption: An upbeat and celebratory pop track driven by a clean, rhythmic acoustic
+  guitar and a simple, steady drum machine beat. A clear male lead vocal delivers
+  a catchy, feel-good melody, prominently supported by layered group backing vocals
+  that create an anthemic, singalong 'la la la' hook. The production is bright and
+  polished, with a straightforward bassline grounding the arrangement. The song maintains
+  a consistently positive and energetic mood, perfect for a party or celebration,
+  blending elements of pop and light Latin pop.
+duration: 117
+keyscale:G major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro]
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+
+[Verse 1]
+When the sun sets low, feel the rhythm flow
+(Ooh yeah)
+In the twilight glow, let the party grow
+(Ooh yeah)
+With a heart of fire and a soulful tune
+We'll dance together beneath the moon
+Drums pound like thunder in the summer heat
+(Ooh yeah)
+Baselines dropping, making hearts skip a beat
+(Ooh yeah)
+Electric guitar sings, making spirits fly
+Underneath these stars in the open sky
+
+[Chorus]
+Feel the beat, let it move your feet
+Dance away, life is oh so sweet
+Join the vibe, come and take the ride
+Celebrate, love is on our side
+
+[Post-Chorus]
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+
+[Verse 2]
+Piano keys sparkle like the morning dew
+(Ooh yeah)
+Every note we play brings us something new
+(Ooh yeah)
+Harmony collides in a blissful trance
+In this melody we find our dance
+Feel the magic rise as the moments pass
+(Ooh yeah)
+In the sunset glow where love is found
+(Ooh yeah)
+Let the rhythm guide us through the night
+Everything we need we got inside
+
+[Chorus]
+Feel the beat, let it move your feet
+Dance away, life is oh so sweet
+Join the vibe, come and take the ride
+Celebrate, love is on our side
+
+[Outro]
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+La la la la la la la la
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 46453ms | N=1 seed=3506024448
+[Store] Unload LM (1879.2 MB)
+[Server] Job 3e787357e1bb9704 done (LM, 1 results)
+[Server] Job c5237a69b144cdf1 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 500 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1810ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.8 tok/s
+[LM-Phase1] Step 200, 1 active, 13.7 tok/s
+[LM-Phase1] Step 300, 1 active, 12.9 tok/s
+[LM-Phase1] Step 400, 1 active, 12.6 tok/s
+[LM-Phase1] Step 500, 1 active, 12.2 tok/s
+[LM-Phase1] Decode 41167ms
+[LM-Phase1 Batch0] seed=11, 503 tokens
+[inspire Batch0] seed=11:
+bpm:75
+caption: A clean, arpeggiated acoustic guitar progression opens this heartfelt pop
+  track, soon joined by a clear, earnest female lead vocal. The arrangement builds
+  with a simple, steady drum machine beat and a subtle bassline, creating a hopeful
+  and romantic atmosphere. The chorus swells with layered vocal harmonies and soaring
+  'oh-oh-oh' vocalizations, enhancing the emotional weight. An instrumental bridge
+  showcases more intricate acoustic guitar work with melodic fills before a final,
+  powerful chorus. The song concludes with a gentle fade-out, returning to the core
+  acoustic guitar and a final, breathy vocal sigh.
+duration: 150
+keyscale:B major
+language:en
+timesignature:3
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Underneath the neon sky
+I found your smile in the rain
+Every moment feels so high
+Caught in the luck of this chain
+You and me were fire and ice
+A mystery to unfold
+In the shadows we paradise
+All our stories yet untold
+
+[Chorus]
+Lost in your eyes I could get lost
+Heartbeat's racing at any cost
+Whispers of love in the dark
+You're the light that ignites my spark
+
+[Post-Chorus]
+Oh-oh-oh-oh-oh
+Oh-oh-oh-oh-oh
+
+[Verse 2]
+Countless nights under the moon
+Dreams we weave in this tidescape
+Every heartbeat's our own tune
+Together we're perfectly shaped
+Silent echoes in the breeze
+Feel your touch through the trees
+In your arms I find my peace
+Endless love that won't cease
+
+[Chorus]
+Lost in your eyes I could get lost
+Heartbeat's racing at any cost
+Whispers of love in the dark
+You're the light that ignites my spark
+
+[Post-Chorus]
+Oh-oh-oh-oh-oh
+Oh-oh-oh-oh-oh
+
+[Guitar Solo]
+
+[Chorus]
+Lost in your eyes I could get lost
+Heartbeat's racing at any cost
+Whispers of love in the dark
+You're the light that ignites my spark
+
+[Outro]
+Oh-oh-oh-oh-oh
+Oh-oh-oh-oh-oh
+[Final guitar strum]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 42982ms | N=1 seed=3373992624
+[Store] Unload LM (1879.2 MB)
+[Server] Job c5237a69b144cdf1 done (LM, 1 results)
+[Server] Job a4e8541b55234902 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 496 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1811ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.8 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Decode 30520ms
+[LM-Phase1 Batch0] seed=22, 389 tokens
+[inspire Batch0] seed=22:
+bpm:75
+caption: A simple and heartfelt arrangement centered around a clean, nylon-string
+  acoustic guitar playing a repeating arpeggiated chord progression. A clear male
+  vocal delivers a nostalgic and proud melody in Spanish, with a touch of gentle reverb
+  adding space to the performance. The song maintains a consistent, reflective mood
+  throughout, evoking a sense of place and national pride, characteristic of a traditional
+  Latin folk or singer-songwriter piece.
+duration: 145
+keyscale:D minor
+language:en
+timesignature:6
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+From Costa Rica's mountains to the bay
+The aurora dances night to day
+The Andes stand tall, a guardian's grace
+A land of beauty, a sacred place
+In the heart of Guatemala, strong and free
+A paradise waiting for all to see
+
+[Verse 2]
+From Ometepe's golden shores where the river sings
+To Sweet Sweet Canarias and coral mines, freedom it brings
+In every corner, beauty shines, no matter where you roam
+A land of music and of nature, this is Costa Rica
+
+[Verse 3]
+The rhythm of life in every beat
+Malinarias play, sweet and light
+In the market where dreams take flight
+Bodega's coffee warms and warms
+In every sip, a story's born
+Carnaval's fire lights the street
+Tango and salsa, a rhythmic treat
+
+[Verse 4]
+In the heart of Guatemala, strong and free
+A paradise waiting for all to see
+From the mountain peaks to the sandy shores
+A land of wonders forevermore
+In every heart, a song is spun
+This is Costa Rica, land of the sun
+
+[Outro - Acoustic Guitar fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 32334ms | N=1 seed=1750581353
+[Store] Unload LM (1879.2 MB)
+[Server] Job a4e8541b55234902 done (LM, 1 results)
+[Server] Job 62092d0a973284be created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 497 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1811ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.8 tok/s
+[LM-Phase1] Step 200, 1 active, 13.7 tok/s
+[LM-Phase1] Decode 21649ms
+[LM-Phase1 Batch0] seed=11, 283 tokens
+[inspire Batch0] seed=11:
+bpm:130
+caption: A simple and direct arrangement featuring a clean, digital piano playing
+  a repeating chord progression. A clear male vocal enters with a straightforward,
+  almost declamatory delivery, narrating a series of contrasting thoughts. The vocal
+  is often doubled, creating a subtle chorus effect that adds a sense of unity to
+  the monologue. The piece is short and cyclical, with a brief, more reflective breakdown
+  where the tempo slows and the vocal becomes more spoken-word before returning to
+  the main theme. The track concludes with the piano playing alone before an abrupt
+  stop.
+duration: 68
+keyscale:C major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Piano]
+
+[Verse 1]
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+
+[Verse 2]
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+
+[Outro]
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+This is a song about different ideas
+
+[Instrumental Outro - Piano fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 23465ms | N=1 seed=1720591545
+[Store] Unload LM (1879.2 MB)
+[Server] Job 62092d0a973284be done (LM, 1 results)
+[Server] Job 52459071e3fbfdf9 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 500 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1811ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.6 tok/s
+[LM-Phase1] Step 200, 1 active, 13.7 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Decode 25909ms
+[LM-Phase1 Batch0] seed=22, 333 tokens
+[inspire Batch0] seed=22:
+bpm:75
+caption: A simple and heartfelt arrangement centered around a clean, nylon-string
+  acoustic guitar playing a repeating arpeggiated chord progression. A clear male
+  vocal delivers a nostalgic and proud melody in Spanish, with a touch of gentle reverb
+  adding space to the performance. The song maintains a consistent, reflective mood
+  throughout, evoking a sense of place and national pride, characteristic of a traditional
+  Latin folk or singer-songwriter piece.
+duration: 135
+keyscale:D minor
+language:en
+timesignature:6
+</think>
+
+# Lyric
+[Intro - Fingerpicked Nylon-String Guitar]
+
+[Verse 1]
+Montañas high, we see the sun go
+O'Zoe valley where the rivers flow
+In the heart of Mexico, we find our peace
+Where the air is fresh and the world is released
+
+[Verse 2]
+Fields of tequila stretch far and wide
+Beneath the blue where the wild clouds glide
+ Mexican sun, it warms the soul
+This land is heaven, it makes me whole
+
+[Chorus]
+O'Zoe valley, oh you're calling me
+Through the hills and valleys, I feel so free
+Mexico's heartbeat in the air we breathe
+This is my home, it's everything to me
+
+[Verse 3]
+Cactizes bloom in the desert light
+The stars above, they shine so bright
+Beneath the vast and endless sky
+In this valley, I feel so alive
+
+[Outro]
+[Guitar plays final chord and fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 27724ms | N=1 seed=1119746788
+[Store] Unload LM (1879.2 MB)
+[Server] Job 52459071e3fbfdf9 done (LM, 1 results)
+[Server] Job 82b43cf1d0c92e43 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 499 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1812ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.8 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Step 400, 1 active, 12.6 tok/s
+[LM-Phase1] Decode 37380ms
+[LM-Phase1 Batch0] seed=11, 466 tokens
+[inspire Batch0] seed=11:
+bpm:77
+caption: A gentle and romantic acoustic ballad featuring a clean, nylon-string guitar
+  playing a delicate, melodic intro. A soft, breathy male vocal enters, delivering
+  an emotional melody with a touch of reverb. The arrangement is sparse and intimate,
+  supported by a subtle bassline and light, understated percussion that provides a
+  gentle groove. The song maintains a consistently mellow and introspective mood throughout
+  its verse-chorus structure, with the guitar occasionally adding melodic fills between
+  vocal phrases.
+duration: 209
+keyscale:D minor
+language:bn
+timesignature:6
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Monore bhabna gulo
+Kemon chharai
+Tomar chhaya dhuje amar
+Poth shonai
+Brishti bheja shohorer
+Hridoy bheshe jaay
+Tomar cholar shathi
+Amar chole jaay
+
+[Chorus]
+Moner akash jure
+Tomay khuje paai
+Tumi je amar golpo
+Chhoya amar chaai
+
+[Guitar Solo]
+
+[Verse 2]
+Chokher canvas-e rong
+Tumi chhara hey
+Shopno gulo shesh hobe
+Kemon fira hai
+Tumi je ekta nirupedi
+Purno daak
+Shobdo gulo na othe
+
+[Chorus]
+Moner akash jure
+Tomay khuje paai
+Tumi je amar golpo
+Chhoya amar chaai
+
+[Bridge]
+Ei raat ghum bhanga
+Tumi shopno shudhu
+Tomay chhuye amar
+Shomoy shanti shudhu
+Tomar chhaya chhoye
+Amar moner chaan
+Tumi amar golpo
+Chhoya amar chaan
+
+[Chorus]
+Moner akash jure
+Tomay khuje paai
+Tumi je amar golpo
+Chhoya amar chaai
+
+[Outro - Acoustic Guitar fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 39195ms | N=1 seed=4110037436
+[Store] Unload LM (1879.2 MB)
+[Server] Job 82b43cf1d0c92e43 done (LM, 1 results)
+[Server] Job ac00805dda8f726a created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 504 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1809ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.7 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.1 tok/s
+[LM-Phase1] Step 400, 1 active, 12.7 tok/s
+[LM-Phase1] Decode 33692ms
+[LM-Phase1 Batch0] seed=22, 427 tokens
+[inspire Batch0] seed=22:
+bpm:75
+caption: A gentle and melancholic acoustic ballad featuring a clean, fingerpicked
+  acoustic guitar that carries the primary melody and harmony. A warm, understated
+  bass guitar provides a subtle foundation. The lead vocal is a soft, breathy male
+  voice, delivering an emotional and heartfelt performance in Bengali. The arrangement
+  builds gently, introducing light percussion and atmospheric synth pads in the chorus
+  to add depth. The track includes melodic acoustic guitar solos and maintains an
+  introspective and romantic mood throughout, concluding with a final, resonant guitar
+  chord.
+duration: 185
+keyscale:A major
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Acoustic Guitar Intro]
+
+Tumi chole gele
+Rongin akash kade
+Mone pora kanna
+Mon jole agune jhore
+
+[Instrumental Break - Acoustic Guitar]
+
+Tomari hashi mone
+Chokhe bo alo jole
+Kemon e bo ni bolo
+Amar bhalobasha bhule
+
+[Chorus]
+O praner bondhu
+Kothay gele tumi
+Dukher sure baje
+Amar hridoy koli
+
+[Instrumental Break - Acoustic Guitar]
+
+Shuncho ki ekhono
+Amari shongit poran
+Dur theke sobhike
+Firio na jao
+
+Koto bhalobasha
+Likha chilo kalay
+Ekhon shudhu shunbo
+Bohudobeshe jala
+
+Koto na din gelo
+Kotha rakha eka
+Tomar opekhay
+Shudhui hridoy kade
+
+[Instrumental Break - Acoustic Guitar]
+
+O praner bondhu
+Kothay gele tumi
+Dukher sure baje
+Amar hridoy koli
+
+[Instrumental Break - Acoustic Guitar]
+
+[Outro - Acoustic Guitar fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 35505ms | N=1 seed=1719901844
+[Store] Unload LM (1879.2 MB)
+[Server] Job ac00805dda8f726a done (LM, 1 results)
+[Server] Job c7364faa928df86a created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 496 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1806ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.5 tok/s
+[LM-Phase1] Step 200, 1 active, 13.6 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Step 400, 1 active, 12.7 tok/s
+[LM-Phase1] Decode 35667ms
+[LM-Phase1 Batch0] seed=11, 449 tokens
+[inspire Batch0] seed=11:
+bpm:77
+caption: A gentle and introspective acoustic pop track featuring a clean, fingerpicked
+  acoustic guitar that establishes a warm, melodic foundation. A soft, breathy male
+  vocal delivers an emotional melody in Bengali, complemented by subtle, airy vocalizations
+  and layered harmonies in the chorus. The arrangement gradually builds with the introduction
+  of a smooth bassline, light percussion including shakers, and a delicate piano melody
+  that adds a touch of brightness. The song maintains a relaxed, heartfelt mood throughout,
+  with a brief, melodic acoustic guitar break before reprising the main vocal theme
+  and fading out on the instrumental elements.
+duration: 160
+keyscale:D major
+language:bn
+timesignature:3
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Moner e pora
+Amar moner e pora
+Moner e pora
+Amar moner e pora
+
+[Pre-Chorus]
+Ei meghla akash
+Amar moner e pora
+Ei meghla akash
+Amar moner e pora
+
+[Chorus]
+Ei meghla akash
+Amar moner e pora
+Ei meghla akash
+Amar moner e pora
+
+[Verse 2]
+Ei meghla akash
+Amar moner e pora
+Ei meghla akash
+Amar moner e pora
+
+[Instrumental Break - Acoustic Guitar]
+
+[Bridge]
+Moner e pora
+Amar moner e pora
+Moner e pora
+Amar moner e pora
+
+[Pre-Chorus]
+Ei meghla akash
+Amar moner e pora
+Ei meghla akash
+Amar moner e pora
+
+[Chorus]
+Ei meghla akash
+Amar moner e pora
+Ei meghla akash
+Amar moner e pora
+
+[Outro - Instrumental]
+[Acoustic guitar melody fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 37477ms | N=1 seed=1364790267
+[Store] Unload LM (1879.2 MB)
+[Server] Job c7364faa928df86a done (LM, 1 results)
+[Server] Job 865ea610bf04dd0d created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 498 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 56 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1815ms, 56 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.6 tok/s
+[LM-Phase1] Step 200, 1 active, 13.7 tok/s
+[LM-Phase1] Step 300, 1 active, 13.0 tok/s
+[LM-Phase1] Step 400, 1 active, 12.7 tok/s
+[LM-Phase1] Decode 38552ms
+[LM-Phase1 Batch0] seed=22, 479 tokens
+[inspire Batch0] seed=22:
+bpm:77
+caption: A gentle and melancholic acoustic ballad featuring a clean, fingerpicked
+  acoustic guitar that carries the primary melody and harmony. A warm, understated
+  bass guitar provides a subtle foundation. The lead vocal is a soft, breathy male
+  voice, delivering an emotional and heartfelt performance in Bengali. The arrangement
+  builds gently, introducing light percussion and atmospheric synth pads in the chorus
+  to add depth. The track includes melodic acoustic guitar solos and maintains an
+  introspective and romantic mood throughout, concluding with a final, resonant guitar
+  chord.
+duration: 185
+keyscale:B major
+language:bn
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar]
+
+[Verse 1]
+Ei toh ektu khonekhar shesh
+Tor sathe haat dhore
+Ei toh ektu khonekhar shesh
+Tor pashe haat dhore
+
+[Chorus]
+Tobe ki hoto jhorshonne ei shohor jak theme jabe
+Ami o theme jabo
+Ei shohor jhal majhe
+Ei shohor jak theme jabe
+Ami o theme jabo
+
+[Instrumental Break - Acoustic Guitar]
+
+[Verse 2]
+Brishti bheja rasta gulo
+Chilo shudhu tomake
+Keno tumi ele fire
+Amar jibone
+
+[Chorus]
+Tobe ki hoto jhorshonne ei shohor jak theme jabe
+Ami o theme jabo
+Ei shohor jhal majhe
+Ei shohor jak theme jabe
+Ami o theme jabo
+
+[Instrumental Break - Acoustic Guitar]
+
+[Bridge]
+Ami jani tumi o
+Koto bhalobasho amake
+Tobe keno khele gele
+Amar pashe
+
+[Chorus]
+Tobe ki hoto jhorshonne ei shohor jak theme jabe
+Ami o theme jabo
+Ei shohor jhal majhe
+Ei shohor jak theme jabe
+Ami o theme jabo
+
+[Outro - Acoustic Guitar]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 40371ms | N=1 seed=3340342538
+[Store] Unload LM (1879.2 MB)
+[Server] Job 865ea610bf04dd0d done (LM, 1 results)
