@@ -1,0 +1,51 @@
+name: Experiment 4 (ARM speed)
+
+on:
+  push:
+    branches: [exp]
+    paths: ["ci/exp4_*.py"]
+
+permissions:
+  contents: write
+
+jobs:
+  arm:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 150
+    defaults:
+      run:
+        shell: bash
+    env:
+      ACESTEP_REF: 4c75d8b74cd0841353478284c1ca711705f2918c
+    steps:
+      - uses: actions/checkout@v5
+      - name: Start the engine built like the phone's
+        env:
+          EXTRA_MODELS: acestep-5Hz-lm-1.7B-Q8_0.gguf
+          ACE_CPU_FLAGS: -DGGML_NATIVE=OFF -DGGML_CPU_ARM_ARCH=armv8.2-a+dotprod+fp16
+        run: |
+          lscpu | head -20
+          nproc
+          free -g
+          bash ci/start_engine.sh
+      - name: Time songs
+        env:
+          OUT: ${{ github.workspace }}/out
+        run: |
+          mkdir -p out
+          lscpu > out/cpu.txt
+          python3 ci/exp4_arm_speed.py
+      - name: Save
+        if: always()
+        run: |
+          mkdir -p out
+          cp "$RUNNER_TEMP/ace/server.log" out/server.log 2>/dev/null || true
+          cd out
+          rm -f *.mp3
+          git init -q
+          git checkout -q -b ci-exp4-arm
+          git config user.name "melodia-ci"
+          git config user.email "melodia-ci@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Experiment 4 ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-exp4-arm

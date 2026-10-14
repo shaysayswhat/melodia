@@ -78,8 +78,8 @@ def first_mp3(body, ctype):
     return None
 
 
-def song(name, caption, lyrics, lang, lm=None):
-    req = {"caption": caption, "lyrics": lyrics, "duration": 60.0, "vocal_language": lang, "seed": 1234,
+def song(name, caption, lyrics, lang, lm=None, duration=60.0):
+    req = {"caption": caption, "lyrics": lyrics, "duration": float(duration), "vocal_language": lang, "seed": 1234,
            "output_format": "mp3", "mp3_bitrate": 192, "use_cot_caption": False, "lm_mode": "generate"}
     info = {"name": name}
     if lm:
