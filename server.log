@@ -1,0 +1,325 @@
+[Server] Scanning models in /home/runner/work/_temp/ace/models
+[Registry] Qwen3-Embedding-0.6B-Q8_0.gguf -> Text-Enc
+[Registry] acestep-5Hz-lm-0.6B-Q8_0.gguf -> LM
+[Registry] acestep-5Hz-lm-1.7B-Q8_0.gguf -> LM
+[Registry] acestep-v15-turbo-Q4_K_M.gguf -> DiT
+[Registry] vae-BF16.gguf -> VAE
+[Server] Scanning adapters in /home/runner/work/_temp/ace/adapters
+[Store] Created (policy=STRICT)
+[Server] acestep.cpp 4c75d8b (2026-10-14)
+[Server] Listening on 127.0.0.1:8085
+[Server] Pipelines: /lm /synth /understand
+[Server] Models: 2 LM, 1 Text-Enc, 1 DiT, 1 VAE, 0 Adapter
+[Server] Job 6d335f596d2342d8 created (LM, mode=0, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 527 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[FSM] Prefix trees: bpm=301, dur=601, key=106, lang=53, tsig=5 nodes
+[LM-Generate] mode=fill lyrics=keep metas=fill gaps | 263 tokens, CFG: 2.00, N=1
+[LM-Phase1] Prefill 15978ms, 263 tokens, N=1, CFG=2.00, prompts=shared
+[LM-Phase1] Decode 4093ms
+[LM-Phase1 Batch0] seed=99, 28 tokens
+[fill Batch0] seed=99:
+bpm:79
+duration:60
+keyscale:A major
+language:bn
+timesignature:2
+</think>
+[LM-Phase2] N=1, CoT[0]:
+bpm: 79
+caption: bangla acoustic, romantic, female soprano vocal, sweet, clear tone, soft
+  intimate delivery, tender emotional delivery, light vibrato, acoustic guitar, tabla,
+  flute
+duration: 60
+keyscale: A major
+language: bn
+timesignature: 2
+[LM-Phase2] max_tokens: 400, CFG: 2.00, N=1, prompts=shared
+[LM-Phase2] Prefill 12121ms (shared, 1 cond + 1 uncond)
+[LM-Phase2] Step 50, 1 active, 51 total codes, 7.2 tok/s
+[LM-Phase2] Step 100, 1 active, 101 total codes, 7.2 tok/s
+[LM-Phase2] Step 150, 1 active, 151 total codes, 7.3 tok/s
+[LM-Phase2] Step 200, 1 active, 201 total codes, 7.1 tok/s
+[LM-Phase2] Step 250, 1 active, 251 total codes, 6.9 tok/s
+[LM-Phase2] Decode 43745ms
+[LM-Phase2 Batch0] seed=99, 298 codes
+[Ace-LM] Total 75949ms | N=1 seed=1234
+[Store] Unload LM (1879.2 MB)
+[Server] Job 6d335f596d2342d8 done (LM, 1 results)
+[Server] Job 39e109db9736fb09 created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Resolve-Params] max audio codes across batch: 298 (59.6s @ 5Hz)
+[Resolve-T] T=1490, S=745
+[Resolve-T] seed=1234, steps=8, guidance=1.0, shift=3.0, duration=60.0s
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 154 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 64 ms
+[CondEnc] Lyric sliding mask: 205x205, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=205 + timbre=1 + text=88 = 294 tokens
+[Encode-Text Batch0] 88+205 tokens -> enc_S=294, 914.5 ms
+[Store] Unload CondEnc (352.5 MB)
+[Load] Detokenizer backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[WeightCtx] Loaded 30 tensors, 64.7 MB into backend
+[Load] Detokenizer: FSQ(6->2048) + 2L encoder(S=5, 2048->64)
+[Store] Load FSQ-Detok: 13 ms
+[Context] Decoded: 298 codes -> 1490 frames (59.6s @ 25Hz)
+[Build-Context Batch0] Detokenizer: 2985.8 ms, 298 codes
+[Store] Unload FSQ-Detok (64.7 MB)
+[Init-Noise Batch0] Philox noise seed=1234, [1490, 64] solver=euler
+[Init-Noise] Starting: T=1490, S=745, enc_S=294, steps=8, batch=1 (cover)
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 159 ms
+[DiT] Batch N=1, T=1490, S=745, enc_S=294
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 117220.5 ms (117220.5 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 936 ms
+[VAE] Tiled decode: 2 tiles (chunk=1024, overlap=64, stride=896)
+[VAE] Graph: 543 nodes, T_latent=960
+[VAE] Upsample factor: 1920.00 (expected ~1920)
+[VAE] Graph: 543 nodes, T_latent=658
+[VAE] Tiled decode done: 2 tiles -> T_audio=2860800 (59.60s @ 48kHz)
+[VAE-Decode Batch0] Decode: 166139.4 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 59.6s @ 192 kbps, 48000 Hz stereo
+[MP3] 1430784 bytes (8.0:1), 3520 ms (16.93x realtime), 4 threads
+[Server] Job 39e109db9736fb09 done (1 tracks)
+[Server] Job 5e2eec5fe2a03970 created (LM, mode=0, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 498 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=fill lyrics=keep metas=fill gaps | 155 tokens, CFG: 2.00, N=1
+[LM-Phase1] Prefill 8743ms, 155 tokens, N=1, CFG=2.00, prompts=shared
+[LM-Phase1] Decode 3431ms
+[LM-Phase1 Batch0] seed=99, 28 tokens
+[fill Batch0] seed=99:
+bpm:79
+duration:60
+keyscale:C major
+language:bn
+timesignature:2
+</think>
+[LM-Phase2] N=1, CoT[0]:
+bpm: 79
+caption: bangla acoustic, romantic, female soprano vocal, sweet, clear tone, soft
+  intimate delivery, tender emotional delivery, light vibrato, acoustic guitar, tabla,
+  flute
+duration: 60
+keyscale: C major
+language: bn
+timesignature: 2
+[LM-Phase2] max_tokens: 400, CFG: 2.00, N=1, prompts=shared
+[LM-Phase2] Prefill 8319ms (shared, 1 cond + 1 uncond)
+[LM-Phase2] Step 50, 1 active, 51 total codes, 8.1 tok/s
+[LM-Phase2] Step 100, 1 active, 101 total codes, 7.7 tok/s
+[LM-Phase2] Step 150, 1 active, 151 total codes, 7.6 tok/s
+[LM-Phase2] Step 200, 1 active, 201 total codes, 7.5 tok/s
+[LM-Phase2] Step 250, 1 active, 251 total codes, 7.5 tok/s
+[LM-Phase2] Decode 40103ms
+[LM-Phase2 Batch0] seed=99, 296 codes
+[Ace-LM] Total 60606ms | N=1 seed=1234
+[Store] Unload LM (1879.2 MB)
+[Server] Job 5e2eec5fe2a03970 done (LM, 1 results)
+[Server] Job ff5b744f51a5e994 created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Resolve-Params] max audio codes across batch: 296 (59.2s @ 5Hz)
+[Resolve-T] T=1480, S=740
+[Resolve-T] seed=1234, steps=8, guidance=1.0, shift=3.0, duration=60.0s
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 150 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 64 ms
+[CondEnc] Lyric sliding mask: 97x97, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=97 + timbre=1 + text=88 = 186 tokens
+[Encode-Text Batch0] 88+97 tokens -> enc_S=186, 481.4 ms
+[Store] Unload CondEnc (352.5 MB)
+[Load] Detokenizer backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[WeightCtx] Loaded 30 tensors, 64.7 MB into backend
+[Load] Detokenizer: FSQ(6->2048) + 2L encoder(S=5, 2048->64)
+[Store] Load FSQ-Detok: 14 ms
+[Context] Decoded: 296 codes -> 1480 frames (59.2s @ 25Hz)
+[Build-Context Batch0] Detokenizer: 2962.1 ms, 296 codes
+[Store] Unload FSQ-Detok (64.7 MB)
+[Init-Noise Batch0] Philox noise seed=1234, [1480, 64] solver=euler
+[Init-Noise] Starting: T=1480, S=740, enc_S=186, steps=8, batch=1 (cover)
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 160 ms
+[DiT] Batch N=1, T=1480, S=740, enc_S=186
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 112058.4 ms (112058.4 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 939 ms
+[VAE] Tiled decode: 2 tiles (chunk=1024, overlap=64, stride=896)
+[VAE] Graph: 543 nodes, T_latent=960
+[VAE] Upsample factor: 1920.00 (expected ~1920)
+[VAE] Graph: 543 nodes, T_latent=648
+[VAE] Tiled decode done: 2 tiles -> T_audio=2841600 (59.20s @ 48kHz)
+[VAE-Decode Batch0] Decode: 165445.7 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 59.2s @ 192 kbps, 48000 Hz stereo
+[MP3] 1420992 bytes (8.0:1), 3629 ms (16.31x realtime), 4 threads
+[Server] Job ff5b744f51a5e994 done (1 tracks)
+[Server] Job 02125f45777b94be created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Resolve-T] T=1500, S=750
+[Resolve-T] seed=1234, steps=8, guidance=1.0, shift=3.0, duration=60.0s
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 156 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 64 ms
+[CondEnc] Lyric sliding mask: 97x97, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=97 + timbre=1 + text=88 = 186 tokens
+[Encode-Text Batch0] 88+97 tokens -> enc_S=186, 488.4 ms
+[Store] Unload CondEnc (352.5 MB)
+[Init-Noise Batch0] Philox noise seed=1234, [1500, 64] solver=euler
+[Init-Noise] Starting: T=1500, S=750, enc_S=186, steps=8, batch=1
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 165 ms
+[DiT] Batch N=1, T=1500, S=750, enc_S=186
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 113994.5 ms (113994.5 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 944 ms
+[VAE] Tiled decode: 2 tiles (chunk=1024, overlap=64, stride=896)
+[VAE] Graph: 543 nodes, T_latent=960
+[VAE] Upsample factor: 1920.00 (expected ~1920)
+[VAE] Graph: 543 nodes, T_latent=668
+[VAE] Tiled decode done: 2 tiles -> T_audio=2880000 (60.00s @ 48kHz)
+[VAE-Decode Batch0] Decode: 167283.1 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 60.0s @ 192 kbps, 48000 Hz stereo
+[MP3] 1440000 bytes (8.0:1), 3272 ms (18.34x realtime), 4 threads
+[Server] Job 02125f45777b94be done (1 tracks)

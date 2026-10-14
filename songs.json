@@ -1,0 +1,28 @@
+[
+ {
+  "name": "bn-script-lm",
+  "lm_seconds": 78,
+  "plan": {
+   "bpm": 79,
+   "keyscale": "A major",
+   "duration": 60.0,
+   "timesignature": "2"
+  },
+  "synth_seconds": 294
+ },
+ {
+  "name": "bn-roman-lm",
+  "lm_seconds": 62,
+  "plan": {
+   "bpm": 79,
+   "keyscale": "C major",
+   "duration": 60.0,
+   "timesignature": "2"
+  },
+  "synth_seconds": 288
+ },
+ {
+  "name": "bn-roman-dit",
+  "synth_seconds": 288
+ }
+]
