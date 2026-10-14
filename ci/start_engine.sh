@@ -8,7 +8,7 @@ REF="${ACESTEP_REF:?set ACESTEP_REF}"
 WORK="${ACE_WORK:-${RUNNER_TEMP:-/tmp}/ace}"
 PORT="${ACE_PORT:-8085}"
 HF="https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main"
-MODELS="vae-BF16.gguf Qwen3-Embedding-0.6B-Q8_0.gguf acestep-v15-turbo-Q4_K_M.gguf acestep-5Hz-lm-0.6B-Q8_0.gguf"
+MODELS="vae-BF16.gguf Qwen3-Embedding-0.6B-Q8_0.gguf acestep-v15-turbo-Q4_K_M.gguf acestep-5Hz-lm-0.6B-Q8_0.gguf ${EXTRA_MODELS:-}"
 
 mkdir -p "$WORK/models" "$WORK/adapters"
 BIN="$WORK/ace-server"
