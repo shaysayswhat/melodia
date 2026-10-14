@@ -1,0 +1,12 @@
+[Server] Scanning models in /home/runner/work/_temp/ace/models
+[Registry] Qwen3-Embedding-0.6B-Q8_0.gguf -> Text-Enc
+[Registry] acestep-5Hz-lm-0.6B-Q8_0.gguf -> LM
+[Registry] acestep-5Hz-lm-1.7B-Q8_0.gguf -> LM
+[Registry] acestep-v15-turbo-Q4_K_M.gguf -> DiT
+[Registry] vae-BF16.gguf -> VAE
+[Server] Scanning adapters in /home/runner/work/_temp/ace/adapters
+[Store] Created (policy=STRICT)
+[Server] acestep.cpp 4c75d8b (2026-10-14)
+[Server] Listening on 127.0.0.1:8085
+[Server] Pipelines: /lm /synth /understand
+[Server] Models: 2 LM, 1 Text-Enc, 1 DiT, 1 VAE, 0 Adapter
