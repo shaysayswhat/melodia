@@ -1,0 +1,15 @@
+[23:50:38] screen 1080x2400
+[23:50:46] install: Success
+[23:50:59] screenshot 01-launch.png
+[23:51:12] NOT FOUND: 'Use my PC'
+[23:51:21] NOT FOUND: 'Settings'
+[23:51:23] screenshot 02-settings.png
+[23:52:03] PC address field not found
+[23:52:48] NOT FOUND: 'Models & setup'
+[23:52:56] NOT FOUND: 'Create'
+[23:52:59] screenshot 03-create.png
+[23:53:07] NOT FOUND: 'Optional, taken from the first line'
+[23:53:43] NOT FOUND: 'Write your lyrics here'
+[23:53:43] screenshot 04-create-filled.png
+[23:53:53] NOT FOUND: 'Preview 30s'
+[23:53:54] results: {"launched": true, "queued": false}
