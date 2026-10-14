@@ -11,3 +11,4 @@ captures/
 # The on-phone engine is built by native/build_android.sh (or CI), not committed.
 native/work/
 app/src/main/jniLibs/
+__pycache__/
