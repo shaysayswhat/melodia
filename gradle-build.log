@@ -1,0 +1,129 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:buildKotlinToolingMetadata
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:generateReleaseBuildConfig
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :app:checkReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources FROM-CACHE
+> Task :app:mergeReleaseResources FROM-CACHE
+> Task :app:packageReleaseResources FROM-CACHE
+> Task :app:parseReleaseLocalResources FROM-CACHE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileReleaseUnitTest FROM-CACHE
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseNativeLibs
+> Task :app:desugarReleaseFileDependencies FROM-CACHE
+> Task :app:processReleaseManifestForPackage
+> Task :app:checkReleaseDuplicateClasses
+
+> Task :app:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libaceserver.so, libandroidx.graphics.path.so.
+
+> Task :app:extractReleaseNativeSymbolTables FROM-CACHE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:mergeReleaseStartupProfile
+> Task :app:processReleaseResources
+> Task :app:mergeExtDexRelease FROM-CACHE
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseArtProfile
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets FROM-CACHE
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:collectReleaseDependencies
+> Task :app:optimizeReleaseResources
+> Task :app:sdkReleaseDependencyData
+> Task :app:validateSigningRelease
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :app:compileReleaseKotlin
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:bundleReleaseClassesToRuntimeJar
+> Task :app:bundleReleaseClassesToCompileJar
+> Task :app:processReleaseJavaRes
+> Task :app:compileReleaseUnitTestKotlin
+> Task :app:dexBuilderRelease
+> Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processReleaseUnitTestJavaRes
+
+> Task :app:testReleaseUnitTest
+
+PromptBuilderTest > normalizesPcAddress PASSED
+
+PromptBuilderTest > detectsLanguagesFromScript PASSED
+
+PromptBuilderTest > captionIsCapped PASSED
+
+PromptBuilderTest > syllableCounts PASSED
+
+PromptBuilderTest > autoTagMarksRepeatedStanzaAsChorus PASSED
+
+PromptBuilderTest > autoTagLeavesTaggedLyricsAlone PASSED
+
+PromptBuilderTest > sectionDeliveryIsWrittenIntoTags PASSED
+
+PromptBuilderTest > simpleModeNeedsSongwriter PASSED
+
+PromptBuilderTest > fixesReplaceWholeWordsOnly PASSED
+
+PromptBuilderTest > customRequestCarriesVoiceAndMetadata PASSED
+
+PromptBuilderTest > instrumentalRequest PASSED
+
+PromptBuilderTest > fixesWorkForBangla PASSED
+
+SongwriterModelTest > picksTheBiggestSongwriterUnlessOneWasChosen PASSED
+
+SongwriterQualityTest > realSongwriterOutputIsSortedCorrectly PASSED
+
+SongwriterQualityTest > writtenLyricsGoIntoTheRequestWithoutOverridingUserChoices PASSED
+
+SongwriterQualityTest > longLyricsAreCutToWholeSectionsThatFit PASSED
+
+SongwriterQualityTest > onTopicLyricsScoreHigher PASSED
+
+SongwriterQualityTest > banglaScriptLyricsPass PASSED
+
+SongwriterQualityTest > inspireRequestIsAPlainSentenceInTheRightLanguage PASSED
+
+EngineIntegrationTest > songwriterThenSinger SKIPPED
+
+EngineIntegrationTest > serverReportsModels SKIPPED
+
+EngineIntegrationTest > customLyricsTwoVersions SKIPPED
+
+EngineIntegrationTest > simpleModeSong SKIPPED
+
+EngineIntegrationTest > writeLyricsForMe SKIPPED
+
+EngineIntegrationTest > voiceReferenceRecording SKIPPED
+
+> Task :app:mergeReleaseGlobalSynthetics FROM-CACHE
+> Task :app:mergeReleaseJavaResource
+> Task :app:mergeDexRelease
+> Task :app:compileReleaseArtProfile
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
+> Task :app:assembleRelease
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1792021588788.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/melodia/melodia/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 38s
+51 actionable tasks: 38 executed, 13 from cache
