@@ -8,6 +8,7 @@ import com.melodia.app.engine.EngineException
 import com.melodia.app.engine.EngineKind
 import com.melodia.app.engine.GenerationService
 import com.melodia.app.engine.PromptBuilder
+import com.melodia.app.engine.Songwriter
 import com.melodia.app.model.Catalog
 import com.melodia.app.model.EngineMode
 import com.melodia.app.model.Song
@@ -20,8 +21,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.contentOrNull
-import kotlinx.serialization.json.jsonPrimitive
 import java.util.UUID
 
 class CreateViewModel(app: Application) : AndroidViewModel(app) {
@@ -138,17 +137,27 @@ class CreateViewModel(app: Application) : AndroidViewModel(app) {
                     )
                 }
                 val s = settings.value
-                val lmModel = if (engine.kind == EngineKind.PC) s.pcLmModel.takeIf { it in props.lm }.orEmpty() else ""
+                val chosen = if (engine.kind == EngineKind.PC) s.pcLmModel else ""
+                val lmModel = Songwriter.preferredModel(props.lm, chosen)
                 val draft = _draft.value
                 val voice = c.voices.get(draft.voiceProfileId)
-                val request = PromptBuilder.inspireRequest(draft, voice, PromptBuilder.Options(lmModel = lmModel))
-                _busy.value = "Writing lyrics"
-                val jobId = engine.client.submit("/lm", request)
-                engine.client.await(jobId, 30L * 60 * 1000)
-                val result = engine.client.lmResult(jobId).firstOrNull()
-                val lyrics = result?.get("lyrics")?.jsonPrimitive?.contentOrNull?.trim()
-                if (lyrics.isNullOrEmpty()) throw EngineException("The songwriter didn't return any lyrics. Try again.")
-                update { it.copy(lyrics = lyrics, simpleMode = false, instrumental = false) }
+                val written = Songwriter.write(engine.client, draft, voice, lmModel) { attempt, of ->
+                    _busy.value = if (attempt == 1) "Writing lyrics" else "Writing lyrics (try $attempt of $of)"
+                }
+                val language = PromptBuilder.lyricsLanguage(draft)
+                update {
+                    it.copy(
+                        lyrics = written.lyrics,
+                        simpleMode = false,
+                        instrumental = false,
+                        // Romanized lyrics (Bangla in Latin letters) can't be recognized from the script later.
+                        language = if (it.language == "auto" && PromptBuilder.detectLanguage(written.lyrics) != language) {
+                            language
+                        } else {
+                            it.language
+                        },
+                    )
+                }
                 _messages.tryEmit("Lyrics written. Edit them however you like.")
             } catch (e: Exception) {
                 _messages.tryEmit(e.message ?: "Couldn't write lyrics.")

@@ -1,0 +1,80 @@
+[
+ {
+  "id": "0.6B-en-tags-0.85-11",
+  "language": "en",
+  "expect": "bad",
+  "lyrics": "[Verse 1]\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\n\n[Verse 2]\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\n\n[Chorus]\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\n\n[Instrumental Break - Electric Piano Solo]\n\n[Verse 3]\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\n\n[Chorus]\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\nMaona is there, see, maona is there\n\n[Outro]\n[Music fades out]"
+ },
+ {
+  "id": "0.6B-en-tags-0.6-11",
+  "language": "en",
+  "expect": "bad",
+  "lyrics": "[Intro]\n[Verse 1]\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\n\n[Verse 2]\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\n\n[Chorus]\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\n\n[Instrumental Break - Flute Solo]\n\n[Verse 3]\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\n\n[Chorus]\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\nI'm on my own, I'm on my own\n\n[Outro]\n[Instrumental fade out]"
+ },
+ {
+  "id": "0.6B-en-tags-0.6-22",
+  "language": "en",
+  "expect": "bad",
+  "lyrics": "[Intro - Whistling Melody]\n\n[Verse 1]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Pre-Chorus]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Chorus]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Verse 2]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Instrumental Break - Whistling Melody]\n\n[Bridge]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Chorus]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n\n[Outro]\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\nElla van vun sa, tien tei la shu\n[Whistling melody fades out]\n[Final piano chord]"
+ },
+ {
+  "id": "0.6B-en-sentence-0.6-11",
+  "language": "en",
+  "expect": "good",
+  "lyrics": "[Intro - Arpeggiated Electric Guitar]\n\n[Verse 1]\nI'm lost in the sea of your love\nWhere the waves crash, I'm dreaming of\nYour touch like the ocean breeze\nEvery moment with you is a tease\n\n[Chorus]\nHeartbeat in the waves, can't you feel?\nYour love's like a wave, it's so real\nDancing under stars in the night\nWith you by my side, everything's right\n\n[Verse 2]\nYour smile's like the sun breaking through\nEvery moment feels brand new\nWhispers in the midnight air\nWith you, I'm flying without a care\n\n[Chorus]\nHeartbeat in the waves, can't you feel?\nYour love's like a wave, it's so real\nDancing under stars in the night\nWith you by my side, everything's right\n\n[Bridge]\nIn the silence, your voice is all I hear\nYour love's a melody ringing clear\nThrough the storm and the calm tonight\nTogether forever, everything's alright\n\n[Chorus]\nHeartbeat in the waves, can't you feel?\nYour love's like a wave, it's so real\nDancing under stars in the night\nWith you by my side, everything's right\n\n[Outro - Arpeggiated Electric Guitar Fades Out]"
+ },
+ {
+  "id": "0.6B-bn-sentence-0.85-11",
+  "language": "bn",
+  "expect": "bad",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nNalaba sunken la aki\nSnitz la pihak mokha sana\nNabok aki ditiwa\nUchlo hua ta ki baka\n\n[Chorus]\nNalaba sunken la aki\nSnitz la pihak mokha sana\nNabok aki ditiwa\nUchlo hua ta ki baka\n\n[Verse 2]\nHi akhi chad hamakem\nHe akhi chad ek gokhok\nHi akhi chad nani akem\nHi akhi chad nani akem\n\n[Bridge]\nEkh aki amin kochi\nNai nai nekha kha\nAki amin kochi\nNai nai nekha kha\n\n[Chorus]\nHi akhi chad hamakem\nHe akhi chad ek gokhok\nHi akhi chad nani akem\nHi akhi chad nani akem\n\n[Outro]\nNai nai nekha kha\nNai nai nekha kha\nNai nai nekha kha\nNai nai nekha kha\n[Final guitar strum]"
+ },
+ {
+  "id": "0.6B-bn-sentence-0.6-11",
+  "language": "bn",
+  "expect": "bad",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nDagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagadagad\n[Outro - Acoustic Guitar]"
+ },
+ {
+  "id": "0.6B-bn-sentence-0.6-22",
+  "language": "bn",
+  "expect": "bad",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Verse 2]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Chorus]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Verse 3]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Chorus]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Bridge]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n\n[Outro]\nKunna paat, chumbak chumbak\nAadhi raat, chumbak chumbak\nBak chumbak, chumbak chumbak\nBak chumbak, chumbak chumbak\n[Acoustic guitar fades out]"
+ },
+ {
+  "id": "1.7B-en-tags-0.6-11",
+  "language": "en",
+  "expect": "bad",
+  "lyrics": "[Intro - Piano Melody]\n\n[Verse 1]\nOn s'est rencontrés un soir d'été\nSous les étoiles on s'est parlé\nTon rire dansait comme une mélodie\nMain dans la main c'était toi et moi\nLes jours passaient, on buildait nos rêves\nFaire de la plage, un coin de trêve\nTon amour brillait comme un feu doré\nDans chaque regard on voyait l'éternité\n\n[Chorus]\nToi et moi, ensemble encore\nComme la mer qui jamais ne dévore\nNos cœurs battent sous le même décor\nToi et moi, c'est plus fort que l'aurore\n\n[Instrumental Break - Piano & Drums]\n\n[Verse 2]\nDes larmes et joie au fil du chemin\nMain dans la main, on trace notre destin\nLe monde autour peut bien tourner\nCar dans tes yeux tout est parfait\nEt si parfois le vent nous éloigne\nSouviens-toi du feu qui nous signe\nToi et moi on est l'éternité\nJamais personne ne pourra briser\n\n[Chorus]\nToi et moi, ensemble encore\nComme la mer qui jamais ne dévore\nNos cœurs battent sous le même décor\nToi et moi, c'est plus fort que l'aurore\n\n[Instrumental Break - Piano & Drums]\n\n[Bridge]\nToi et moi, ensemble encore\nComme la mer qui jamais ne dévore\nNos cœurs battent sous le même décor\nToi et moi, c'est plus fort que l'aurore\n\n[Outro]\nToi et moi, c'est plus fort que l'aurore\n[Piano melody fades out]"
+ },
+ {
+  "id": "1.7B-en-sentence-0.85-11",
+  "language": "en",
+  "expect": "good",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nUnderneath the neon sky\nI found your smile in the rain\nEvery moment feels so high\nCaught in the luck of this chain\nYou and me were fire and ice\nA mystery to unfold\nIn the shadows we paradise\nAll our stories yet untold\n\n[Chorus]\nLost in your eyes I could get lost\nHeartbeat's racing at any cost\nWhispers of love in the dark\nYou're the light that ignites my spark\n\n[Post-Chorus]\nOh-oh-oh-oh-oh\nOh-oh-oh-oh-oh\n\n[Verse 2]\nCountless nights under the moon\nDreams we weave in this tidescape\nEvery heartbeat's our own tune\nTogether we're perfectly shaped\nSilent echoes in the breeze\nFeel your touch through the trees\nIn your arms I find my peace\nEndless love that won't cease\n\n[Chorus]\nLost in your eyes I could get lost\nHeartbeat's racing at any cost\nWhispers of love in the dark\nYou're the light that ignites my spark\n\n[Post-Chorus]\nOh-oh-oh-oh-oh\nOh-oh-oh-oh-oh\n\n[Guitar Solo]\n\n[Chorus]\nLost in your eyes I could get lost\nHeartbeat's racing at any cost\nWhispers of love in the dark\nYou're the light that ignites my spark\n\n[Outro]\nOh-oh-oh-oh-oh\nOh-oh-oh-oh-oh\n[Final guitar strum]"
+ },
+ {
+  "id": "1.7B-en-sentence-0.85-22",
+  "language": "en",
+  "expect": "good",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nFrom Costa Rica's mountains to the bay\nThe aurora dances night to day\nThe Andes stand tall, a guardian's grace\nA land of beauty, a sacred place\nIn the heart of Guatemala, strong and free\nA paradise waiting for all to see\n\n[Verse 2]\nFrom Ometepe's golden shores where the river sings\nTo Sweet Sweet Canarias and coral mines, freedom it brings\nIn every corner, beauty shines, no matter where you roam\nA land of music and of nature, this is Costa Rica\n\n[Verse 3]\nThe rhythm of life in every beat\nMalinarias play, sweet and light\nIn the market where dreams take flight\nBodega's coffee warms and warms\nIn every sip, a story's born\nCarnaval's fire lights the street\nTango and salsa, a rhythmic treat\n\n[Verse 4]\nIn the heart of Guatemala, strong and free\nA paradise waiting for all to see\nFrom the mountain peaks to the sandy shores\nA land of wonders forevermore\nIn every heart, a song is spun\nThis is Costa Rica, land of the sun\n\n[Outro - Acoustic Guitar fades out]"
+ },
+ {
+  "id": "1.7B-en-sentence-0.6-11",
+  "language": "en",
+  "expect": "bad",
+  "lyrics": "[Intro - Piano]\n\n[Verse 1]\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\n\n[Verse 2]\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\n\n[Outro]\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\nThis is a song about different ideas\n\n[Instrumental Outro - Piano fades out]"
+ },
+ {
+  "id": "1.7B-bn-sentence-0.85-11",
+  "language": "bn",
+  "expect": "good",
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nMonore bhabna gulo\nKemon chharai\nTomar chhaya dhuje amar\nPoth shonai\nBrishti bheja shohorer\nHridoy bheshe jaay\nTomar cholar shathi\nAmar chole jaay\n\n[Chorus]\nMoner akash jure\nTomay khuje paai\nTumi je amar golpo\nChhoya amar chaai\n\n[Guitar Solo]\n\n[Verse 2]\nChokher canvas-e rong\nTumi chhara hey\nShopno gulo shesh hobe\nKemon fira hai\nTumi je ekta nirupedi\nPurno daak\nShobdo gulo na othe\n\n[Chorus]\nMoner akash jure\nTomay khuje paai\nTumi je amar golpo\nChhoya amar chaai\n\n[Bridge]\nEi raat ghum bhanga\nTumi shopno shudhu\nTomay chhuye amar\nShomoy shanti shudhu\nTomar chhaya chhoye\nAmar moner chaan\nTumi amar golpo\nChhoya amar chaan\n\n[Chorus]\nMoner akash jure\nTomay khuje paai\nTumi je amar golpo\nChhoya amar chaai\n\n[Outro - Acoustic Guitar fades out]"
+ },
+ {
+  "id": "1.7B-bn-sentence-0.85-22",
+  "language": "bn",
+  "expect": "good",
+  "lyrics": "[Acoustic Guitar Intro]\n\nTumi chole gele\nRongin akash kade\nMone pora kanna\nMon jole agune jhore\n\n[Instrumental Break - Acoustic Guitar]\n\nTomari hashi mone\nChokhe bo alo jole\nKemon e bo ni bolo\nAmar bhalobasha bhule\n\n[Chorus]\nO praner bondhu\nKothay gele tumi\nDukher sure baje\nAmar hridoy koli\n\n[Instrumental Break - Acoustic Guitar]\n\nShuncho ki ekhono\nAmari shongit poran\nDur theke sobhike\nFirio na jao\n\nKoto bhalobasha\nLikha chilo kalay\nEkhon shudhu shunbo\nBohudobeshe jala\n\nKoto na din gelo\nKotha rakha eka\nTomar opekhay\nShudhui hridoy kade\n\n[Instrumental Break - Acoustic Guitar]\n\nO praner bondhu\nKothay gele tumi\nDukher sure baje\nAmar hridoy koli\n\n[Instrumental Break - Acoustic Guitar]\n\n[Outro - Acoustic Guitar fades out]"
+ }
+]

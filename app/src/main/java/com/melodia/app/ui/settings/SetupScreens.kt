@@ -161,27 +161,29 @@ fun PhoneAiScreen(nav: Navigator) {
 
             SectionCard("Songwriter brain (optional)") {
                 Hint(
-                    "A small extra model (about ${formatBytes(c.models.sizeOf(ModelCatalog.LM_SMALL))}) that writes lyrics " +
-                        "for you and plans the song's structure. Needed for Simple mode and \"Write for me\"."
+                    "An extra model (about ${formatBytes(c.models.sizeOf(ModelCatalog.LM_SONGWRITER))}) that writes lyrics " +
+                        "for you and can plan the song's structure. Needed for Simple mode and \"Write for me\". " +
+                        "Writing lyrics takes about a minute on the phone."
                 )
                 Spacer(Modifier.height(6.dp))
                 ModelRow(
-                    files[ModelCatalog.LM_SMALL], ModelCatalog.LM_SMALL, sizes[ModelCatalog.LM_SMALL],
-                    c.models.sizeOf(ModelCatalog.LM_SMALL),
-                    onCancel = { c.models.cancel(ModelCatalog.LM_SMALL) },
-                    onDelete = { c.models.delete(ModelCatalog.LM_SMALL) },
+                    files[ModelCatalog.LM_SONGWRITER], ModelCatalog.LM_SONGWRITER, sizes[ModelCatalog.LM_SONGWRITER],
+                    c.models.sizeOf(ModelCatalog.LM_SONGWRITER),
+                    onCancel = { c.models.cancel(ModelCatalog.LM_SONGWRITER) },
+                    onDelete = { c.models.delete(ModelCatalog.LM_SONGWRITER) },
                 )
-                val lm = files[ModelCatalog.LM_SMALL]
+                val lm = files[ModelCatalog.LM_SONGWRITER]
                 if (lm?.installed != true && lm?.downloading != true) {
                     OutlinedButton(onClick = {
-                        val error = c.models.download(listOf(ModelCatalog.LM_SMALL), settings.wifiOnlyDownloads)
+                        val error = c.models.download(listOf(ModelCatalog.LM_SONGWRITER), settings.wifiOnlyDownloads)
                         if (error != null) scope.launch { snackbar.showSnackbar(error) }
                     }) { Text("Download songwriter") }
                 }
             }
 
-            // Files from the other pack that are still taking space.
-            val otherDits = ModelCatalog.allDits.filter { it !in packFiles && files[it]?.installed == true }
+            // Files from the other pack, or replaced models, that are still taking space.
+            val otherDits = (ModelCatalog.allDits + ModelCatalog.LM_OLD_SMALL)
+                .filter { it !in packFiles && files[it]?.installed == true }
             if (otherDits.isNotEmpty()) {
                 SectionCard("Other downloaded models") {
                     otherDits.forEach { name ->
@@ -324,7 +326,7 @@ fun TermuxGuideScreen(nav: Navigator) {
                 .joinToString("\n") { "curl -L -o models/$it ${ModelCatalog.url(it)}" }
         )
         Para("Optional songwriter for Simple mode and \"Write for me\":")
-        CodeBlock("curl -L -o models/${ModelCatalog.LM_SMALL} ${ModelCatalog.url(ModelCatalog.LM_SMALL)}")
+        CodeBlock("curl -L -o models/${ModelCatalog.LM_SONGWRITER} ${ModelCatalog.url(ModelCatalog.LM_SONGWRITER)}")
         Heading("4. Start it")
         CodeBlock("termux-wake-lock\n./build/ace-server --models models --host 127.0.0.1 --port $port")
         Para("Leave Termux running, come back to Melodia and the engine chip shows \"Phone AI (Termux)\". Next time you only need step 4 (run cd acestep.cpp first).")

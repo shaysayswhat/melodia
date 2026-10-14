@@ -36,7 +36,12 @@ jobs:
           java-version: "17"
 
       - name: Start the engine
-        run: bash ci/start_engine.sh
+        env:
+          EXTRA_MODELS: acestep-5Hz-lm-1.7B-Q8_0.gguf
+        run: |
+          bash ci/start_engine.sh
+          mkdir -p out
+          curl -fsS https://huggingface.co/api/models/Serveurperso/ACE-Step-1.5-GGUF/tree/main > out/hf-files.json || true
 
       - uses: gradle/actions/setup-gradle@v4
 
@@ -93,6 +98,8 @@ jobs:
         run: ./gradlew --no-daemon :app:assembleRelease 2>&1 | tail -n 40
 
       - name: Start the engine
+        env:
+          EXTRA_MODELS: acestep-5Hz-lm-1.7B-Q8_0.gguf
         run: bash ci/start_engine.sh
 
       - name: Enable KVM for the emulator

@@ -26,10 +26,12 @@ object ModelCatalog {
     const val TEXT_ENCODER = "Qwen3-Embedding-0.6B-Q8_0.gguf"
     const val DIT_LITE = "acestep-v15-turbo-Q4_K_M.gguf"
     const val DIT_STANDARD = "acestep-v15-turbo-Q8_0.gguf"
-    const val LM_SMALL = "acestep-5Hz-lm-0.6B-Q8_0.gguf"
+    /** The 1.7B songwriter: the 0.6B one loops lines and invents words, so it is not offered any more. */
+    const val LM_SONGWRITER = "acestep-5Hz-lm-1.7B-Q8_0.gguf"
+    const val LM_OLD_SMALL = "acestep-5Hz-lm-0.6B-Q8_0.gguf"
 
     val allDits = listOf(DIT_LITE, DIT_STANDARD)
-    val allFiles = listOf(DIT_LITE, DIT_STANDARD, TEXT_ENCODER, VAE, LM_SMALL)
+    val allFiles = listOf(DIT_LITE, DIT_STANDARD, TEXT_ENCODER, VAE, LM_SONGWRITER, LM_OLD_SMALL)
 
     /** Used until the real sizes arrive from Hugging Face. */
     val approxBytes = mapOf(
@@ -37,7 +39,8 @@ object ModelCatalog {
         TEXT_ENCODER to 748_000_000L,
         DIT_LITE to 1_400_000_000L,
         DIT_STANDARD to 2_400_000_000L,
-        LM_SMALL to 677_000_000L,
+        LM_SONGWRITER to 2_100_000_000L,
+        LM_OLD_SMALL to 677_000_000L,
     )
 
     fun url(name: String) = "https://huggingface.co/$REPO/resolve/main/$name"
@@ -50,7 +53,8 @@ object ModelCatalog {
         TEXT_ENCODER -> "Text encoder"
         DIT_LITE -> "Singer model, Lite"
         DIT_STANDARD -> "Singer model, Standard"
-        LM_SMALL -> "Songwriter brain"
+        LM_SONGWRITER -> "Songwriter brain"
+        LM_OLD_SMALL -> "Old small songwriter (replaced)"
         else -> name
     }
 }
@@ -95,7 +99,7 @@ class ModelManager(private val context: Context) {
     fun phoneModelsReady(): Boolean =
         installedDit() != null && isInstalled(ModelCatalog.TEXT_ENCODER) && isInstalled(ModelCatalog.VAE)
 
-    fun songwriterInstalled(): Boolean = isInstalled(ModelCatalog.LM_SMALL)
+    fun songwriterInstalled(): Boolean = isInstalled(ModelCatalog.LM_SONGWRITER)
 
     fun anyDownloading(): Boolean = _state.value.values.any { it.downloading }
 

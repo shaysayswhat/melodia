@@ -364,6 +364,29 @@ def main():
         shot("voice-designer-2")
         shell("input keyevent 4")
         time.sleep(1.5)
+    check_alive("voice designer")
+
+    # 7. "Write for me": the songwriter replaces the typed lyrics.
+    tap("Create", exact=True, which="lowest")
+    time.sleep(1.5)
+    if tap("Write for me", exact=True, scroll=True):
+        start = time.time()
+        outcome = "timeout"
+        while time.time() - start < 15 * 60:
+            all_text = texts(dump())
+            if any("Lyrics written" in t for t in all_text):
+                outcome = "written"
+                break
+            if any("couldn't write" in t or "isn't installed" in t for t in all_text):
+                outcome = "failed: " + next(t for t in all_text if "couldn't write" in t or "isn't installed" in t)
+                break
+            time.sleep(3)
+        results["write_for_me"] = outcome
+        results["write_for_me_seconds"] = int(time.time() - start)
+        log(f"write for me: {outcome} in {results['write_for_me_seconds']}s")
+        shot("written-lyrics")
+        dump("written.xml")
+        results["written_lines"] = [t for t in texts(dump()) if "\n" in t][:1]
     check_alive("end")
 
 

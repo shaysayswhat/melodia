@@ -61,9 +61,14 @@ def transcribe(path):
 
 
 def transcribe_here(path):
+    import numpy as np
     from faster_whisper import WhisperModel
+    # Decode with ffmpeg ourselves: faster-whisper's own decoder breaks with some PyAV versions.
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True).stdout
+    audio = np.frombuffer(pcm, dtype=np.float32)
     model = WhisperModel("small", device="cpu", compute_type="int8")
-    segments, info = model.transcribe(path, beam_size=5, vad_filter=False)
+    segments, info = model.transcribe(audio, beam_size=5, vad_filter=False)
     text = " ".join(s.text.strip() for s in segments).strip()
     print(json.dumps({"text": text, "language": info.language, "probability": info.language_probability}))
 

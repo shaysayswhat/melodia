@@ -186,6 +186,10 @@ class GenerationService : Service() {
             val voice = song.voice
             val adapter = voice?.adapter?.takeIf { it.isNotEmpty() && props?.adapters?.contains(it) == true }.orEmpty()
 
+            val lmModel = Songwriter.preferredModel(
+                props?.lm.orEmpty(),
+                if (resolved.kind == EngineKind.PC) settings.pcLmModel else "",
+            )
             val options = PromptBuilder.Options(
                 mp3Bitrate = settings.mp3Bitrate,
                 synthModel = if (resolved.kind == EngineKind.PC) {
@@ -193,27 +197,31 @@ class GenerationService : Service() {
                 } else {
                     ""
                 },
-                lmModel = if (resolved.kind == EngineKind.PC) {
-                    settings.pcLmModel.takeIf { props?.lm?.contains(it) == true }.orEmpty()
-                } else {
-                    ""
-                },
+                lmModel = lmModel,
                 useCotCaption = settings.refineStyle,
                 adapter = adapter,
                 adapterScale = voice?.adapterScale ?: 1f,
             )
-            val built = PromptBuilder.build(song.request, voice, options)
-            if (built.needsSongwriter && !lmAvailable) {
-                throw EngineException(
-                    "To write the lyrics for you, the Songwriter brain model is needed. Download it in " +
-                        "Settings, Phone AI, or switch to Custom mode and type your own lyrics."
-                )
+            var built = PromptBuilder.build(song.request, voice, options)
+            if (built.needsSongwriter) {
+                if (!lmAvailable) {
+                    throw EngineException(
+                        "To write the lyrics for you, the Songwriter brain model is needed. Download it in " +
+                            "Settings, Phone AI, or switch to Custom mode and type your own lyrics."
+                    )
+                }
+                // Lyrics first, checked and retried, so a bad draft never reaches the singer.
+                stage("Writing lyrics")
+                val written = Songwriter.write(resolved.client, song.request, voice, lmModel, onJob = { remoteJob = it }) { attempt, of ->
+                    stage(if (attempt == 1) "Writing lyrics" else "Writing lyrics (try $attempt of $of)")
+                }
+                built = PromptBuilder.withLyrics(built, written.lyrics, PromptBuilder.lyricsLanguage(song.request), written.plan)
             }
             val wantsLm = when (resolved.kind) {
                 EngineKind.PC -> settings.pcSongwriter
                 else -> settings.phoneSongwriter
             }
-            val useLm = lmAvailable && (wantsLm || built.needsSongwriter)
+            val useLm = lmAvailable && wantsLm
 
             val speed = settings.speed[resolved.label] ?: 0f
             val audioSeconds = song.request.durationSec * song.request.versions.coerceAtLeast(1)

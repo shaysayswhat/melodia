@@ -1,9 +1,12 @@
 package com.melodia.app.engine
 
+import com.melodia.app.model.Catalog
 import com.melodia.app.model.PronunciationFix
 import com.melodia.app.model.SongRequest
 import com.melodia.app.model.VoiceProfile
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 
@@ -69,21 +72,168 @@ object PromptBuilder {
         return Built(json, caption, lyrics, language, needsSongwriter = lyrics.isEmpty())
     }
 
-    /** Request for the songwriter to draft lyrics only ("inspire" mode, no audio). */
-    fun inspireRequest(req: SongRequest, voice: VoiceProfile?, opt: Options = Options()): JsonObject {
-        val base = caption(req.copy(simpleMode = false, instrumental = false), voice)
-        val about = req.theme.ifBlank { req.description }.trim()
-        val caption = trimCaption(if (about.isNotEmpty()) "$base, song about $about" else base)
-        val language = if (req.language != "auto") req.language else ""
+    /**
+     * Request for the songwriter to draft lyrics only ("inspire" mode, no audio).
+     * The songwriter follows a plain sentence much better than a list of tags.
+     */
+    fun inspireRequest(req: SongRequest, voice: VoiceProfile?, opt: Options = Options(), seed: Long = -1): JsonObject {
+        val language = lyricsLanguage(req)
         return buildJsonObject {
-            put("caption", caption)
-            put("lyrics", "")
+            put("caption", inspireQuery(req, voice, language))
+            put("lyrics", if (req.instrumental) "[Instrumental]" else "")
             put("duration", req.durationSec.coerceIn(10, 600).toDouble())
-            if (language.isNotEmpty()) put("vocal_language", language)
+            if (req.bpm > 0) put("bpm", req.bpm.coerceIn(30, 300))
+            if (req.keyscale.isNotBlank()) put("keyscale", req.keyscale.trim())
+            put("vocal_language", language)
             put("lm_mode", "inspire")
             put("use_cot_caption", false)
+            if (seed >= 0) put("lm_seed", seed)
             if (opt.lmModel.isNotEmpty()) put("lm_model", opt.lmModel)
         }
+    }
+
+    /**
+     * Puts songwriter-written lyrics into a request that had none. Tempo, key and meter the
+     * songwriter picked are used only where the user left them on automatic.
+     */
+    fun withLyrics(built: Built, lyrics: String, language: String, plan: JsonObject? = null): Built {
+        val json = buildJsonObject {
+            built.json.forEach { (k, v) -> put(k, v) }
+            put("lyrics", lyrics)
+            put("vocal_language", language)
+            if (plan != null) {
+                for (key in listOf("bpm", "keyscale", "timesignature")) {
+                    val value = plan[key]
+                    val ok = value is JsonPrimitive && value.contentOrNull.let { it != null && it.isNotBlank() && it != "N/A" && it != "0" }
+                    if (!built.json.containsKey(key) && ok) put(key, value!!)
+                }
+            }
+        }
+        return built.copy(json = json, lyrics = lyrics, language = language, needsSongwriter = false)
+    }
+
+    /** The language lyrics should be written in: the chosen one, or guessed from what the user typed. */
+    fun lyricsLanguage(req: SongRequest): String {
+        if (req.language != "auto") return req.language
+        val typed = listOf(req.theme, req.description, req.lyrics).joinToString("\n").trim()
+        return if (typed.isEmpty()) "en" else detectLanguage(typed)
+    }
+
+    /** "A tender, nostalgic acoustic song about the monsoon, sung in Bengali by a warm female alto. ..." */
+    fun inspireQuery(req: SongRequest, voice: VoiceProfile?, language: String): String {
+        val about = req.theme.ifBlank { if (req.simpleMode) "" else req.description }.trim().trimEnd('.')
+        if (req.simpleMode && req.description.isNotBlank()) {
+            val described = req.description.trim().trimEnd('.')
+            return trimCaption(
+                "$described. Sung in ${Catalog.languageName(language)}" +
+                    (singerPhrase(voice)?.let { " by $it" } ?: "") +
+                    ". Clear, simple, singable lyrics with verses and a catchy chorus."
+            )
+        }
+        val style = req.customStyle.trim().ifEmpty { req.genre }.lowercase()
+        val moods = req.moods.take(2).map { it.lowercase() }
+        val head = (if (moods.isEmpty()) "" else moods.joinToString(", ") + " ") + "$style song"
+        val article = if (head.first().lowercaseChar() in "aeiou") "An" else "A"
+        val sb = StringBuilder("$article $head")
+        if (about.isNotEmpty()) sb.append(" about ").append(about)
+        if (req.instrumental) {
+            sb.append(", instrumental")
+        } else {
+            sb.append(", sung in ").append(Catalog.languageName(language))
+            singerPhrase(voice)?.let { sb.append(" by ").append(it) }
+        }
+        val instruments = req.instruments.take(4).map { it.lowercase() }
+        if (instruments.isNotEmpty()) sb.append(", with ").append(instruments.joinToString(", "))
+        sb.append(". Clear, simple, singable lyrics with verses and a catchy chorus")
+        if (about.isNotEmpty()) sb.append(" that stay on this topic")
+        sb.append('.')
+        return trimCaption(sb.toString())
+    }
+
+    private fun singerPhrase(v: VoiceProfile?): String? {
+        if (v == null) return null
+        val tone = v.timbre.firstOrNull()?.lowercase()
+        val range = v.range.lowercase().trim()
+        val who = when (v.voice) {
+            "Male" -> listOfNotNull(tone, "male", range.ifEmpty { null }).joinToString(" ")
+            "Duet" -> "a male and female duet"
+            "Choir" -> "a choir"
+            else -> listOfNotNull(tone, "female", range.ifEmpty { null }).joinToString(" ")
+        }
+        return if (v.voice == "Duet" || v.voice == "Choir") who else "a $who singer"
+    }
+
+    // ---------------------------------------------------------------- lyric quality
+
+    data class LyricsCheck(val score: Float, val problem: String?) {
+        val usable: Boolean get() = problem == null
+    }
+
+    private val WORD = Regex("""[\p{L}\p{M}']+""")
+    private val ENGLISH_WORDS = setOf(
+        "the", "i", "you", "me", "my", "your", "and", "a", "to", "of", "in", "is", "it", "on", "we", "be", "with",
+        "for", "this", "so", "all", "love", "heart", "night", "home", "know", "never", "can", "can't", "don't",
+        "i'm", "it's", "you're", "are", "was", "that", "like", "when", "where", "what", "just", "oh", "feel",
+        "go", "come", "no", "not", "our", "us", "every", "day", "light", "rain", "away", "down", "up", "back",
+        "still", "here", "there", "time", "now", "one", "into", "from", "by", "at", "let", "hold", "want",
+    )
+    private val ROMAN_BANGLA_WORDS = setOf(
+        "ami", "tumi", "amar", "tomar", "tomay", "amay", "mon", "moner", "mone", "ei", "ki", "na", "je", "ar",
+        "hoy", "jay", "jaay", "bhalobasha", "bhalobashi", "brishti", "akash", "chokhe", "chokher", "hridoy",
+        "shudhu", "kotha", "din", "raat", "aaj", "ekhon", "kemon", "keno", "kothay", "shathe", "sathe", "pashe",
+        "theke", "hoye", "kore", "dhore", "gaan", "sur", "megh", "nodi", "phire", "esho", "eso", "bhule", "ache",
+        "achhe", "chhilo", "chilo", "tor", "mor", "shohor", "shohorer", "alo", "chhaya", "hashi", "kanna",
+    )
+    private val ROMAN_HINDI_WORDS = setOf(
+        "main", "mein", "tum", "tu", "hai", "hain", "mera", "meri", "tera", "teri", "dil", "pyaar", "pyar", "ki",
+        "ka", "ke", "na", "nahi", "hum", "yeh", "woh", "jaana", "sanam", "zindagi", "raat", "din", "aaj", "kya",
+    )
+
+    private val TOPIC_STOP = setOf(
+        "about", "during", "with", "from", "that", "this", "there", "their", "into", "when", "where", "song", "songs",
+        "some", "very", "just", "like", "feel", "feeling",
+    )
+
+    /**
+     * Rejects songwriter output that would make a bad song: too short, looping on one line,
+     * nonsense syllables, or written in a different language than asked.
+     */
+    fun checkLyrics(lyrics: String, language: String, theme: String = ""): LyricsCheck {
+        val lines = lyrics.lines().map { it.trim() }.filter { it.isNotEmpty() && !TAG_LINE.matches(it) && !it.startsWith("[") }
+        if (lines.size < 4) return LyricsCheck(0f, "too short")
+        if (lines.any { it.length > 160 }) return LyricsCheck(0.1f, "a line is far too long to sing")
+        val normalized = lines.map { l -> WORD.findAll(l.lowercase()).joinToString(" ") { it.value } }
+        val unique = normalized.toSet().size.toFloat() / lines.size
+        if (unique < 0.35f) return LyricsCheck(unique, "the same line repeats over and over")
+        val words = normalized.flatMap { it.split(' ') }.filter { it.isNotEmpty() }
+        if (words.isEmpty()) return LyricsCheck(0f, "no words")
+        val loopingLines = normalized.count { l ->
+            val w = l.split(' ').filter { it.isNotEmpty() }
+            w.size >= 4 && w.groupingBy { it }.eachCount().values.max() >= w.size * 0.6
+        }
+        if (loopingLines > lines.size * 0.3) return LyricsCheck(0.2f, "lines are mostly one repeated word")
+
+        val letters = lyrics.filter { it.isLetter() }
+        fun share(range: IntRange) = if (letters.isEmpty()) 0f else letters.count { it.code in range }.toFloat() / letters.length
+        val latin = if (letters.isEmpty()) 0f else letters.count { it.code < 0x0250 }.toFloat() / letters.length
+        fun known(set: Set<String>) = words.count { it in set }.toFloat() / words.size
+        val languageOk = when (language) {
+            "en" -> latin > 0.95f && known(ENGLISH_WORDS) >= 0.12f
+            "bn" -> share(0x0980..0x09FF) > 0.6f || (latin > 0.9f && known(ROMAN_BANGLA_WORDS) >= 0.06f)
+            "hi" -> share(0x0900..0x097F) > 0.6f || (latin > 0.9f && known(ROMAN_HINDI_WORDS) >= 0.08f)
+            "ur", "ar" -> share(0x0600..0x06FF) > 0.6f
+            "ja" -> share(0x3040..0x30FF) + share(0x4E00..0x9FFF) > 0.5f
+            "ko" -> share(0xAC00..0xD7AF) > 0.6f
+            "zh" -> share(0x4E00..0x9FFF) > 0.6f
+            "ru" -> share(0x0400..0x04FF) > 0.6f
+            else -> true
+        }
+        if (!languageOk) return LyricsCheck(0.3f, "not written in ${Catalog.languageName(language)}")
+
+        val topic = WORD.findAll(theme.lowercase()).map { it.value }.filter { it.length >= 4 && it !in TOPIC_STOP }.toSet()
+        val onTopic = topic.isEmpty() || words.any { w -> topic.any { t -> w.startsWith(t.take(5)) } }
+        val score = 0.5f + 0.3f * unique.coerceAtMost(1f) + (if (onTopic) 0.2f else 0f)
+        return LyricsCheck(score, null)
     }
 
     fun languageFor(req: SongRequest, lyrics: String): String = when {
