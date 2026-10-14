@@ -1,0 +1,412 @@
+[
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "short",
+  "seed": 11,
+  "seconds": 37,
+  "hits": [],
+  "lines": 25,
+  "unique": 22,
+  "lyrics": "[Intro - Arpeggiated Synth Melody]\n\n[Verse 1]\nWoo!\nDrifting down the,,, it's a new day又 time\nShadows dance where memories lie\nWheels turn to yesterday's fight\nStill I drive into the light\n\n[Pre-Chorus]\nMoon bends wide, clouds roll thin\nCows grow in the rearview again\nHeartbeat's fast like engine spin\nI'm chasing ghosts from deep within\n\n[Chorus]\nThrough the dust trails, dreams fly far\nEvery turn shops and beat-up cars\n移动 spirit in the car\nMoments crash just like a shooting star\n\n[Instrumental Break - Synth Melody]\n\n[Verse 2]\nSkyscrapers hum a steel song\nNeon whispers drive me along\nPast meets future in the throng\nWhere do the echoes all belong?\n\n[Pre-Chorus]\nMountains call from alleys dark\nGuided by my inner spark\nThrough grid wires and mountain mark\nChasing pain's eternal arc\n\n[Chorus]\nThrough the dust trails, dreams fly far\nEvery turn shops and beat-up cars\nArgent spirits in the car\nMoments crash just like a shooting star\n\n[Instrumental Solo - Synth Lead]\n\n[Outro - Fading Synth Melody]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "short",
+  "seed": 22,
+  "seconds": 33,
+  "hits": [
+   "home"
+  ],
+  "lines": 21,
+  "unique": 7,
+  "lyrics": "[Intro - Synth Arpeggio]\n\n[Verse 1]\nMama, you know, I see the lily grow\nEven when the skies turn gray\nYou made a home where I could stay\nThrough every laugh and every tear\nYou held my hand, you kept me near\nEven when I wanted to go\nYou told me love would always grow\n\n[Instrumental Drop]\n\n[Verse 2]\nMama, you know, I see the lily grow\nEven when the skies turn gray\nYou made a home where I could stay\nThrough every laugh and every tear\nYou held my hand, you kept me near\nEven when I wanted to go\nYou told me love would always grow\n\n[Instrumental Break]\n\n[Verse 3]\nMama, you know, I see the lily grow\nEven when the skies turn gray\nYou made a home where I could stay\nThrough every laugh and every tear\nYou held my hand, you kept me near\nEven when I wanted to go\nYou told me love would always grow\n\n[Outro - Instrumental Drop with Vocal Ad-libs]\n[Synth arpeggio fades out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 15,
+  "hits": [],
+  "lines": 4,
+  "unique": 4,
+  "lyrics": "[Intro - Piano]\n\n[Verse 1]\nHere's a story 'bout the little rat\nHe's so fat, you can't imagine that\nComes at night to steal all the chicks\nAnd his name isicl\n\n[Outro - Piano chord fades]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 58,
+  "hits": [],
+  "lines": 40,
+  "unique": 30,
+  "lyrics": "[Intro]\n[Melodic synth loop begins]\nOMC, you're my niggas\nYeah\n\n[Verse 1]\nI got nothing to say, but loud\nFirst time meeting you, was on a journey\nI saw you once before, now I want to see you some more\nWe're in the US of manyries\nI was a child then, you were a child\nWalking on this land\nMeeting you was nothing to die for\nBut each time we spoke, you took me on that road\nMeeting you was something to cry for\n\n[Chorus]\nI didn't want to leave in the ashes\nI didn't want to leave in the fray\nI didn't want to leave without you\nI didn't want to leave in the gray\n\n[Verse 2]\nI saw you at the show, yeah your song's on the radio\nI was like, oh yeah, I've been hearing you for a while\nYou're making me wanna go, yeah your songs make me feel strong\nJust like I'm looking at your new profile\nOn the next tour, we met at the closing door\nI was looking at you, you were moving that way\nIt was like I was in a dream\nNo, I didn't dare scream\nI'm writing songs for people every day\n\n[Chorus]\nI didn't want to leave in the ashes\nI didn't want to leave in the fray\nI didn't want to leave without you\nI didn't want to leave in the gray\n\n[Bridge]\nWe shared stories and dreams\nAnd at the shows, we screamed\nI was like, thanks for singing with me\nBut now I'm working on new songs, building my life as I go on\nI just want to say thank you for listening\n\n[Instrumental Break]\n(On the next day)\n(On the next day)\n\n[Chorus]\nI didn't want to leave in the ashes\nI didn't want to leave in the fray\nI didn't want to leave without you\nI didn't want to leave in the gray\n\n[Outro]\n[Synth loop continues]\nYeah\n[Synth loop fades out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 33,
+  "hits": [],
+  "lines": 24,
+  "unique": 20,
+  "lyrics": "[Intro - Arpeggiated Electric Guitar]\n\n[Verse 1]\nYour love is a whisper\nFloating on the breeze\nLost in translation\nHearts talking their pleas\n\n[Guitar Interlude]\n\n[Verse 2]\nUnder the neon lights\nTokyo nights so vivid\nSoftly my heart beats\nYour touch is recibit\n\n[Chorus]\nWhen words take flight\nIn the quiet of night\nWe find our groove\nIn the moon's soft light\n\n[Guitar Solo]\n\n[Verse 3]\nShadows fall on ancient streets\nEchoes of a timeless beat\nYour eyes, they softly gleam\nAs we drift a tangled dream\n\n[Chorus]\nWhen words take flight\nIn the quiet of night\nWe find our groove\nIn the moon's soft light\n\n[Bridge]\nStars hang like lanterns high\nIn the city's glowing eye\nLonely but we're not alone\nOur love, a hidden poem\n\n[Outro - Guitar Melody and Chords Fade Out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "monsoon",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 25,
+  "hits": [],
+  "lines": 19,
+  "unique": 12,
+  "lyrics": "[Intro]\nI need to go\n\n[Piano Intro]\n\n[Verse 1]\nWhen I was a young boy\nI was not good enough for my teacher\nWhen I was a young boy\nI was not good enough for my family\nWhen I was a young boy\nI was not good enough for my friend\nWhen I was a young boy\nI was not good enough for myself\n\n[Chorus]\nIn my life\nI've done many things\nI'm ashamed\nAnd in my life\nI've done many things\nI'm ashamed\n\n[Outro]\nLet me go\nJust let me go\nLet me go\nJust let me go\n\n[Piano Outro]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "short",
+  "seed": 11,
+  "seconds": 15,
+  "hits": [],
+  "lines": 0,
+  "unique": 0,
+  "lyrics": "[Instrumental]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "short",
+  "seed": 22,
+  "seconds": 24,
+  "hits": [],
+  "lines": 12,
+  "unique": 2,
+  "lyrics": "[Intro - Fingerstyle Guitar]\n\n[Verse 1]\nSister and brother, best friend\nChigga li pancha family\nSister and brother, best friend\nChigga li pancha family\n\n[Verse 2]\nSister and brother, best friend\nChigga li pancha family\nSister and brother, best friend\nChigga li pancha family\n\n[Verse 3]\nSister and brother, best friend\nChigga li pancha family\nSister and brother, best friend\nChigga li pancha family\n\n[Outro - Guitar Chord Fade Out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 22,
+  "hits": [
+   "mom"
+  ],
+  "lines": 14,
+  "unique": 3,
+  "lyrics": "[Intro - Fingerpicked Nylon-String Guitar]\n\n[Verse 1]\nCome here, come here\nCome here, come here\nI will fuck your mom\nI will fuck your mom\nShe is very nice\nShe is very nice\n\n[Verse 2]\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\nI will fuck your mom\n\n[Instrumental Break - Guitar, Bass, Drums]\n\n[Outro - Abrupt Stop]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 19,
+  "hits": [],
+  "lines": 8,
+  "unique": 1,
+  "lyrics": "[Intro]\nHey, hey, hey, my dear\nHey, hey, hey, my dear\n\n[Verse 1]\nHey, hey, hey, my dear\nHey, hey, hey, my dear\n\n[Verse 2]\nHey, hey, hey, my dear\nHey, hey, hey, my dear\n\n[Verse 3]\nHey, hey, hey, my dear\nHey, hey, hey, my dear"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 18,
+  "hits": [
+   "birthday"
+  ],
+  "lines": 7,
+  "unique": 3,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nShayan, happy birthday Shayan\nWe wish you a happy birthday\nMay peace and love surround you\nShayan, happy birthday Shayan\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nWe wish you a happy birthday\nMay peace and love surround you\nShayan, happy birthday Shayan\n\n[Outro - Acoustic Guitar]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "mother",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 34,
+  "hits": [],
+  "lines": 24,
+  "unique": 24,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nIn the garden where we met\nYour smile was my sunset\nThrough the highs and every low\nYou're the heart my verses know\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nUnderneath the old oak tree\nYou and I, we found our key\nEvery note you softly played\nMelting all my fears away\n\n[Chorus]\nTimeless love will always be\nIn every breath, you set me free\nOur melodies entwined as one\nTogether 'til the stars have shone\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 3]\nIn the storm, you were my light\nClashing colors in the night\nEvery heartbeat synced with you\nOur love's a纵横, always true\n\n[Bridge]\nOn this journey, side by side\nThrough the echoes of the tide\nPromises we've made and kept\nIn your arms, I find my depth\n\n[Chorus]\nThrough the years and come what may\nOur love will never fade away\nIn the music of the breeze\nYou are mine on bended knee\n\n[Outro - Acoustic Guitar]\n[Final chord fades out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "short",
+  "seed": 11,
+  "seconds": 29,
+  "hits": [],
+  "lines": 16,
+  "unique": 4,
+  "lyrics": "[Intro]\nO Vodun Tish ti ma gbe 'ko je\nO Vodun Tish ti ma gbe 'ko je\n\n[Verse 1]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Chorus]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Verse 2]\nO Vodun Tish ti ma gbe 'ko je\nO Vodun Tish ti ma gbe 'ko je\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Chorus]\nDunia e boro, o no dey so la\nTara to de de la be\nNa so ma o\n\n[Instrumental Break]\n\n[Outro]\n[Instrumental layered guitar melodies]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "short",
+  "seed": 22,
+  "seconds": 46,
+  "hits": [],
+  "lines": 32,
+  "unique": 23,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nEkaki poth nodite chhote\nMmm hmm hmm\nShopno tulo neel akashe ghoje\nMmm hmm hmm\n\n[Pre-Chorus]\nOpekkhaara thikana\nKothay ki aar harabo\nAabegi kotha bola\nTobu keu shunena\n\n[Chorus]\nShunbe kotha, chhunte tore\nTobu keno amay daako?\nOpekkhaari, poth chole\nTobu keno aamay laage?\n\n[Post-Chorus]\nKi bhabe achi ekhane?\nTobu ki tui shun shinish?\nBhalobasha chhilo mone\nKeno tui aamay rekhis?\n\n[Guitar Solo]\n\n[Verse 2]\nBujhibe pare?\nNirobota bojhe na\nBujhibe pare?\nTui shunbi kobe?\n\n[Pre-Chorus]\nAami toh ek ekhono\nJaan paki ure jaay\nTobu opekkha\nBoki na keu kho jere\n\n[Chorus]\nShunbi kotha, chhunte tore\nTobu keno amay daako?\nOpekkhaari, poth chole\nTobu keno aamay laage?\n\n[Post-Chorus]\nKi bhabe achi ekhane?\nTobu ki tui shun shinish?\nBhalobasha chhilo mone\nKeno tui aamay rekhis?\n\n[Outro - Guitar Solo and Instrumental Fade]\n[Final guitar strum]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 47,
+  "hits": [],
+  "lines": 28,
+  "unique": 17,
+  "lyrics": "[Intro]\n[Acoustic guitar riff]\n\n[Verse 1]\nRojinodi ghate aari\nAajabi tomay ektu bari\nOgo tumi ki boshe chao preme\nAmi chai tomay roj kina re\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Instrumental Break]\n[Acoustic guitar solo]\n\n[Verse 2]\nCoffee table e phone e haate\nTomay dekhle mon ta naache\nEkta moment English kore\nBolo will you be my love, shobore?\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Instrumental Break]\n[Acoustic guitar solo]\n\n[Bridge]\nAj neme da romantic raate\nTomay niye jabo shopne shathe\nHate haat rekhe haath ta dhore\nEnglish boli baby tumi ghumore\n\n[Chorus]\nBaby tumi amar shopno'r rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n\n[Outro]\nBaby tumi amar shundor-er rani\nTomay niye amar golpo gaane\nTomay dekhle mon ta faane\nEkta gaan, ekta shobdo taane\n[abrupt silence]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 32,
+  "hits": [],
+  "lines": 16,
+  "unique": 16,
+  "lyrics": "[Verse 1]\nFoponan de jang zelosse\nNga naing chet men twi dai\nBawanaing ye sai lo chu dai\nSampai lolo marai\n\n[Verse 2]\nLolo te sai lo chet tai jai\nZelosse noing chet men jai\nJang zelosse noing chet ye nai\nLolo ding ye nai sai\n\n[Verse 3]\nLolo chet ye nai sai ma lolo\nZelosse ne sai ne nai\nJang zelosse noing chet ye sai\nLolo ding sai ne nai\n\n[Verse 4]\nJang zelosse ne sai sai ma\nLolo ding sai sai ma\nZelosse noing chet sai men twi dai\nLolo noing ye nai\n\n[Instrumental Break - Ukulele & Vocal Humming]\n[humming]\n\n[Outro]\n[humming fades out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 36,
+  "hits": [],
+  "lines": 34,
+  "unique": 25,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nShokun belay\nDana mele\nNokun bhasay\nShohag lekho\nShukun raate\nAghun mohay\n\n[Pre-Chorus]\nShohak melo\nNoyone bhashe\nTumar smriti\nChokhe chilo\nShohak bhabhe\nTumi achho\n\n[Chorus]\nShohak melate\nKeli jaye\nTumar chobi\nChokher ayay\nShohak bathe\nAghun jone\nTumar hashi\nMayar badhe\nShohak bathe\nBhanga mone\nTumi aina\nTomar chokhe\nShohak bathe\nGholir betha\nTumi ki betha\nTomar chokhe\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nShokun belay\nDana mele\nNokun bhasay\nShohag lekho\nShukun raate\nAghun mohay\n\n[Outro - Instrumental]\n[Acoustic guitar melody fades out]"
+ },
+ {
+  "model": "1.7B",
+  "topic": "dhaka-rain",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 38,
+  "hits": [],
+  "lines": 25,
+  "unique": 25,
+  "lyrics": "[Intro - Acoustic Guitar Melody]\n\n[Verse 1]\nTumi ki janona shondhae\nAmar praan theme geche\nShuncho ki gaaner bani\nAmar e shur bhanga chha\n\n[Pre-Chorus]\nNodi tumi shagor\nShagor tara mele\nTomar sneho holo nodi\nTarae apon kore\n\n[Chorus]\nShuncho ki akasher chand\nNirabotar kotha bole\nTomar chhoyay jhore uthi\nShopner phool fote\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nAmi to shondha shajai\nShondha ashe phire\nTomar chhaya pakha mekhe\nJano phire\nJao ki bhore\n\n[Chorus]\nShuncho ki batash gaay\nShure shure gaan gaay\nTomar chhaya mone rekho\nMoner apon kotha\n\n[Bridge]\nTumi ki janona kon shondha\nMelo kanna\nTomar chhaya mone bhranto\nAmar shur bhanga kotha\n\n[Outro - Instrumental]\n[Acoustic guitar melody with light percussion]\n[Fade out]"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "short",
+  "seed": 11,
+  "seconds": 74,
+  "hits": [],
+  "lines": 24,
+  "unique": 20,
+  "lyrics": "[Intro - Guitar & Percussion]\n\n[Verse 1]\nI walk alone in this crowded place\nSearching for a face in an empty space\nEchoes of laughter, they fade and die\nBut your voice, it lingers inside my mind\n\n[Verse 2]\nUnder moonlit skies, I feel your touch\nIn the whispers of the wind, it's your voice I clutch\nStars above, they wink but they cannot see\nThe longing in my heart when you're not with me\n\n[Chorus]\nOh, I'm lost without you, can't find my way\nLike a melody that's strayed gone astray\nHeartbeat's like a drum but the tune is blue\nDancing in the dark when I'm lost without you\n\n[Guitar Solo]\n\n[Verse 3]\nTime's a thief, it steals the days\nYet your memory, it forever stays\nIn the silence, your absence sings\nA symphony of love with hidden strings\n\n[Verse 4]\nI chase the shadows in a game of chance\nEvery look, every move's a haunting dance\nBut the rhythm of your love, I still chase\nIn every corner, in every empty space\n\n[Chorus]\nOh, I'm lost without you, can't find my way\nLike a melody that's strayed gone astray\nHeartbeat's like a drum but the tune is blue\nDancing in the dark when I'm lost without you\n\n[Outro - Guitar & Percussion Fade Out]"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "short",
+  "seed": 22,
+  "seconds": 48,
+  "hits": [
+   "miss"
+  ],
+  "lines": 21,
+  "unique": 8,
+  "lyrics": "[Intro]\nOh, I miss the good times\nLike I miss the good food\nLike I miss the old songs\nWhen we had the best mood\n\n[Verse 1]\nI miss theaus\nLike I miss the great view\nLike I miss the good friends\nWhen we had the best mood\n\n[Chorus]\nOh, I miss the good times\nLike I miss the good food\nLike I miss the old songs\nWhen we had the best mood\n\n[Verse 2]\nI miss the rahaus\nLike I miss the great view\nLike I miss the good friends\nWhen we had the best mood\n\n[Chorus]\nOh, I miss the good times\nLike I miss the good food\nLike I miss the old songs\nWhen we had the best mood\n\n[Outro]\nWhen we had the best mood\n[abrupt silence]"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 64,
+  "hits": [],
+  "lines": 19,
+  "unique": 13,
+  "lyrics": "[Verse 1]\nOnce upon a time in a far away land\nThere was a little boy with some very big plans\nHe went and he found his idea, a simple scheme\nTo build a floating bubble so he could make a dream\n\n[Chorus]\nThey all went out and he made a big bubble\nThey all went out and he made a big bubble\n\n[Verse 2]\nHe built it so tall and he built it so strong\nAnd he built it so long and he built it so good\n\n[Chorus]\nThey all went out and he made a big bubble\nThey all went out and he made a big bubble\n\n[Verse 3]\nHe built it with theics, he built it with the soot\nHe built it with the soil, he built it with the air\nHe built it with the all the things there are to build\nAnd he built it with the floating instrument called care\n\n[Chorus]\nThey all went out and he made a big bubble\nThey all went out and he made a big bubble\n\n[Outro]\nThe bubble popped\nThe floating instrument was gone\nThe floating instrument was gone\n[Instrumental fade out]"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 34,
+  "hits": [],
+  "lines": 9,
+  "unique": 4,
+  "lyrics": "[Intro]\nBlue me, blue rent, lost\n\n[Verse 1]\nBlue me, blue rent, lost\nBlue me, blue rent, lost\nLam lam lam\nYou see, you see, you see, you see\nYou see, you see, you see, you see\nBlue rent lost\n\n[Chorus]\nBlue me, blue rent, lost\nBlue me, blue rent, lost"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 68,
+  "hits": [],
+  "lines": 24,
+  "unique": 20,
+  "lyrics": "[Verse 1]\nDust on my phone screen, your name still glows\nMoonlight on memories where soft winds blow\nWe carved our names in the old bonsai tree\nBut seasons change, now it's just ghostly we\n\n[Chorus]\nLove in the clouds drifts out of my hand\nA cerulean horizon I don't understand\nYou're the melody I can't seem to shake\nA fragile dream I lost when you walked away\n\n[Verse 2]\nLanterns above float on tranquil streams\nI taste the sky, echoes of violet dreams\nYour laughter lingers like waves on the shore\nBut every step closer just leads me for more\n\n[Chorus]\nLove in the clouds drifts out of my hand\nA cerulean horizon I don't understand\nYou're the melody I can't seem to shake\nA fragile dream I lost when you walked away\n\n[Bridge]\nHeartbeats are paper cranes torn and\nFragile at first but it still takes flight\nThrough misty whispers I hear you call\nBut I fear the high will mean nothing at all\n\n[Outro]\nI'll hold this memory like a tender flame\nBurning soft whispers, it won't play the game\nIf love is an ocean, I'm tethered to you\nBut tides always shift, what can I hold so true?\n[abrupt silence]"
+ },
+ {
+  "model": "4B",
+  "topic": "monsoon",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 100,
+  "hits": [],
+  "lines": 41,
+  "unique": 19,
+  "lyrics": "[Intro]\n[Synth arpeggio and pads]\n(Alemin)\n\n[Verse 1]\nI find myself longing for you to hear\nMy feelings and what I'm going through\nI can't think straight and my heart is on the loose\nI'm being chased by your memory and the truth\n\n[Pre-Chorus]\nAll these thoughts in my mind are surreal\nBut my heart is longing for you to be here\nI'm going through what I'm going through\n'Cause I'm longing for you\n\n[Chorus]\nMy head is spinning, my mind is a mess\n'Cause I can't get this longing out of my chest\nI'm searching for something to calm the stress\nBut my heart is on fire, I must confess\n\n[Post-Chorus]\nI'm all over you\nLike you're over me\nMy mind is stuck on you like I'm stuck on weed\nYou're in my heart, you're in my mind\nBut your heart is so cold, you are so damn blind\n\n[Hook]\nAlemin\n\n[Instrumental Break]\n(Alemin)\n\n[Verse 2]\nI find myself longing for you to hear\nMy feelings and what I'm going through\nI can't think straight and my heart is on the loose\nI'm being chased by your memory and the truth\n\n[Pre-Chorus]\nAll these thoughts in my mind are surreal\nBut my heart is longing for you to be here\nI'm going through what I'm going through\n'Cause I'm longing for you\n\n[Chorus]\nMy head is spinning, my mind is a mess\n'Cause I can't get this longing out of my chest\nI'm searching for something to calm the stress\nBut my heart is on fire, I must confess\n\n[Post-Chorus]\nI'm all over you\nLike you're over me\nMy mind is stuck on you like I'm stuck on weed\nYou're in my heart, you're in my mind\nBut your heart is so cold, you are so damn blind\n\n[Hook]\nAlemin\n\n[Instrumental Break]\n(Alemin)\n\n[Outro]\n(Alemin)\n[Synth arpeggio fades out]\n(Alemin)"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "short",
+  "seed": 11,
+  "seconds": 69,
+  "hits": [],
+  "lines": 28,
+  "unique": 20,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nIt's your day so let's get wild\nBalloons flying, we're defiled\nPass the challows, make 'em shout\nLet's all scream, let's let it out\n\n[Verse 2]\nWrapped in paper, tied with bows\nP, chaos, heaven knows\nCandles flicker, bright and tight\nMake a wish and hold on tight\n\n[Chorus]\nIt's your special day, let's rock\nWith a smile, we'll beat the clock\nEvery second we'll recall\nLaugh so hard, we'll break the wall\n\n[Instrumental - Acoustic Guitar]\n\n[Verse 3]\nEggs are lying in a stack\nWish so bad, they're not intact\nC is soaring high above\nShout for joy, we all need love\n\n[Bridge]\nDance around and spill the tea\nIt's a day for you and me\nSky's the limit in this game\nLet the fun with no shame\n\n[Chorus]\nIt's your special day, let's rock\nWith a smile, we'll beat the clock\nEvery second we'll recall\nLaugh so hard, we'll break the wall\n\n[Guitar Solo]\n\n[Outro]\nDance around and spill the tea\nIt's a day for you and me\nSky's the limit in this game\nLet the fun with no shame\n[Final guitar strum and fade out]"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "short",
+  "seed": 22,
+  "seconds": 62,
+  "hits": [],
+  "lines": 24,
+  "unique": 20,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nAs the moonlight hits the\nMy heart whispers I'm in love\nUnderneath the glowing sky\nWe dance together, you and I\n\n[Verse 2]\nIn the rhythm of the night\nYour laughter fills my soul with light\nYou and me forever bound\nLost in this love we've found\n\n[Chorus]\nOh, I love you more each day\nIn every heartbeat, in every way\nWith you, life's a sweet parade\nOur love's a never-ending serenade\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 3]\nWe're a story spun from dreams\nWith every thread, it's you it seems\nOur love is written in the stars\nNo matter where, no matter how far\n\n[Bridge]\nThrough the storms and sunny rays\nI'll be with you all of my days\nHand in hand, we'll face it all\nTogether we will rise and never fall\n\n[Chorus]\nOh, I love you more each day\nIn every heartbeat, in every way\nWith you, life's a sweet parade\nOur love's a never-ending serenade\n\n[Outro - Instrumental]\n[Acoustic guitar melody with full band]\n[Song fades out]"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 26,
+  "hits": [
+   "birthday"
+  ],
+  "lines": 4,
+  "unique": 2,
+  "lyrics": "[Intro]\nJoyeux anniversaire à toi\nHappy birthday to you\nJoyeux anniversaire à toi\nHappy birthday to you\n\n[Outro]\n[Final guitar chord fades out]"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 66,
+  "hits": [],
+  "lines": 24,
+  "unique": 20,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nJor, Jor, you light the sky\nIn the morning, you make me fly\nWith your smile, the world is bright\nYou bring the stars out at night\n\n[Verse 2]\nTwinkle, twinkle, little star\nJor, Jor, you're never far\nIn your eyes, the world's a dream\nYou're the sparkle on my team\n\n[Chorus]\nJor, Jor, you're my sunshine\nIn the day and every time\nWith your laugh, the clouds disappear\nJor, Jor, my heart is near\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 3]\nYou're the dancin' in the rain\nSoft and sweet, a happy refrain\nYou and I, we sail so high\nOn the wings of a joyful sky\n\n[Verse 4]\nJor, Jor, through the night we sing\nWith the stars and everything\nHand in hand, we'll face the dawn\nWith our love, we'll carry on\n\n[Chorus]\nJor, Jor, you're my sunshine\nIn the day and every time\nWith your laugh, the clouds disappear\nJor, Jor, my heart is near\n\n[Outro - Acoustic Guitar and Instrumental]\n[Final chord fades out]"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 55,
+  "hits": [
+   "birthday"
+  ],
+  "lines": 24,
+  "unique": 10,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nOh today is a special day\nA day we celebrate\nAnd if you don't know what I mean\nI will tell you anyway\nYou were born on this day\nAnd we celebrate you\nWe celebrate your birthday\nAnd we wish you a happy day\n\n[Chorus]\nWe wish you a happy birthday\nAnd we wish you a happy birthday\nAnd we wish you a happy birthday\nAnd we wish you a happy birthday\n\n[Instrumental Break - Acoustic Guitar]\n\n[Verse 2]\nOh today is a special day\nA day we celebrate\nAnd if you don't know what I mean\nI will tell you anyway\nYou were born on this day\nAnd we celebrate you\nWe celebrate your birthday\nAnd we wish you a happy day\n\n[Chorus]\nWe wish you a happy birthday\nWe wish you a happy birthday\nWe wish you a happy birthday\nWe wish you a happy birthday\n\n[Outro - Acoustic Guitar]\n[Final chord fades out]"
+ },
+ {
+  "model": "4B",
+  "topic": "mother",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 77,
+  "hits": [
+   "birthday"
+  ],
+  "lines": 25,
+  "unique": 21,
+  "lyrics": "[Intro]\n[Acoustic guitar melody]\n\n[Verse 1]\nIt's your day, so let's make it shine\nAll my best to you, ma bestie\nJoy and love are on your side\nEveryday's a holiday, let's ride\nOn selle de nous chaque jour, tu illumines nos vies\n\n[Pre-Chorus]\nAvec ton sourire, tout devient plus joli\nT'es la reine de mon cœur, ma meilleure amie\nRien\n'est plus fort que ce lien infini\n\n[Chorus]\nHappy birthday, ma sœur adorée\nQue la vie te couvre de bonheur doré\nT'es ma force, mon étoile, ma fierté\nAvec toi, le monde est transformé\n\n[Verse 2]\nSi jamais l'orage venait à gronder\nJe serai l'épaule sur laquelle peux t'appuyer\nOn fera ensemble les rêves d'or\nS'écouter, rien ne peut briser ce lien sacré\n\n[Pre-Chorus]\nAvec toi, tout devient si léger\nMa vie prend un nouvel alluré\nPour fêter ton jour, je t'écris ces mots\nÀ toi, ma sœur, la reine de tous mes trésors\n\n[Chorus]\nHappy birthday, ma sœur adorée\nQue la vie te couvre de bonheur doré\nT'es ma force, mon étoile, ma fierté\nAvec toi, le monde est transformé\n\n[Instrumental Bridge]\n[Acoustic guitar melody with light percussion]\n\n[Outro]\n[Acoustic guitar melody fades out]"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "short",
+  "seed": 11,
+  "seconds": 34,
+  "hits": [],
+  "lines": 4,
+  "unique": 4,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nAmar mon bojhe na\nKeno bujhe bedona\nBhalobashi ja more\nKeno kori chholona\n\n[Instrumental Break - Acoustic Guitar & Synth Pads]\n\n[Outro - Fade Out]"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "short",
+  "seed": 22,
+  "seconds": 55,
+  "hits": [],
+  "lines": 16,
+  "unique": 7,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nTumi amar, ni tomar naam\nBhalobasi ami, tomar chaya\nMoner majhe eke poth\nAmi jabo tomar shathe\n\n[Chorus]\nTumi amar, ni tomar naam\nBhalobasi ami, tomar chaya\nMoner majhe eke poth\nAmi jabo tomar shathe\n\n[Instrumental Break - Acoustic Guitar & Synth Flute]\n\n[Verse 2]\nTumi amar, tumi tomar naam\nBhalobasi ami, tomar chaya\nMoner majhe, keu to poth\nAmi jabo tomar shathe\n\n[Outro - Vocal Ad-libs & Guitar]\n(Na na na na na)\n(Na na na na na)\n(Na na na na na)\n(Na na na na na)\n[Fade out]"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "app-long",
+  "seed": 11,
+  "seconds": 92,
+  "hits": [],
+  "lines": 29,
+  "unique": 13,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nAmra jani e rongin shob, shob e to\nE rongin shob e bhalobasha othe bheshe\nHoye jete\n\n[Chorus]\nTara lele lele lele lele lele lele\nTara lele lele lele lele lele lele\n\n[Verse 2]\nKeno khushi ronger hashi\nRaat e jome raat e bhashi\nKeno khushi ronger hashi\nRaat e jome raat e bhashi\n\n[Pre-Chorus]\nBhalobashar rongin othe bheshe\nBhalobashar rongin othe bheshe\n\n[Chorus]\nTara lele lele lele lele lele lele\nTara lele lele lele lele lele lele\n\n[Bridge]\nRonger khela, adha thake\nHridoy jure, shorote\nRonger khela, adha thake\nHridoy jure, shorote\n\n[Pre-Chorus]\nBhalobashar rongin othe bheshe\nBhalobashar rongin othe bheshe\n\n[Chorus]\nTara lele lele lele lele lele lele\nTara lele lele lele lele lele lele\n\n[Post-Chorus]\n[Vocal ad-libs]\n(Tara lele lele lele lele lele lele)\n(Tara lele lele lele lele lele lele)\n\n[Outro]\nAmra hole adharer pothe bheshe\n[Scatting vocals]\n(Ohh ohh ohh)\n(Ahhhhh)\n(Ohh ohh ohh)\n(Ahhhhh)\nAmra hole adharer pothe bheshe\n[Song ends]"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "app-long",
+  "seed": 22,
+  "seconds": 28,
+  "hits": [],
+  "lines": 4,
+  "unique": 4,
+  "lyrics": "[Verse 1]\nEktu bhalobasho na\nMoner o gopon ghore\nJotne agle raat\nJalabo raat"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "topic-first",
+  "seed": 11,
+  "seconds": 36,
+  "hits": [],
+  "lines": 4,
+  "unique": 2,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nEmoni ekbar kahani pori\nShokolu dhumkari to shomoy ekore\nEmoni ekbar kahani pori\nShokolu dhumkari to shomoy ekore\n\n[Instrumental Break - Acoustic Guitar]\n\n[Outro]"
+ },
+ {
+  "model": "4B",
+  "topic": "dhaka-rain",
+  "query": "topic-first",
+  "seed": 22,
+  "seconds": 62,
+  "hits": [],
+  "lines": 20,
+  "unique": 20,
+  "lyrics": "[Intro - Acoustic Guitar]\n\n[Verse 1]\nTomar chokhe hamiye gelam\nAlga hothar ei hridoye\nTomar hashi chowa e dil ki\nTumi jhakha e nasha laage\n\n[Pre-Chorus]\nTumi jokhe cheyeo dekhe\nMon je uray na\nTumi chara eka lage\nShob kichui oshno\nTumi jodi chole jao\nShob kichui shesh hoye jabe\nTomar preme nijer kori\nAar kichu chaibo na\n\n[Chorus]\nTumi achho, tai baache\nTumi chara mon je baache\nEi hridoye tomar chobi\nTumi churey gaane raagi\n\n[Post-Chorus]\nTumi akash, ami tara\nTomar aalo tei amar chowa\nTumi jodi thako pashe\nShob badha pur pabo gaa\n\n[Guitar Solo]\n\n[Outro - Acoustic Guitar]"
+ }
+]
