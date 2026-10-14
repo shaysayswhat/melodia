@@ -3,6 +3,7 @@ name: Songwriter experiment
 on:
   push:
     branches: [exp]
+    paths: ["ci/lyrics_experiment.py"]
 
 permissions:
   contents: write
