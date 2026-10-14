@@ -215,7 +215,8 @@ class GenerationService : Service() {
                 val written = Songwriter.write(resolved.client, song.request, voice, lmModel, onJob = { remoteJob = it }) { attempt, of ->
                     stage(if (attempt == 1) "Writing lyrics" else "Writing lyrics (try $attempt of $of)")
                 }
-                built = PromptBuilder.withLyrics(built, written.lyrics, PromptBuilder.lyricsLanguage(song.request), written.plan)
+                val fitted = PromptBuilder.fitLyrics(written.lyrics, song.request.durationSec)
+                built = PromptBuilder.withLyrics(built, fitted, PromptBuilder.lyricsLanguage(song.request), written.plan)
             }
             val wantsLm = when (resolved.kind) {
                 EngineKind.PC -> settings.pcSongwriter

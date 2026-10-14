@@ -109,7 +109,8 @@ data class AppSettings(
     val engineMode: EngineMode = EngineMode.AUTO,
     val pcUrl: String = "",
     val termuxPort: Int = 8085,
-    val phoneSongwriter: Boolean = false,
+    /** The songwriter plans the song before singing; tests showed the singer then follows the lyrics far better. */
+    val phoneSongwriter: Boolean = true,
     val pcSongwriter: Boolean = true,
     val refineStyle: Boolean = false,
     val mp3Bitrate: Int = 192,
@@ -122,4 +123,6 @@ data class AppSettings(
     val pcDitModel: String = "",
     val pcLmModel: String = "",
     val welcomeSeen: Boolean = false,
+    /** Bumped when a new default must replace a stored value; see SettingsRepository.migrate. */
+    val settingsVersion: Int = 0,
 )

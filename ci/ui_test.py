@@ -369,6 +369,7 @@ def main():
     # 7. "Write for me": the songwriter replaces the typed lyrics.
     tap("Create", exact=True, which="lowest")
     time.sleep(1.5)
+    scroll_top()
     if tap("Write for me", exact=True, scroll=True):
         start = time.time()
         outcome = "timeout"

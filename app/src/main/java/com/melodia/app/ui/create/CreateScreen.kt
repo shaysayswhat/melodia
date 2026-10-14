@@ -348,6 +348,8 @@ private fun LyricsCard(draft: SongRequest, vm: CreateViewModel, busy: Boolean) {
                 }
             }
             if (syllableWarning != null) Hint(syllableWarning, color = MelodiaColors.Amber)
+            val lengthWarning = remember(draft.lyrics, draft.durationSec) { tooManyLinesWarning(draft.lyrics, draft.durationSec) }
+            if (lengthWarning != null) Hint(lengthWarning, color = MelodiaColors.Amber)
             Hint("Leave lyrics empty to let the Songwriter brain write them. Put [Verse], [Chorus] tags on their own lines.")
         }
     }
@@ -356,6 +358,15 @@ private fun LyricsCard(draft: SongRequest, vm: CreateViewModel, busy: Boolean) {
 @Composable
 private fun CounterText(text: String, modifier: Modifier) {
     Text(text, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = modifier)
+}
+
+private fun tooManyLinesWarning(lyrics: String, durationSec: Int): String? {
+    val lines = PromptBuilder.sungLines(lyrics)
+    val fit = PromptBuilder.linesThatFit(durationSec)
+    if (lines <= fit * 5 / 4) return null
+    val length = "${durationSec / 60}:${(durationSec % 60).toString().padStart(2, '0')}"
+    return "$lines lines is a lot for a $length song (about $fit fit). The singer may rush or skip lines: " +
+        "make the song longer in Song settings, or shorten the lyrics. A 30-second preview sings only the start."
 }
 
 private fun longLineWarning(lyrics: String): String? {
