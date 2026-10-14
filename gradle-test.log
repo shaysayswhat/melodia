@@ -1,0 +1,183 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:buildKotlinToolingMetadata
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:generateReleaseBuildConfig FROM-CACHE
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :app:checkReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources FROM-CACHE
+> Task :app:mergeReleaseResources FROM-CACHE
+> Task :app:packageReleaseResources FROM-CACHE
+> Task :app:parseReleaseLocalResources FROM-CACHE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :app:processReleaseMainManifest FROM-CACHE
+> Task :app:processReleaseManifest FROM-CACHE
+> Task :app:processReleaseManifestForPackage FROM-CACHE
+> Task :app:processReleaseResources FROM-CACHE
+> Task :app:compileReleaseKotlin FROM-CACHE
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :app:compileReleaseJavaWithJavac FROM-CACHE
+> Task :app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileReleaseUnitTest FROM-CACHE
+> Task :app:processReleaseJavaRes
+> Task :app:bundleReleaseClassesToRuntimeJar
+> Task :app:bundleReleaseClassesToCompileJar
+> Task :app:compileReleaseUnitTestKotlin FROM-CACHE
+> Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processReleaseUnitTestJavaRes
+
+> Task :app:testReleaseUnitTest
+
+EngineIntegrationTest > songwriterThenSinger STANDARD_OUT
+    lm request: {"caption":"acoustic, nostalgic, male tenor vocal, bright, clear tone, powerful vocals, hopeful emotional delivery, light vibrato, backing vocal harmonies, western pop singing style, polished studio vocal production","lyrics":"[Verse 1]\nRain on the window\nI still remember you\n\n[Verse 2]\nEvery little raindrop\nSings a song of you","duration":15.0,"vocal_language":"en","seed":7,"synth_batch_size":1,"lm_batch_size":1,"output_format":"mp3","mp3_bitrate":192,"use_cot_caption":false,"lm_mode":"generate"}
+    songwriter took 10s
+    songwriter plan keys: [caption, seed, lyrics, audio_codes, bpm, duration, keyscale, timesignature, vocal_language, lm_seed, use_cot_caption, solver, lm_mode, output_format, task_type, mp3_bitrate]
+    bpm=111 key="G major" duration=15.0
+    singer (lm plan) took 54s
+    songwriter-v1.mp3: 342144 bytes
+
+EngineIntegrationTest > songwriterThenSinger PASSED
+
+EngineIntegrationTest > serverReportsModels STANDARD_OUT
+    props: Props(dit=[acestep-v15-turbo-Q4_K_M.gguf], lm=[acestep-5Hz-lm-0.6B-Q8_0.gguf, acestep-5Hz-lm-1.7B-Q8_0.gguf], adapters=[], version=4c75d8b (2026-10-14))
+
+EngineIntegrationTest > serverReportsModels PASSED
+
+EngineIntegrationTest > customLyricsTwoVersions STANDARD_OUT
+    synth request: {"caption":"pop, happy, female alto vocal, warm, breathy tone, soft intimate delivery, tender emotional delivery, light vibrato, close-mic dry vocal, soft verses, emotional chorus","lyrics":"[Verse 1 - soft]\nMorning light upon the river\nCarry me home tonight\n\n[Verse 2 - soft]\nSing it loud and sing it free\nYou are the song in me","duration":15.0,"vocal_language":"en","seed":42,"synth_batch_size":2,"lm_batch_size":1,"output_format":"mp3","mp3_bitrate":128,"use_cot_caption":false,"lm_mode":"generate"}
+    singer (two versions) took 109s
+    custom-v1.mp3: 240768 bytes
+    custom-v2.mp3: 240768 bytes
+
+EngineIntegrationTest > customLyricsTwoVersions PASSED
+
+EngineIntegrationTest > simpleModeSong STANDARD_OUT
+    simple-mode request: {"caption":"A cheerful acoustic song about a sunny morning in the village, male tenor vocal, bright, clear tone, powerful vocals, hopeful emotional delivery, light vibrato, backing vocal harmonies, western pop singing style, polished studio vocal production","lyrics":"[Intro - Ukulele]\n\n[Verse 1]\nShub dub, let's celebrate\nWith Shub dub, life's great\nShub dub, with love so bright\nShub dub, let's sing tonight\n\n[Instrumental Break - Ukulele]\n\n[Verse 2]\nShub dub, a day for two\nShub dub, our love shines through\nShub dub, with every beat\nShub dub, our joy's complete","duration":30.0,"seed":11,"synth_batch_size":1,"lm_batch_size":1,"output_format":"mp3","mp3_bitrate":192,"use_cot_caption":false,"lm_mode":"generate","lm_model":"acestep-5Hz-lm-1.7B-Q8_0.gguf","vocal_language":"en","bpm":150,"keyscale":"C major","timesignature":"2"}
+    singer (simple mode) took 111s
+    simple-v1.mp3: 716544 bytes
+
+EngineIntegrationTest > simpleModeSong PASSED
+
+EngineIntegrationTest > writeLyricsForMe STANDARD_OUT
+    songwriter model: acestep-5Hz-lm-1.7B-Q8_0.gguf
+    written-en: try 1 of 3
+    written-en took 36s in 1 tries:
+    [Intro - Acoustic Guitar & Whistling]
+
+    [Verse 1]
+    I heard the ocean call my name
+    In whispers soft, yet not the same
+    The shorelines turned and drift away
+    In your eyes, I start to sway
+
+    [Chorus]
+    Waves of you come rushing through
+    Drowning me in shades of blue
+    Hold me close and don't let go
+    In your love's electric glow
+
+    [Instrumental - Acoustic Guitar & Whistling]
+
+    [Verse 2]
+    Footprints vanish in the sand
+    You and me just hand in hand
+    Stars above begin to dance
+    Magic sparks with every glance
+
+    [Chorus]
+    Waves of you come rushing through
+    Drowning me in shades of blue
+    Hold me close and don't let go
+    In your love's electric glow
+
+    [Bridge]
+    Wind and tide, they spin us 'round
+    In your arms, I'm lost and found
+    Echoes of our hearts's sweet sound
+    In this storm, we are unbound
+
+    [Chorus]
+    Waves of you come rushing through
+    Drowning me in shades of blue
+    Hold me close and don't let go
+    In your love's electric glow
+
+    [Outro - Acoustic Guitar & Whistling]
+    [Final guitar strum fades out]
+
+    written-bn: try 1 of 3
+    written-bn took 37s in 1 tries:
+    [Intro]
+    [Acoustic guitar riff and shaker]
+
+    [Verse 1]
+    Fagun haway haway
+    Chole belay
+    Tomar ndali pal tole
+    Buker pakha mele
+    Mukhe dukhe
+    Utashe jole
+
+    [Pre-Chorus]
+    Purbo dhara dhare
+    Purbo rakha pore
+    Moner kotha mala khani
+    Dhuke dhuke kete jaye
+    Rupar upi han
+    Patar rup e
+
+    [Chorus]
+    Fagun haway haway
+    Fagun haway haway
+
+    [Instrumental Break]
+    [Acoustic guitar solo with shaker]
+
+    [Verse 2]
+    Bokul pakhi tori
+    Nupur dhole doli
+    Rupali jalalay
+    Aka chokhe chahi
+    Dekhi akhi
+    Nirab niralaay
+
+    [Pre-Chorus]
+    Bujhe na shi kahay
+    Kuje na shi kahay
+    Praaner kotha bheshe bheshe
+    Ghese uthe
+    Dolat dolat dolat doli
+
+    [Chorus]
+    Fagun haway haway
+    Fagun haway haway
+    Fagun haway haway
+
+    [Outro]
+    [Acoustic guitar solo with shaker]
+    [Music fades out]
+
+
+EngineIntegrationTest > writeLyricsForMe PASSED
+
+EngineIntegrationTest > voiceReferenceRecording STANDARD_OUT
+    singer (reference) took 60s
+    reference-v1.mp3: 192000 bytes
+
+EngineIntegrationTest > voiceReferenceRecording PASSED
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1792021721929.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/melodia/melodia/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 8m 6s
+25 actionable tasks: 9 executed, 16 from cache

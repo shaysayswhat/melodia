@@ -1,0 +1,630 @@
+[Server] Scanning models in /home/runner/work/_temp/ace/models
+[Registry] Qwen3-Embedding-0.6B-Q8_0.gguf -> Text-Enc
+[Registry] acestep-5Hz-lm-0.6B-Q8_0.gguf -> LM
+[Registry] acestep-5Hz-lm-1.7B-Q8_0.gguf -> LM
+[Registry] acestep-v15-turbo-Q4_K_M.gguf -> DiT
+[Registry] vae-BF16.gguf -> VAE
+[Server] Scanning adapters in /home/runner/work/_temp/ace/adapters
+[Store] Created (policy=STRICT)
+[Server] acestep.cpp 4c75d8b (2026-10-14)
+[Server] Listening on 127.0.0.1:8085
+[Server] Pipelines: /lm /synth /understand
+[Server] Models: 2 LM, 1 Text-Enc, 1 DiT, 1 VAE, 0 Adapter
+[Server] Job 50ee174fabd6f1ab created (LM, mode=0, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-0.6B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=1024, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 671.9 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 248 ms
+[LM] Partial head: 65559 rows (151645..217204), 68.0 MB
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[FSM] Prefix trees: bpm=301, dur=601, key=106, lang=53, tsig=5 nodes
+[LM-Generate] mode=fill lyrics=keep metas=fill gaps | 106 tokens, CFG: 2.00, N=1
+[LM-Phase1] Prefill 1578ms, 106 tokens, N=1, CFG=2.00, prompts=shared
+[LM-Phase1] Decode 1696ms
+[LM-Phase1 Batch0] seed=193425959, 29 tokens
+[fill Batch0] seed=193425959:
+bpm:111
+duration:15
+keyscale:G major
+language:en
+timesignature:2
+</think>
+[LM-Phase2] N=1, CoT[0]:
+bpm: 111
+caption: acoustic, nostalgic, male tenor vocal, bright, clear tone, powerful vocals,
+  hopeful emotional delivery, light vibrato, backing vocal harmonies, western pop
+  singing style, polished studio vocal production
+duration: 15
+keyscale: G major
+language: en
+timesignature: 2
+[LM-Phase2] max_tokens: 175, CFG: 2.00, N=1, prompts=shared
+[LM-Phase2] Prefill 2032ms (shared, 1 cond + 1 uncond)
+[LM-Phase2] Step 50, 1 active, 51 total codes, 19.0 tok/s
+[LM-Phase2] Decode 3675ms
+[LM-Phase2 Batch0] seed=193425959, 71 codes
+[Ace-LM] Total 8992ms | N=1 seed=7
+[Store] Unload LM (671.9 MB)
+[Server] Job 50ee174fabd6f1ab done (LM, 1 results)
+[Server] Job 94a8083a711d4e3c created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Resolve-Params] max audio codes across batch: 71 (14.2s @ 5Hz)
+[Resolve-T] T=356, S=178
+[Resolve-T] seed=7, steps=8, guidance=1.0, shift=3.0, duration=15.0s
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 134 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 54 ms
+[CondEnc] Lyric sliding mask: 42x42, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=42 + timbre=1 + text=95 = 138 tokens
+[Encode-Text Batch0] 95+42 tokens -> enc_S=138, 100.3 ms
+[Store] Unload CondEnc (352.5 MB)
+[Load] Detokenizer backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[WeightCtx] Loaded 30 tensors, 64.7 MB into backend
+[Load] Detokenizer: FSQ(6->2048) + 2L encoder(S=5, 2048->64)
+[Store] Load FSQ-Detok: 11 ms
+[Context] Decoded: 71 codes -> 355 frames (14.2s @ 25Hz)
+[Build-Context Batch0] Detokenizer: 561.4 ms, 71 codes
+[Store] Unload FSQ-Detok (64.7 MB)
+[Init-Noise Batch0] Philox noise seed=7, [356, 64] solver=euler
+[Init-Noise] Starting: T=356, S=178, enc_S=138, steps=8, batch=1 (cover)
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 137 ms
+[DiT] Batch N=1, T=356, S=178, enc_S=138
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 11194.2 ms (11194.2 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 834 ms
+[VAE] Graph: 543 nodes, T_latent=356
+[VAE] Decoded: T_latent=356 -> T_audio=683520 (14.24s @ 48kHz)
+[VAE-Decode Batch0] Decode: 38186.7 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 14.2s @ 192 kbps, 48000 Hz stereo
+[MP3] 342144 bytes (8.0:1), 641 ms (22.22x realtime), 4 threads
+[Server] Job 94a8083a711d4e3c done (1 tracks)
+[Server] Job bb9369ad317aece2 created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Server] Batch: 2 track(s) from 1 request(s)
+[Resolve-T] T=376, S=188
+[Resolve-T] seed=42, steps=8, guidance=1.0, shift=3.0, duration=15.0s
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 139 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 54 ms
+[CondEnc] Lyric sliding mask: 51x51, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=51 + timbre=1 + text=91 = 143 tokens
+[Encode-Text Batch0] 91+51 tokens -> enc_S=143, 124.6 ms
+[CondEnc] Lyric sliding mask: 51x51, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=51 + timbre=1 + text=91 = 143 tokens
+[Encode-Text Batch1] 91+51 tokens -> enc_S=143, 123.7 ms
+[Store] Unload CondEnc (352.5 MB)
+[Encode-Text] Per-batch encoding done: max_enc_S=143
+[Init-Noise Batch0] Philox noise seed=42, [376, 64] solver=euler
+[Init-Noise Batch1] Philox noise seed=43, [376, 64] solver=euler
+[Init-Noise] Starting: T=376, S=188, enc_S=143, steps=8, batch=2
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 136 ms
+[DiT] Batch N=2, T=376, S=188, enc_S=143
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT] Batch0 output: min=-5.6849 max=4.2679 mean=-0.131756 nan=0
+[DiT] Batch1 output: min=-5.7457 max=3.6701 mean=-0.143680 nan=0
+[DiT-Generate] Total: 23454.1 ms (11727.0 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 850 ms
+[VAE] Graph: 543 nodes, T_latent=376
+[VAE] Decoded: T_latent=376 -> T_audio=721920 (15.04s @ 48kHz)
+[VAE-Decode Batch0] Decode: 40436.0 ms
+[VAE] Decoded: T_latent=376 -> T_audio=721920 (15.04s @ 48kHz)
+[VAE-Decode Batch1] Decode: 40277.3 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 15.0s @ 128 kbps, 48000 Hz stereo
+[MP3] 240768 bytes (12.0:1), 813 ms (18.49x realtime), 4 threads
+[MP3] Encoding 15.0s @ 128 kbps, 48000 Hz stereo
+[MP3] 240768 bytes (12.0:1), 692 ms (21.74x realtime), 4 threads
+[Server] Job bb9369ad317aece2 done (2 tracks)
+[Server] Job ddc064e0343fed86 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 404 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[BPE] Loaded from GGUF: 151643 vocab, 151387 merges
+[FSM] Prefix trees: bpm=301, dur=601, key=106, lang=53, tsig=5 nodes
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 67 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1859ms, 67 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.9 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.4 tok/s
+[LM-Phase1] Decode 22893ms
+[LM-Phase1 Batch0] seed=2134132916, 306 tokens
+[inspire Batch0] seed=2134132916:
+bpm:150
+caption: A cheerful and lighthearted acoustic piece featuring a friendly male vocal
+  performance over a jaunty ukulele strumming a simple chord progression. A clean,
+  round bass guitar provides a steady foundation alongside a light, brushed drum pattern.
+  The arrangement includes a brief, melodic trombone solo that adds a playful character.
+  The overall mood is upbeat and celebratory, reminiscent of a children's song or
+  a simple, feel-good acoustic pop tune.
+duration: 53
+keyscale:C major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Ukulele]
+
+[Verse 1]
+Shub dub, let's celebrate
+With Shub dub, life's great
+Shub dub, with love so bright
+Shub dub, let's sing tonight
+
+[Instrumental Break - Ukulele]
+
+[Verse 2]
+Shub dub, a day for two
+Shub dub, our love shines through
+Shub dub, with every beat
+Shub dub, our joy's complete
+
+[Instrumental Break - Ukulele]
+
+[Bridge]
+Shub dub, with all our might
+Celebrate this endless night
+
+[Chorus]
+Shub dub, let's celebrate
+With Shub dub, life's great
+Shub dub, with love so bright
+Shub dub, let's sing tonight
+
+[Outro - Ukulele]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 24756ms | N=1 seed=2627710990
+[Store] Unload LM (1879.2 MB)
+[Server] Job ddc064e0343fed86 done (LM, 1 results)
+[Server] Job d5958a60645cf2aa created (LM, mode=0, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 401 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Phase2] N=1, CoT[0]:
+bpm: 150
+caption: A cheerful acoustic song about a sunny morning in the village, male tenor
+  vocal, bright, clear tone, powerful vocals, hopeful emotional delivery, light vibrato,
+  backing vocal harmonies, western pop singing style, polished studio vocal production
+duration: 30
+keyscale: C major
+language: en
+timesignature: 2
+[LM-Phase2] max_tokens: 250, CFG: 2.00, N=1, prompts=shared
+[LM-Phase2] Prefill 8320ms (shared, 1 cond + 1 uncond)
+[LM-Phase2] Step 50, 1 active, 51 total codes, 8.3 tok/s
+[LM-Phase2] Step 100, 1 active, 101 total codes, 8.2 tok/s
+[LM-Phase2] Decode 18045ms
+[LM-Phase2 Batch0] seed=1426958760, 149 codes
+[Ace-LM] Total 26371ms | N=1 seed=11
+[Store] Unload LM (1879.2 MB)
+[Server] Job d5958a60645cf2aa done (LM, 1 results)
+[Server] Job 166ab6d5c19af5c7 created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[Resolve-Params] max audio codes across batch: 149 (29.8s @ 5Hz)
+[Resolve-T] T=746, S=373
+[Resolve-T] seed=11, steps=8, guidance=1.0, shift=3.0, duration=30.0s
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 131 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 53 ms
+[CondEnc] Lyric sliding mask: 106x106, window=128
+[CondEnc] Timbre sliding mask: 1x1, window=128
+[Encode] Packed: lyric=106 + timbre=1 + text=102 = 209 tokens
+[Encode-Text Batch0] 102+106 tokens -> enc_S=209, 208.1 ms
+[Store] Unload CondEnc (352.5 MB)
+[Load] Detokenizer backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[WeightCtx] Loaded 30 tensors, 64.7 MB into backend
+[Load] Detokenizer: FSQ(6->2048) + 2L encoder(S=5, 2048->64)
+[Store] Load FSQ-Detok: 11 ms
+[Context] Decoded: 149 codes -> 745 frames (29.8s @ 25Hz)
+[Build-Context Batch0] Detokenizer: 1164.0 ms, 149 codes
+[Store] Unload FSQ-Detok (64.7 MB)
+[Init-Noise Batch0] Philox noise seed=11, [746, 64] solver=euler
+[Init-Noise] Starting: T=746, S=373, enc_S=209, steps=8, batch=1 (cover)
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 136 ms
+[DiT] Batch N=1, T=746, S=373, enc_S=209
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 25130.1 ms (25130.1 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 790 ms
+[VAE] Graph: 543 nodes, T_latent=746
+[VAE] Decoded: T_latent=746 -> T_audio=1432320 (29.84s @ 48kHz)
+[VAE-Decode Batch0] Decode: 80299.8 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 29.8s @ 192 kbps, 48000 Hz stereo
+[MP3] 716544 bytes (8.0:1), 1348 ms (22.13x realtime), 4 threads
+[Server] Job 166ab6d5c19af5c7 done (1 tracks)
+[Server] Job 87936003f4932788 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 402 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 71 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 1963ms, 71 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 14.3 tok/s
+[LM-Phase1] Step 200, 1 active, 14.1 tok/s
+[LM-Phase1] Step 300, 1 active, 13.6 tok/s
+[LM-Phase1] Step 400, 1 active, 13.3 tok/s
+[LM-Phase1] Decode 32578ms
+[LM-Phase1 Batch0] seed=246230930, 432 tokens
+[inspire Batch0] seed=246230930:
+bpm:150
+caption: A bright, clean acoustic guitar opens with an intricate fingerpicked melody,
+  accompanied by a whistled tune that mirrors the guitar line. A clear, emotive female
+  vocal enters, singing in a gentle, narrative style. The song builds into an anthemic,
+  powerful chorus where the vocals become more forceful and are layered with soaring
+  harmonies over a steady, driving drum beat and a solid bassline. The arrangement
+  shifts between these gentle verses and explosive choruses, creating a dynamic emotional
+  journey. The track concludes by returning to the initial acoustic guitar and whistling
+  motif, fading out peacefully.
+duration: 155
+keyscale:A major
+language:en
+timesignature:2
+</think>
+
+# Lyric
+[Intro - Acoustic Guitar & Whistling]
+
+[Verse 1]
+I heard the ocean call my name
+In whispers soft, yet not the same
+The shorelines turned and drift away
+In your eyes, I start to sway
+
+[Chorus]
+Waves of you come rushing through
+Drowning me in shades of blue
+Hold me close and don't let go
+In your love's electric glow
+
+[Instrumental - Acoustic Guitar & Whistling]
+
+[Verse 2]
+Footprints vanish in the sand
+You and me just hand in hand
+Stars above begin to dance
+Magic sparks with every glance
+
+[Chorus]
+Waves of you come rushing through
+Drowning me in shades of blue
+Hold me close and don't let go
+In your love's electric glow
+
+[Bridge]
+Wind and tide, they spin us 'round
+In your arms, I'm lost and found
+Echoes of our hearts's sweet sound
+In this storm, we are unbound
+
+[Chorus]
+Waves of you come rushing through
+Drowning me in shades of blue
+Hold me close and don't let go
+In your love's electric glow
+
+[Outro - Acoustic Guitar & Whistling]
+[Final guitar strum fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 34544ms | N=1 seed=3747137305
+[Store] Unload LM (1879.2 MB)
+[Server] Job 87936003f4932788 done (LM, 1 results)
+[Server] Job 713b98da70b1a8f2 created (LM, mode=1, N=1)
+[Ace-LM] Ready: path=/home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf, max_seq=8192, max_batch=1, fa=yes, fsm=yes
+[Load] LM backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-5Hz-lm-1.7B-Q8_0.gguf: 310 tensors, data at offset 5339520
+[LM-Config] 28L, H=2048, V=217204, Nh=16, Nkv=8, D=128, tied=1
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 1879.2 MB into backend
+[LM-KV] Allocated 2 sets x 28 layers (4D batched), 1792.0 MB
+[Store] Load LM: 406 ms
+[LM] Partial head: 65559 rows (151645..217204), 136.0 MB
+[LM-Generate] mode=inspire lyrics=generate metas=fill gaps | 72 tokens, CFG: 1.00, N=1
+[LM-Phase1] Prefill 2002ms, 72 tokens, N=1, CFG=1.00, prompts=shared
+[LM-Phase1] Step 100, 1 active, 13.8 tok/s
+[LM-Phase1] Step 200, 1 active, 13.8 tok/s
+[LM-Phase1] Step 300, 1 active, 13.3 tok/s
+[LM-Phase1] Step 400, 1 active, 13.1 tok/s
+[LM-Phase1] Decode 33946ms
+[LM-Phase1 Batch0] seed=623425265, 442 tokens
+[inspire Batch0] seed=623425265:
+bpm:125
+caption: An intimate and rhythmic acoustic piece driven by a percussive acoustic guitar
+  that provides both the chordal harmony and a beat by striking the body. A clear,
+  melodic female vocal delivers a catchy, traditional-sounding melody in Bengali.
+  The arrangement is enriched by a bright, mandolin-like instrument that plays counter-melodies
+  and takes the lead during lively instrumental breaks. The production is clean and
+  direct, emphasizing the raw, organic feel of the performance, creating a warm and
+  inviting atmosphere.
+duration: 102
+keyscale:A minor
+language:bn
+timesignature:3
+</think>
+
+# Lyric
+[Intro]
+[Acoustic guitar riff and shaker]
+
+[Verse 1]
+Fagun haway haway
+Chole belay
+Tomar ndali pal tole
+Buker pakha mele
+Mukhe dukhe
+Utashe jole
+
+[Pre-Chorus]
+Purbo dhara dhare
+Purbo rakha pore
+Moner kotha mala khani
+Dhuke dhuke kete jaye
+Rupar upi han
+Patar rup e
+
+[Chorus]
+Fagun haway haway
+Fagun haway haway
+
+[Instrumental Break]
+[Acoustic guitar solo with shaker]
+
+[Verse 2]
+Bokul pakhi tori
+Nupur dhole doli
+Rupali jalalay
+Aka chokhe chahi
+Dekhi akhi
+Nirab niralaay
+
+[Pre-Chorus]
+Bujhe na shi kahay
+Kuje na shi kahay
+Praaner kotha bheshe bheshe
+Ghese uthe
+Dolat dolat dolat doli
+
+[Chorus]
+Fagun haway haway
+Fagun haway haway
+Fagun haway haway
+
+[Outro]
+[Acoustic guitar solo with shaker]
+[Music fades out]
+
+[LM-Generate] Inspire mode, no audio code generation
+[Ace-LM] Total 35952ms | N=1 seed=1580740863
+[Store] Unload LM (1879.2 MB)
+[Server] Job 713b98da70b1a8f2 done (LM, 1 results)
+[WAV] Read buffer: 264600 samples, 44100 Hz, 1 ch, 16 bit
+[Audio-Resample] 44100 Hz -> 48000 Hz, 264600 samples...
+[Audio-Resample] Done: 264600 -> 288000 samples
+[Server] Reference audio: 6.00s @ 48kHz
+[Server] Job 1be77a3e164ca48e created (1 requests)
+[Server] Loading synth: DiT=acestep-v15-turbo-Q4_K_M.gguf VAE=vae-BF16.gguf
+[Synth-Load] Ready: turbo=yes, fa=yes, batch_cfg=yes
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE-Enc backend: CPU (CPU threads: 2)
+[VAE-Enc] Backend: CPU, Weight buffer: 160.8 MB
+[VAE-Enc] Loaded: 5 blocks, downsample=1920x, F32 activations
+[Store] Load VAE-Enc: 724 ms
+[VAE-Enc] Graph: 565 nodes, T_audio=288000
+[VAE-Enc] Encode: T_audio=288000 -> T_latent=150 (6.00s @ 48kHz)
+[Encode-Timbre] ref_audio: 150 frames (6.0s), 15551.6 ms
+[Store] Unload VAE-Enc (160.8 MB)
+[Resolve-T] T=300, S=150
+[Resolve-T] seed=3, steps=8, guidance=1.0, shift=3.0, duration=12.0s
+[Load] TextEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/Qwen3-Embedding-0.6B-Q8_0.gguf: 310 tensors, data at offset 5337664
+[Load] TextEncoder: 28L, H=1024, Nh=16/8
+[Qwen3] Attn: Q+K+V fused
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 310 tensors, 742.7 MB into backend
+[Store] Load TextEnc: 177 ms
+[Store] Unload TextEnc (742.7 MB)
+[Load] CondEncoder backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[Load] LyricEncoder: 8L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[Load] TimbreEncoder: 4L
+[Qwen3] Attn: Q+K fused, V separate
+[Qwen3] MLP: gate+up fused
+[WeightCtx] Loaded 140 tensors, 352.5 MB into backend
+[Load] CondEncoder: lyric(8L), timbre(4L), text_proj, null_cond
+[Store] Load CondEnc: 55 ms
+[CondEnc] Lyric sliding mask: 26x26, window=128
+[CondEnc] Timbre sliding mask: 150x150, window=128
+[Encode] Packed: lyric=26 + timbre=1 + text=56 = 83 tokens
+[Encode-Text Batch0] 56+26 tokens -> enc_S=83, 210.7 ms
+[Store] Unload CondEnc (352.5 MB)
+[Init-Noise Batch0] Philox noise seed=3, [300, 64] solver=euler
+[Init-Noise] Starting: T=300, S=150, enc_S=83, steps=8, batch=1
+[Load] DiT backend: CPU (CPU threads: 2)
+[GGUF] /home/runner/work/_temp/ace/models/acestep-v15-turbo-Q4_K_M.gguf: 678 tensors, data at offset 56864
+[DiT] Self-attn: Q+K fused, V separate
+[DiT] Cross-attn: all separate
+[DiT] MLP: gate+up fused
+[Load] null_condition_emb found (CFG available)
+[WeightCtx] Loaded 478 tensors, 895.6 MB into backend
+[Load] DiT: 24 layers, H=2048, Nh=16/8, D=128
+[Store] Load DiT: 137 ms
+[DiT] Batch N=1, T=300, S=150, enc_S=83
+[DiT] Graph: 2063 nodes
+[DiT] Solver: ODE Euler (1 NFE/step, order 1)
+[DiT] Step 1/8 t=1.000
+[DiT] Step 2/8 t=0.955
+[DiT] Step 3/8 t=0.900
+[DiT] Step 4/8 t=0.833
+[DiT] Step 5/8 t=0.750
+[DiT] Step 6/8 t=0.643
+[DiT] Step 7/8 t=0.500
+[DiT] Step 8/8 t=0.300
+[DiT-Generate] Total: 8680.2 ms (8680.2 ms/sample)
+[Store] Unload DiT (895.6 MB)
+[GGUF] /home/runner/work/_temp/ace/models/vae-BF16.gguf: 365 tensors, data at offset 30048
+[Load] VAE backend: CPU (CPU threads: 2)
+[VAE] Backend: CPU, Weight buffer: 161.1 MB
+[VAE] Loaded: 5 blocks, upsample=1920x, F32 activations
+[Store] Load VAE-Dec: 789 ms
+[VAE] Graph: 543 nodes, T_latent=300
+[VAE] Decoded: T_latent=300 -> T_audio=576000 (12.00s @ 48kHz)
+[VAE-Decode Batch0] Decode: 32181.1 ms
+[Store] Unload VAE-Dec (161.1 MB)
+[MP3] Encoding 12.0s @ 128 kbps, 48000 Hz stereo
+[MP3] 192000 bytes (12.0:1), 774 ms (15.51x realtime), 4 threads
+[Server] Job 1be77a3e164ca48e done (1 tracks)

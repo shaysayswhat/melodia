@@ -1,0 +1,44 @@
+# Audio check
+
+## custom-v1.mp3
+- length: 15.0 s, size 235 KB
+- loudness: mean -16.0 dB, peak -0.0 dB
+- silent parts: 25% of the song
+- recognizer language: en (0.30)
+- heard: "Ooooooooo oooooooo..."
+- lyric words recognized: 0/18
+- lyric text similarity: 0.14
+
+## custom-v2.mp3
+- length: 15.0 s, size 235 KB
+- loudness: mean -18.9 dB, peak 0.0 dB
+- silent parts: 55% of the song
+- recognizer language: en (0.25)
+- heard: "Oooooooooo"
+- lyric words recognized: 0/18
+- lyric text similarity: 0.15
+
+## reference-v1.mp3
+- length: 12.0 s, size 187 KB
+- loudness: mean -16.2 dB, peak -0.0 dB
+- silent parts: 29% of the song
+- recognizer language: en (0.63)
+- heard: "Hold on the night is young"
+
+## simple-v1.mp3
+- length: 29.9 s, size 699 KB
+- loudness: mean -14.0 dB, peak 0.0 dB
+- silent parts: 0% of the song
+- recognizer language: en (0.94)
+- heard: "Shucked up, let's celebrate We're shooked up, life's great Shucked up, with love so bright Shucked up, let's sing tonight Shucked up, a day for two Shucked up, our love shines through Shucked up, with every beat"
+- lyric words recognized: 19/26
+- lyric text similarity: 0.79
+
+## songwriter-v1.mp3
+- length: 14.3 s, size 334 KB
+- loudness: mean -19.7 dB, peak 0.0 dB
+- silent parts: 73% of the song
+- recognizer language: en (0.77)
+- heard: "You got me little ranger, since so long ago"
+- lyric words recognized: 2/15
+- lyric text similarity: 0.44
