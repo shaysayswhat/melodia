@@ -72,11 +72,13 @@ class GenerationService : Service() {
     private var currentId: String? = null
     private var currentJob: Job? = null
     private var wakeLock: PowerManager.WakeLock? = null
+    private var lastTitle = "Melodia"
+    private var lastText = "Getting ready"
 
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        startInForeground("Getting ready", "Melodia")
+        startInForeground(lastText, lastTitle)
         val id = intent?.getStringExtra(EXTRA_ID)
         when (intent?.action) {
             ACTION_ENQUEUE -> if (id != null && id != currentId && id !in pending) pending.addLast(id)
@@ -99,6 +101,8 @@ class GenerationService : Service() {
     }
 
     private fun updateNotification(title: String, text: String) {
+        lastTitle = title
+        lastText = text
         val notification = Notifications.progress(this, title, text, cancelIntent(currentId))
         runCatching { getSystemService(NotificationManager::class.java).notify(Notifications.WORK_ID, notification) }
     }
