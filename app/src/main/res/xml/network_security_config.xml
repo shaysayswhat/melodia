@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The on-phone engine and a PC on your home Wi-Fi speak plain HTTP
+  (127.0.0.1 or a 192.168.x.x address), so cleartext must be allowed.
+  Hugging Face downloads still use HTTPS.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
