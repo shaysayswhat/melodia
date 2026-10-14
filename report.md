@@ -1,0 +1,55 @@
+# Audio check
+
+## bn-dit-only.mp3
+- length: 60.0 s, size 1406 KB
+- loudness: mean -15.6 dB, peak 0.0 dB
+- silent parts: 7% of the song
+- recognizer language: sa (0.33)
+- heard: "వాల్లిందికి ఆరెల్ల్ కాల్ల్లికి. వాల్లికికికికికి."
+- lyric words recognized: 0/27
+- lyric text similarity: 0.00
+
+## bn-lm-0.6B.mp3
+- length: 59.2 s, size 1387 KB
+- loudness: mean -15.8 dB, peak 0.0 dB
+- silent parts: 3% of the song
+- recognizer language: sa (0.57)
+- heard: "Gaza, Africa Rish             ก                                                . . . . . . . . .   , the world is filled with fools who associate their passions. ǫ nō點ē nā s Buddha Pa �� kar vēlāt bhešē ĩ mō njē shu dhū tō ma e kōche Ṣhirae assurance Ṣhirae assurance Īmē gehādīn Ṣhirae assurance seva tum Ṣa chai mbhārbian vienie Ṣhirae assurance , voltaṭ"
+- lyric words recognized: 0/27
+- lyric text similarity: 0.00
+
+## bn-lm-1.7B.mp3
+- length: 59.6 s, size 1397 KB
+- loudness: mean -16.5 dB, peak 0.0 dB
+- silent parts: 0% of the song
+- recognizer language: bn (0.64)
+- heard: "crocodile డిలుకాకానిత్కితావరిలౌచపి కాకికాపానిమికాదితిటలి మానికజలతింమాలికికాదిపిడి మాంతప౿కిపికాితిలితమిటాలి."
+- lyric words recognized: 0/27
+- lyric text similarity: 0.00
+
+## en-dit-only.mp3
+- length: 60.0 s, size 1406 KB
+- loudness: mean -16.8 dB, peak 0.0 dB
+- silent parts: 9% of the song
+- recognizer language: en (0.79)
+- heard: "Morning light upon the river Carry me home tonight Every road I ever wandered Leads me back to you Sing it loud and sing it free You are the song in me Hold me close and let it be You are the song in me You are the song in me Hold me close and let it be You are the song in me Hold me close and let it be"
+- lyric words recognized: 30/42
+- lyric text similarity: 0.66
+
+## en-lm-0.6B.mp3
+- length: 60.0 s, size 1406 KB
+- loudness: mean -16.5 dB, peak 0.0 dB
+- silent parts: 0% of the song
+- recognizer language: en (0.82)
+- heard: "Every road I ever wander Leads me back Leads me back to you Sing it loud and sing it free You are the song in me Hold me close and let it be You are the song in me The rain is falling on the city in no pain Every drop is calling, calling"
+- lyric words recognized: 29/42
+- lyric text similarity: 0.80
+
+## en-lm-1.7B.mp3
+- length: 59.2 s, size 1387 KB
+- loudness: mean -15.4 dB, peak 0.0 dB
+- silent parts: 0% of the song
+- recognizer language: en (0.58)
+- heard: "Morning light upon the river, carry me home tonight Every road I ever wander leads me back to you Sing it loud and sing it free, you are the song in me Hold me close and let it be, you are the song in me You are the song in me Rain is falling on the city, softly on the window pane Every drop is calling, calling, bring me home again"
+- lyric words recognized: 41/42
+- lyric text similarity: 0.96
