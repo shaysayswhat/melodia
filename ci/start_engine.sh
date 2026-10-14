@@ -17,9 +17,10 @@ if [ ! -x "$BIN" ]; then
     git clone -q --filter=blob:none https://github.com/ServeurpersoCom/acestep.cpp.git "$WORK/src"
     git -C "$WORK/src" checkout -q "$REF"
     git -C "$WORK/src" submodule update --init --recursive --depth 1
+    # ACE_CPU_FLAGS lets a check build with the phone's exact CPU settings instead of this machine's.
     cmake -S "$WORK/src" -B "$WORK/src/build" -DCMAKE_BUILD_TYPE=Release \
-        -DGGML_NATIVE=ON -DGGML_BLAS=OFF -DGGML_CUDA=OFF -DGGML_VULKAN=OFF -DGGML_METAL=OFF \
-        -DGGML_BUILD_TESTS=OFF -DGGML_BUILD_EXAMPLES=OFF > "$WORK/cmake.log"
+        ${ACE_CPU_FLAGS:--DGGML_NATIVE=ON} -DGGML_BLAS=OFF -DGGML_CUDA=OFF -DGGML_VULKAN=OFF -DGGML_METAL=OFF \
+        -DGGML_OPENMP=OFF -DGGML_BUILD_TESTS=OFF -DGGML_BUILD_EXAMPLES=OFF > "$WORK/cmake.log"
     cmake --build "$WORK/src/build" --target ace-server -j"$(nproc)" > "$WORK/build.log" 2>&1 \
         || { tail -n 60 "$WORK/build.log"; exit 1; }
     cp "$(find "$WORK/src/build" -type f -name ace-server | head -n 1)" "$BIN"
