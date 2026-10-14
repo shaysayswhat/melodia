@@ -93,4 +93,39 @@ class SongwriterQualityTest {
         assertFalse(merged.json.containsKey("timesignature"))
         assertEquals("en", merged.json["vocal_language"]!!.jsonPrimitive.content)
     }
+
+    @Test
+    fun longLyricsAreCutToWholeSectionsThatFit() {
+        val lyrics = """
+            [Intro - Acoustic Guitar]
+
+            [Verse 1]
+            one
+            two
+            three
+            four
+
+            [Chorus]
+            five
+            six
+            seven
+            eight
+
+            [Verse 2]
+            nine
+            ten
+            eleven
+            twelve
+
+            [Chorus]
+            five
+            six
+        """.trimIndent()
+        assertEquals(9, PromptBuilder.linesThatFit(30))
+        val fitted = PromptBuilder.fitLyrics(lyrics, 30)
+        assertEquals(8, PromptBuilder.sungLines(fitted))
+        assertTrue(fitted.startsWith("[Intro - Acoustic Guitar]\n\n[Verse 1]\none"))
+        assertTrue(fitted.endsWith("[Chorus]\nfive\nsix\nseven\neight"))
+        assertEquals(lyrics.trim(), PromptBuilder.fitLyrics(lyrics, 120))
+    }
 }

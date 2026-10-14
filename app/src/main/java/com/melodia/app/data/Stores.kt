@@ -34,9 +34,19 @@ class SettingsRepository(context: Context, private val json: Json) {
     private val _settings = MutableStateFlow(load())
     val settings: StateFlow<AppSettings> = _settings.asStateFlow()
 
-    private fun load(): AppSettings = runCatching {
-        prefs.getString("settings", null)?.let { json.decodeFromString(AppSettings.serializer(), it) }
-    }.getOrNull() ?: AppSettings()
+    private fun load(): AppSettings = migrate(
+        runCatching {
+            prefs.getString("settings", null)?.let { json.decodeFromString(AppSettings.serializer(), it) }
+        }.getOrNull() ?: AppSettings()
+    )
+
+    private fun migrate(s: AppSettings): AppSettings {
+        var out = s
+        // v2: songwriter planning on by default on the phone too (it only runs when the model is installed).
+        if (out.settingsVersion < 2) out = out.copy(phoneSongwriter = true, settingsVersion = 2)
+        if (out != s) prefs.edit().putString("settings", json.encodeToString(AppSettings.serializer(), out)).apply()
+        return out
+    }
 
     @Synchronized
     fun update(transform: (AppSettings) -> AppSettings) {

@@ -159,11 +159,11 @@ fun PhoneAiScreen(nav: Navigator) {
                 Hint("Total for this pack: ${formatBytes(packBytes)}. Downloads keep going in the background.")
             }
 
-            SectionCard("Songwriter brain (optional)") {
+            SectionCard("Songwriter brain (recommended)") {
                 Hint(
-                    "An extra model (about ${formatBytes(c.models.sizeOf(ModelCatalog.LM_SONGWRITER))}) that writes lyrics " +
-                        "for you and can plan the song's structure. Needed for Simple mode and \"Write for me\". " +
-                        "Writing lyrics takes about a minute on the phone."
+                    "An extra model (about ${formatBytes(c.models.sizeOf(ModelCatalog.LM_SONGWRITER))}) that plans each " +
+                        "song before it is sung, so the singer follows your lyrics closely and in order. It also writes " +
+                        "lyrics for Simple mode and \"Write for me\". Adds a minute or two per song."
                 )
                 Spacer(Modifier.height(6.dp))
                 ModelRow(

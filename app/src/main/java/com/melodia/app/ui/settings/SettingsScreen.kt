@@ -144,7 +144,8 @@ fun SettingsScreen(nav: Navigator, snackbar: SnackbarHostState) {
                     "Songwriter brain on the phone",
                     settings.phoneSongwriter,
                     { v -> c.settings.update { it.copy(phoneSongwriter = v) } },
-                    "Plans each song before singing for better structure. Slower. Always used when the AI writes your lyrics.",
+                    "Plans each song before singing, so the singer follows your lyrics closely and in order. " +
+                        "Adds a minute or two per song. Needs the songwriter download.",
                     enabled = c.models.songwriterInstalled(),
                 )
                 SwitchRow(
@@ -202,7 +203,7 @@ fun SettingsScreen(nav: Navigator, snackbar: SnackbarHostState) {
                     "Songwriter brain on the PC",
                     settings.pcSongwriter,
                     { v -> c.settings.update { it.copy(pcSongwriter = v) } },
-                    "Recommended when the PC has one installed.",
+                    "Recommended: the singer follows your lyrics much more closely. Uses the biggest songwriter on the PC.",
                 )
             }
 

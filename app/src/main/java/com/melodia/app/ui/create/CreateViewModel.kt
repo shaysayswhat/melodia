@@ -97,7 +97,12 @@ class CreateViewModel(app: Application) : AndroidViewModel(app) {
         val d = _draft.value
         if (d.simpleMode && d.description.isBlank()) return "Describe the song you want first."
         if (!d.simpleMode && !d.instrumental && d.lyrics.length > 4000) return "Lyrics are too long (max 4000 characters)."
-        val request = if (preview) d.copy(durationSec = 30, versions = 1) else d
+        // A preview sings the opening sections that fit in 30 seconds instead of cramming everything in.
+        val request = if (preview) {
+            d.copy(durationSec = 30, versions = 1, lyrics = if (d.lyrics.isBlank()) d.lyrics else PromptBuilder.fitLyrics(d.lyrics, 30))
+        } else {
+            d
+        }
         val voice = if (request.instrumental) null else c.voices.get(request.voiceProfileId)
         val title = request.title.trim().ifEmpty { autoTitle(request) } + if (preview) " (preview)" else ""
         val song = Song(
@@ -145,13 +150,14 @@ class CreateViewModel(app: Application) : AndroidViewModel(app) {
                     _busy.value = if (attempt == 1) "Writing lyrics" else "Writing lyrics (try $attempt of $of)"
                 }
                 val language = PromptBuilder.lyricsLanguage(draft)
+                val fitted = PromptBuilder.fitLyrics(written.lyrics, draft.durationSec)
                 update {
                     it.copy(
-                        lyrics = written.lyrics,
+                        lyrics = fitted,
                         simpleMode = false,
                         instrumental = false,
                         // Romanized lyrics (Bangla in Latin letters) can't be recognized from the script later.
-                        language = if (it.language == "auto" && PromptBuilder.detectLanguage(written.lyrics) != language) {
+                        language = if (it.language == "auto" && PromptBuilder.detectLanguage(fitted) != language) {
                             language
                         } else {
                             it.language

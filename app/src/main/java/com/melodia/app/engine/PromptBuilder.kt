@@ -396,6 +396,38 @@ object PromptBuilder {
         return out.toString()
     }
 
+    /** Roughly how many sung lines fit in a song of this length, leaving room for intro and instrumental parts. */
+    fun linesThatFit(durationSec: Int): Int = maxOf(4, (durationSec / 3.2).toInt())
+
+    fun sungLines(lyrics: String): Int =
+        lyrics.lines().count { it.isNotBlank() && !TAG_LINE.matches(it) && !it.trim().startsWith("[") }
+
+    /**
+     * Shortens lyrics to what the song length can hold, keeping whole sections in order.
+     * Too many lyrics make the singer rush, skip lines or mumble.
+     */
+    fun fitLyrics(lyrics: String, durationSec: Int): String {
+        val budget = linesThatFit(durationSec)
+        if (sungLines(lyrics) <= budget) return lyrics.trim()
+        val sections = mutableListOf<MutableList<String>>()
+        for (line in lyrics.trim().lines()) {
+            val isTag = line.trim().startsWith("[") && line.trim().endsWith("]")
+            if (sections.isEmpty() || (isTag && sections.last().any { it.isNotBlank() && !it.trim().startsWith("[") })) {
+                sections += mutableListOf<String>()
+            }
+            if (line.isNotBlank() || sections.last().isNotEmpty()) sections.last() += line
+        }
+        val kept = mutableListOf<List<String>>()
+        var used = 0
+        for (section in sections) {
+            val sung = sungLines(section.joinToString("\n"))
+            if (used > 0 && used + sung > budget) break
+            kept += section
+            used += sung
+        }
+        return kept.joinToString("\n\n") { it.joinToString("\n").trim() }.trim()
+    }
+
     /** "Verse 2 - soft" -> "Verse", "Pre chorus" -> "Pre-Chorus". */
     fun sectionKind(tagContent: String): String {
         val base = tagContent.substringBefore(" - ").substringBefore(":").trim()
