@@ -149,10 +149,15 @@ class EngineIntegrationTest {
         var built = PromptBuilder.build(req, voice, PromptBuilder.Options(lmModel = model))
         assertTrue(built.needsSongwriter)
         val draft = Songwriter.write(client, req, voice, model)
-        built = PromptBuilder.withLyrics(built, draft.lyrics, PromptBuilder.lyricsLanguage(req), draft.plan)
+        // Same steps as GenerationService: fit the lyrics to the length, let the songwriter plan, then sing.
+        val fitted = PromptBuilder.fitLyrics(draft.lyrics, req.durationSec)
+        built = PromptBuilder.withLyrics(built, fitted, PromptBuilder.lyricsLanguage(req), draft.plan)
         println("simple-mode request: ${built.json}")
-        File(out, "simple-lyrics.txt").writeText(draft.lyrics)
-        val id = synth("simple mode") { client.submit("/synth", built.json) }
+        File(out, "simple-lyrics.txt").writeText(fitted)
+        val lmId = client.submit("/lm", built.json)
+        client.await(lmId, 30 * 60_000L)
+        val plan = client.lmResult(lmId).first()
+        val id = synth("simple mode") { client.submit("/synth", plan) }
         val outputs = client.synthResult(id, out, "simple-v")
         assertEquals(1, outputs.size)
         assertMp3(outputs.first().audio)

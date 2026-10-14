@@ -4,7 +4,7 @@ Write lyrics, pick a style and a voice, and Melodia sings them as a real song (M
 
 Songs are made by **ACE-Step 1.5**, an open-source music model, running through **acestep.cpp**:
 
-- **Phone AI**: runs on the phone itself, fully offline after a one-time download (about 2.5 GB for the Lite pack, plus about 2 GB for the recommended songwriter). Needs a 64-bit phone with 8 GB+ RAM; 12 GB+ is smoother. It is slow: about 5 minutes for a 30-second preview and roughly 9 minutes per minute of song (measured on phone-class ARM cores).
+- **Phone AI**: runs on the phone itself, fully offline after a one-time download (about 2.5 GB for the Lite pack, plus about 2 GB for the recommended songwriter). Needs a 64-bit phone with 8 GB+ RAM; 12 GB+ is smoother. It is slow: about 3 to 5 minutes for a 30-second preview and roughly 6 to 9 minutes per minute of song (measured on phone-class ARM cores).
 - **PC AI**: the same engine on your computer, reached over your home Wi-Fi. Much faster, and it can use the bigger models.
 - **Termux engine**: the phone engine run inside the Termux app, for builds that don't include it.
 

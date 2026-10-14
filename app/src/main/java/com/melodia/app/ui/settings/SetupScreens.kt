@@ -147,11 +147,24 @@ fun PhoneAiScreen(nav: Navigator) {
                 )
                 val missing = packFiles.filter { files[it]?.installed != true && files[it]?.downloading != true }
                 if (missing.isNotEmpty()) {
+                    // Without the songwriter's plan, short songs often come out hummed instead of sung.
+                    var withSongwriter by remember { mutableStateOf(true) }
+                    val lm = ModelCatalog.LM_SONGWRITER
+                    val lmMissing = files[lm]?.installed != true && files[lm]?.downloading != true
+                    if (lmMissing) {
+                        SwitchRow(
+                            "Include the songwriter (recommended)",
+                            withSongwriter,
+                            { withSongwriter = it },
+                            "+${formatBytes(c.models.sizeOf(lm))}. Makes the singer follow your lyrics; without it, short songs are often hummed.",
+                        )
+                    }
+                    val toGet = missing + if (withSongwriter && lmMissing) listOf(lm) else emptyList()
                     Button(onClick = {
-                        val error = c.models.download(missing, settings.wifiOnlyDownloads)
+                        val error = c.models.download(toGet, settings.wifiOnlyDownloads)
                         if (error != null) scope.launch { snackbar.showSnackbar(error) }
                     }, modifier = Modifier.fillMaxWidth()) {
-                        Text("Download ${pack.name.lowercase().replaceFirstChar { it.uppercase() }} pack (${formatBytes(missing.sumOf { c.models.sizeOf(it) })})")
+                        Text("Download ${pack.name.lowercase().replaceFirstChar { it.uppercase() }} pack (${formatBytes(toGet.sumOf { c.models.sizeOf(it) })})")
                     }
                 } else if (ready) {
                     Hint("Installed. Phone AI is ready.", color = MelodiaColors.Green)

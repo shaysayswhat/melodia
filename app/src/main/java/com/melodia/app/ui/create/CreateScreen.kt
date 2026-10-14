@@ -654,7 +654,7 @@ private fun EngineDialog(
                 EngineOption(
                     "Phone AI",
                     when {
-                        status.phoneReady -> "Ready. Offline, natural vocals. About 5 minutes per 30 seconds of song."
+                        status.phoneReady -> "Ready. Offline, natural vocals. About 3 to 5 minutes per 30 seconds of song."
                         status.termuxUp -> "Using the Termux engine on this phone."
                         else -> status.phoneProblem()
                     },
