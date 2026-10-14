@@ -1,0 +1,86 @@
+name: Experiment 3
+
+on:
+  push:
+    branches: [exp]
+    paths: ["ci/exp3_*.py"]
+
+permissions:
+  contents: write
+
+env:
+  ACESTEP_REF: 4c75d8b74cd0841353478284c1ca711705f2918c
+
+jobs:
+  bangla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          ref: ci-exp-songs
+          path: previous
+      - name: Start the engine
+        env:
+          EXTRA_MODELS: acestep-5Hz-lm-1.7B-Q8_0.gguf
+        run: bash ci/start_engine.sh
+      - name: Bangla in Bengali script vs Latin letters
+        env:
+          OUT: ${{ github.workspace }}/out
+        run: python3 ci/exp3_bangla.py
+      - name: Listen with a recognizer that knows Bengali
+        if: always()
+        continue-on-error: true
+        env:
+          WHISPER_MODEL: large-v3
+          WHISPER_LANG: bn
+        run: |
+          cp previous/bn-dit-only.mp3 previous/bn-dit-only-lyrics.txt previous/bn-lm-1.7B.mp3 previous/bn-lm-1.7B-lyrics.txt out/
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q faster-whisper || pip install -q --break-system-packages faster-whisper
+          python3 ci/analyze_audio.py out 2>&1 | tee out/analysis.log
+      - name: Save
+        if: always()
+        run: |
+          cp "$RUNNER_TEMP/ace/server.log" out/server.log 2>/dev/null || true
+          cd out
+          git init -q
+          git checkout -q -b ci-exp3-bangla
+          git config user.name "melodia-ci"
+          git config user.email "melodia-ci@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Experiment 3 Bangla ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-exp3-bangla
+
+  topics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - name: Start the engine
+        env:
+          EXTRA_MODELS: acestep-5Hz-lm-1.7B-Q8_0.gguf acestep-5Hz-lm-4B-Q5_K_M.gguf
+        run: bash ci/start_engine.sh
+      - name: Ask for lyrics on three topics, three ways, two songwriters
+        env:
+          OUT: ${{ github.workspace }}/out
+        run: python3 ci/exp3_topics.py
+      - name: Save
+        if: always()
+        run: |
+          mkdir -p out
+          cd out
+          git init -q
+          git checkout -q -b ci-exp3-topics
+          git config user.name "melodia-ci"
+          git config user.email "melodia-ci@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Experiment 3 topics ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-exp3-topics

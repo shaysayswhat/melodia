@@ -67,8 +67,8 @@ def transcribe_here(path):
     pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
                          capture_output=True).stdout
     audio = np.frombuffer(pcm, dtype=np.float32)
-    model = WhisperModel("small", device="cpu", compute_type="int8")
-    segments, info = model.transcribe(audio, beam_size=5, vad_filter=False)
+    model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
+    segments, info = model.transcribe(audio, beam_size=5, vad_filter=False, language=os.environ.get("WHISPER_LANG") or None)
     text = " ".join(s.text.strip() for s in segments).strip()
     print(json.dumps({"text": text, "language": info.language, "probability": info.language_probability}))
 

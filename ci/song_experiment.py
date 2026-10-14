@@ -109,12 +109,17 @@ def song(name, caption, lyrics, lang, lm=None):
     return info
 
 
-results = []
-for lang, caption, lyrics in (("en", CAPTION_EN, EN), ("bn", CAPTION_BN, BN)):
-    for lm in (None, "0.6B", "1.7B"):
-        name = f"{lang}-{'dit-only' if lm is None else 'lm-' + lm}"
-        print("making", name, flush=True)
-        results.append(song(name, caption, lyrics, lang, lm))
-        print(json.dumps(results[-1]), flush=True)
-        with open(os.path.join(OUT, "songs.json"), "w") as f:
-            json.dump(results, f, indent=1)
+def main():
+    results = []
+    for lang, caption, lyrics in (("en", CAPTION_EN, EN), ("bn", CAPTION_BN, BN)):
+        for lm in (None, "0.6B", "1.7B"):
+            name = f"{lang}-{'dit-only' if lm is None else 'lm-' + lm}"
+            print("making", name, flush=True)
+            results.append(song(name, caption, lyrics, lang, lm))
+            print(json.dumps(results[-1]), flush=True)
+            with open(os.path.join(OUT, "songs.json"), "w") as f:
+                json.dump(results, f, indent=1)
+
+
+if __name__ == "__main__":
+    main()
