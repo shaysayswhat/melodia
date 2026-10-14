@@ -320,21 +320,25 @@ def main():
         results["library_text"] = texts(dump())
         return
 
-    # 5. Play it, open the full player, save it to Music.
+    # 5. Play it. Tapping a ready song opens the full player.
     tap("Play", exact=True)
     time.sleep(6)
-    shot("playing")
+    shot("player")
+    dump("player.xml")
     session = shell("dumpsys media_session")
     results["playback_state"] = re.findall(r"state=PlaybackState \{state=(\w+)", session)[:3]
     log(f"media session: {results['playback_state']}")
-    if tap(TITLE, exact=True, which="lowest"):
-        time.sleep(3)
-        shot("player")
-        dump("player.xml")
+    if find("Now playing", exact=True, wait=3) is not None:
+        results["player_opened"] = True
         shell("input keyevent 4")
         time.sleep(1.5)
+    shot("library-mini-player")
+    results["mini_player"] = find("Pause", exact=True, which="lowest", wait=3) is not None
 
+    # Save to Music through the song's menu, then pull the file for analysis.
     if tap("More", exact=True):
+        time.sleep(1)
+        shot("song-menu")
         if tap("Save to Music", exact=True):
             time.sleep(4)
             shot("saved")

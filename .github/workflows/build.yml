@@ -3,6 +3,11 @@ name: Build APK
 on:
   push:
     branches: [main]
+    # Changes that only touch the CI checks don't need a new APK release.
+    paths-ignore:
+      - "ci/**"
+      - ".github/workflows/check.yml"
+      - ".github/workflows/exp*.yml"
   workflow_dispatch:
 
 permissions:
