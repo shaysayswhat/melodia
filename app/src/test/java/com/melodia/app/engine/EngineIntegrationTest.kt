@@ -102,19 +102,50 @@ class EngineIntegrationTest {
         File(out, "songwriter-lyrics.txt").writeText(plan["lyrics"]?.jsonPrimitive?.contentOrNull.orEmpty())
     }
 
-    /** "Write for me": inspire mode returns lyrics only. */
+    /** "Write for me": checked and retried songwriter drafts, English and Bangla. */
     @Test
     fun writeLyricsForMe() = runBlocking<Unit> {
-        assumeTrue("no songwriter model on the server", client.props().lm.isNotEmpty())
-        val req = SongRequest(theme = "missing home during the monsoon", genre = "Pop", language = "en")
-        val inspire = PromptBuilder.inspireRequest(req, null)
-        println("inspire request: $inspire")
-        val id = client.submit("/lm", inspire)
-        client.await(id, 30 * 60_000L)
-        val lyrics = client.lmResult(id).first()["lyrics"]?.jsonPrimitive?.contentOrNull.orEmpty()
-        println("written lyrics:\n$lyrics")
-        File(out, "written-lyrics.txt").writeText(lyrics)
-        assertTrue("too few lines", lyrics.lines().count { it.isNotBlank() } >= 4)
+        val props = client.props()
+        assumeTrue("no songwriter model on the server", props.lm.isNotEmpty())
+        val model = Songwriter.preferredModel(props.lm)
+        println("songwriter model: $model")
+        val cases = listOf(
+            "written-en" to SongRequest(theme = "missing home during the monsoon", genre = "Pop", moods = listOf("Nostalgic")),
+            "written-bn" to SongRequest(theme = "the first rain in Dhaka", genre = "Acoustic", moods = listOf("Romantic"), language = "bn"),
+        )
+        for ((name, req) in cases) {
+            val t0 = System.currentTimeMillis()
+            val draft = Songwriter.write(client, req, Catalog.defaultVoices.first(), model) { a, of -> println("$name: try $a of $of") }
+            println("$name took ${(System.currentTimeMillis() - t0) / 1000}s in ${draft.attempts} tries:\n${draft.lyrics}\n")
+            File(out, "$name.txt").writeText(draft.lyrics)
+            val check = PromptBuilder.checkLyrics(draft.lyrics, PromptBuilder.lyricsLanguage(req), req.theme)
+            assertTrue("unusable lyrics: $check", check.usable)
+        }
+    }
+
+    /** Simple mode: a description only; the songwriter writes, the singer sings. */
+    @Test
+    fun simpleModeSong() = runBlocking<Unit> {
+        val props = client.props()
+        assumeTrue("no songwriter model on the server", props.lm.isNotEmpty())
+        val req = SongRequest(
+            simpleMode = true,
+            description = "A cheerful acoustic song about a sunny morning in the village",
+            durationSec = 30,
+            seed = 11,
+        )
+        val voice = Catalog.defaultVoices[1]
+        val model = Songwriter.preferredModel(props.lm)
+        var built = PromptBuilder.build(req, voice, PromptBuilder.Options(lmModel = model))
+        assertTrue(built.needsSongwriter)
+        val draft = Songwriter.write(client, req, voice, model)
+        built = PromptBuilder.withLyrics(built, draft.lyrics, PromptBuilder.lyricsLanguage(req), draft.plan)
+        println("simple-mode request: ${built.json}")
+        File(out, "simple-lyrics.txt").writeText(draft.lyrics)
+        val id = synth("simple mode") { client.submit("/synth", built.json) }
+        val outputs = client.synthResult(id, out, "simple-v")
+        assertEquals(1, outputs.size)
+        assertMp3(outputs.first().audio)
     }
 
     /** "Sound like me": a voice recording sent as the timbre reference. */
