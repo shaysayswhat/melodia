@@ -3,7 +3,7 @@ name: Song experiment
 on:
   push:
     branches: [exp]
-    paths: ["ci/song_experiment.py", ".github/workflows/exp-songs.yml"]
+    paths: ["ci/exp_songs_trigger.txt"]
 
 permissions:
   contents: write
