@@ -1,0 +1,31 @@
+[
+ {
+  "name": "arm-30s-plan",
+  "lm_seconds": 50,
+  "plan": {
+   "bpm": 79,
+   "keyscale": "A major",
+   "duration": 30.0,
+   "timesignature": "4"
+  },
+  "synth_seconds": 216,
+  "total_seconds": 266
+ },
+ {
+  "name": "arm-30s-singer-only",
+  "synth_seconds": 214,
+  "total_seconds": 214
+ },
+ {
+  "name": "arm-60s-plan",
+  "lm_seconds": 78,
+  "plan": {
+   "bpm": 79,
+   "keyscale": "A major",
+   "duration": 60.0,
+   "timesignature": "2"
+  },
+  "synth_seconds": 450,
+  "total_seconds": 528
+ }
+]
